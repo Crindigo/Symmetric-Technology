@@ -1,0 +1,13 @@
+{
+  "package": "symtech.mixins.reccomplex",
+  "refmap": "mixins.symtech.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "RCPosTransformerMixin",
+    "SpawnCommandLogicMixin",
+    "StructureSpawnContextMixin",
+    "GenericStructureMixin"
+  ]
+}

@@ -50,11 +50,11 @@ dependencies {
 
     // # Immersive Railroading dependencies
     // Universal Mod Care 1.2.1
-    implementation rfg.deobf('curse.maven:universal-mod-core-371784:4975229')
+    //implementation rfg.deobf('curse.maven:universal-mod-core-371784:4975229')
     // Track API 1.2.0
-    implementation rfg.deobf('curse.maven:track-api-282613:2825260')
+    //implementation rfg.deobf('curse.maven:track-api-282613:2825260')
     // Immersive Railroading 1.10.0
-    implementation rfg.deobf('curse.maven:immersive-railroading-277736:4970105')
+    //implementation rfg.deobf('curse.maven:immersive-railroading-277736:4970105')
 
     // # Recurrent Complex dependencies
     compileOnly rfg.deobf('curse.maven:recurrent-complex-223150:5615733')

@@ -2,7 +2,7 @@
   {
     "modid" : "${modid}",
     "name" : "${modname}",
-    "description" : "The coremod for Supersymmetry",
+    "description" : "Collection of additional real-world machines for GregTech",
     "version" : "${version}",
     "mcversion" : "${mcversion}",
     "url" : "",
@@ -11,7 +11,7 @@
       "TechLord22",
       "beanie"
     ],
-    "credits" : "The Supersymmetry Dev Team",
+    "credits" : "The Supersymmetry Dev Team (99%), Crindigo (1%)",
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
