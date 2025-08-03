@@ -36,9 +36,9 @@ import symtech.api.blocks.VariantAxialRotatableBlock;
 import symtech.api.capability.IStrandProvider;
 import symtech.api.capability.Strand;
 import symtech.api.capability.StrandConversion;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
 import symtech.common.blocks.BlockMetallurgyRoll;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 import java.io.IOException;
 import java.util.List;
@@ -153,10 +153,10 @@ public abstract class MetaTileEntityStrandShaper extends MultiblockWithDisplayBa
     }
 
     protected void initializeAbilities() {
-        if (!this.getAbilities(SuSyMultiblockAbilities.STRAND_IMPORT).isEmpty())
-            this.input = this.getAbilities(SuSyMultiblockAbilities.STRAND_IMPORT).get(0);
-        if (!this.getAbilities(SuSyMultiblockAbilities.STRAND_EXPORT).isEmpty())
-            this.output = this.getAbilities(SuSyMultiblockAbilities.STRAND_EXPORT).get(0);
+        if (!this.getAbilities(SymtechMultiblockAbilities.STRAND_IMPORT).isEmpty())
+            this.input = this.getAbilities(SymtechMultiblockAbilities.STRAND_IMPORT).get(0);
+        if (!this.getAbilities(SymtechMultiblockAbilities.STRAND_EXPORT).isEmpty())
+            this.output = this.getAbilities(SymtechMultiblockAbilities.STRAND_EXPORT).get(0);
         this.inputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.IMPORT_ITEMS));
         this.inputFluidInventory = new FluidTankList(true, this.getAbilities(MultiblockAbility.IMPORT_FLUIDS));
         this.outputFluidInventory = new FluidTankList(true, this.getAbilities(MultiblockAbility.EXPORT_FLUIDS));
@@ -245,22 +245,22 @@ public abstract class MetaTileEntityStrandShaper extends MultiblockWithDisplayBa
                     Strand displayStrand = strand;
                     if (strand == null) {
                         if (output == null || output.getStrand() == null) {
-                            comps.add(new TextComponentTranslation("susy.multiblock.strand_casting.no_strand"));
+                            comps.add(new TextComponentTranslation("symtech.multiblock.strand_casting.no_strand"));
                             return;
                         }
-                        comps.add(new TextComponentTranslation("susy.multiblock.strand_casting.output_detected"));
+                        comps.add(new TextComponentTranslation("symtech.multiblock.strand_casting.output_detected"));
                         displayStrand = output.getStrand();
                     }
-                    comps.add(new TextComponentTranslation("susy.multiblock.strand_casting.thickness", String.format("%.2f", displayStrand.thickness)));
-                    comps.add(new TextComponentTranslation("susy.multiblock.strand_casting.width", String.format("%.2f", displayStrand.width)));
+                    comps.add(new TextComponentTranslation("symtech.multiblock.strand_casting.thickness", String.format("%.2f", displayStrand.thickness)));
+                    comps.add(new TextComponentTranslation("symtech.multiblock.strand_casting.width", String.format("%.2f", displayStrand.width)));
 
                     StrandConversion conversion = StrandConversion.getConversion(displayStrand);
                     if (conversion == null) {
-                        comps.add(new TextComponentTranslation("susy.multiblock.strand_casting.no_conversion"));
+                        comps.add(new TextComponentTranslation("symtech.multiblock.strand_casting.no_conversion"));
                         return;
                     }
-                    comps.add(new TextComponentTranslation("susy.multiblock.strand_casting.ore_prefix",
-                            new TextComponentTranslation("supersymmetry.prefix." + conversion.prefix.name.toLowerCase())));
+                    comps.add(new TextComponentTranslation("symtech.multiblock.strand_casting.ore_prefix",
+                            new TextComponentTranslation("symtech.prefix." + conversion.prefix.name.toLowerCase())));
                 });
     }
 
@@ -348,7 +348,7 @@ public abstract class MetaTileEntityStrandShaper extends MultiblockWithDisplayBa
     }
 
     private IBlockState rollState() {
-        return SuSyBlocks.METALLURGY_ROLL.getState(BlockMetallurgyRoll.BlockMetallurgyRollType.ROLL);
+        return SymtechBlocks.METALLURGY_ROLL.getState(BlockMetallurgyRoll.BlockMetallurgyRollType.ROLL);
     }
 
     @Override

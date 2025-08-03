@@ -18,8 +18,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.capability.Strand;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.*;
 
 import java.util.function.Supplier;
@@ -121,10 +121,10 @@ public class MetaTileEntityTurningZone extends MetaTileEntityStrandShaper {
                         "ABBBA")
                 .where('B', rollOrientation())
                 .where('A', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX)))
-                .where('I', abilities(SuSyMultiblockAbilities.STRAND_IMPORT))
-                .where('O', abilities(SuSyMultiblockAbilities.STRAND_EXPORT))
+                .where('I', abilities(SymtechMultiblockAbilities.STRAND_IMPORT))
+                .where('O', abilities(SymtechMultiblockAbilities.STRAND_EXPORT))
                 .where('S', selfPredicate())
-                .where('F', states(SuSyMetaBlocks.SHEETED_FRAMES.get(Materials.Steel).getBlock(Materials.Steel)
+                .where('F', states(SymtechMetaBlocks.SHEETED_FRAMES.get(Materials.Steel).getBlock(Materials.Steel)
                         .withProperty(BlockSheetedFrame.SHEETED_FRAME_AXIS, BlockSheetedFrame.FrameEnumAxis
                                 .fromFacingAxis(getRelativeFacing(RelativeDirection.UP).getAxis())))
                         .or(autoAbilities(true, true, false)))
@@ -139,7 +139,7 @@ public class MetaTileEntityTurningZone extends MetaTileEntityStrandShaper {
 
     @Override
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.TURNING_ZONE_OVERLAY;
+        return SymtechTextures.TURNING_ZONE_OVERLAY;
     }
 
     @Override
@@ -171,6 +171,6 @@ public class MetaTileEntityTurningZone extends MetaTileEntityStrandShaper {
     }
 
     private IBlockState rollState() {
-        return SuSyBlocks.METALLURGY_ROLL.getState(BlockMetallurgyRoll.BlockMetallurgyRollType.ROLL);
+        return SymtechBlocks.METALLURGY_ROLL.getState(BlockMetallurgyRoll.BlockMetallurgyRollType.ROLL);
     }
 }

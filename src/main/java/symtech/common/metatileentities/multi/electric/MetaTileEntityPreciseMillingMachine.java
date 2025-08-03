@@ -22,18 +22,18 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockDrillBit;
-import symtech.common.blocks.SuSyBlocks;
-import symtech.common.metatileentities.SuSyMetaTileEntities;
+import symtech.common.blocks.SymtechBlocks;
+import symtech.common.metatileentities.SymtechMetaTileEntities;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MetaTileEntityPreciseMillingMachine extends RecipeMapMultiblockController {
     public MetaTileEntityPreciseMillingMachine(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.MILLING_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.MILLING_RECIPES);
     }
 
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
@@ -51,18 +51,18 @@ public class MetaTileEntityPreciseMillingMachine extends RecipeMapMultiblockCont
                 .where('B', states(getBaseCasingState()).setMinGlobalLimited(18)
                         .or(abilities(MultiblockAbility.INPUT_ENERGY)
                                 .setMinGlobalLimited(1).setMaxGlobalLimited(2)
-                                .addTooltip("susy.multiblock.pattern.error.milling.lower"))
+                                .addTooltip("symtech.multiblock.pattern.error.milling.lower"))
                         .or(abilities(MultiblockAbility.MAINTENANCE_HATCH)
                                 .setExactLimit(1)
-                                .addTooltip("susy.multiblock.pattern.error.milling.lower"))
+                                .addTooltip("symtech.multiblock.pattern.error.milling.lower"))
                 )
                 .where('C', states(getUpperCasingState()).setMinGlobalLimited(35)
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS)
                                 .setMinGlobalLimited(1)
-                                .addTooltip("susy.multiblock.pattern.error.milling.upper"))
+                                .addTooltip("symtech.multiblock.pattern.error.milling.upper"))
                         .or(abilities(MultiblockAbility.EXPORT_ITEMS)
                                 .setMinGlobalLimited(1)
-                                .addTooltip("susy.multiblock.pattern.error.milling.upper"))
+                                .addTooltip("symtech.multiblock.pattern.error.milling.upper"))
                 )
                 .where('D', states(getDrillBitState()))
                 .where('G', states(getGearBoxState()))
@@ -74,7 +74,7 @@ public class MetaTileEntityPreciseMillingMachine extends RecipeMapMultiblockCont
     public List<MultiblockShapeInfo> getMatchingShapes() {
         ArrayList<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
         MultiblockShapeInfo.Builder baseBuilder = MultiblockShapeInfo.builder()
-                .where('S', SuSyMetaTileEntities.MILLING, EnumFacing.SOUTH)
+                .where('S', SymtechMetaTileEntities.MILLING, EnumFacing.SOUTH)
                 .where('B', getBaseCasingState())
                 .where('C', getUpperCasingState())
                 .where('D', getDrillBitState())
@@ -116,7 +116,7 @@ public class MetaTileEntityPreciseMillingMachine extends RecipeMapMultiblockCont
     }
 
     protected static IBlockState getDrillBitState() {
-        return SuSyBlocks.DRILL_BIT.getState(BlockDrillBit.DrillBitType.STEEL);
+        return SymtechBlocks.DRILL_BIT.getState(BlockDrillBit.DrillBitType.STEEL);
     }
 
     protected static IBlockState getGlassState() {
@@ -135,6 +135,6 @@ public class MetaTileEntityPreciseMillingMachine extends RecipeMapMultiblockCont
     @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.MILLING_OVERLAY;
+        return SymtechTextures.MILLING_OVERLAY;
     }
 }

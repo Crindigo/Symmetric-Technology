@@ -16,22 +16,22 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockTurbineRotor;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 import java.util.function.Supplier;
 
 import static symtech.api.blocks.VariantHorizontalRotatableBlock.FACING;
 
-public class MetaTileEntityHighPressureLargeTurbine extends MetaTileEntitySUSYLargeTurbine {
+public class MetaTileEntityHighPressureLargeTurbine extends MetaTileEntitySymtechLargeTurbine {
 
     public MetaTileEntityHighPressureLargeTurbine(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.HIGH_PRESSURE_ADVANCED_STEAM_TURBINE, 4,
+        super(metaTileEntityId, SymtechRecipeMaps.HIGH_PRESSURE_ADVANCED_STEAM_TURBINE, 4,
                 MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_TURBINE_CASING),
-                SuSyBlocks.TURBINE_ROTOR.getState(BlockTurbineRotor.BlockTurbineRotorType.LOW_PRESSURE),
-                Textures.STABLE_TITANIUM_CASING, SusyTextures.HIGH_PRESSURE_ADVANCED_STEAM_TURBINE_OVERLAY);
+                SymtechBlocks.TURBINE_ROTOR.getState(BlockTurbineRotor.BlockTurbineRotorType.LOW_PRESSURE),
+                Textures.STABLE_TITANIUM_CASING, SymtechTextures.HIGH_PRESSURE_ADVANCED_STEAM_TURBINE_OVERLAY);
     }
 
     @Override
@@ -91,7 +91,7 @@ public class MetaTileEntityHighPressureLargeTurbine extends MetaTileEntitySUSYLa
     }
 
     public IBlockState rotorState2() {
-        return SuSyBlocks.TURBINE_ROTOR.getState(BlockTurbineRotor.BlockTurbineRotorType.HIGH_PRESSURE);
+        return SymtechBlocks.TURBINE_ROTOR.getState(BlockTurbineRotor.BlockTurbineRotorType.HIGH_PRESSURE);
     }
 
 }

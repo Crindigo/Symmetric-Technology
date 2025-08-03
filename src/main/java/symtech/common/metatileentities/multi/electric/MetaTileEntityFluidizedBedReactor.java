@@ -23,12 +23,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import symtech.api.capability.impl.ContinuousMultiblockRecipeLogic;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 public class MetaTileEntityFluidizedBedReactor extends RecipeMapMultiblockController {
     public MetaTileEntityFluidizedBedReactor(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.FLUIDIZED_BED_REACTOR_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.FLUIDIZED_BED_REACTOR_RECIPES);
         this.recipeMapWorkable = new ContinuousMultiblockRecipeLogic(this, true);
     }
 
@@ -68,6 +68,6 @@ public class MetaTileEntityFluidizedBedReactor extends RecipeMapMultiblockContro
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.FLUIDIZED_BED_OVERLAY;
+        return SymtechTextures.FLUIDIZED_BED_OVERLAY;
     }
 }

@@ -30,7 +30,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.metatileentities.multi.VoidingMultiblockBase;
 
 import javax.annotation.Nonnull;
@@ -92,14 +92,14 @@ public class MetaTileEntityDumper extends VoidingMultiblockBase {
 
             textList.add(TextComponentUtil.translationWithColor(
                     TextFormatting.GRAY,
-                    "susy.machine.dumper.rate",
+                    "symtech.machine.dumper.rate",
                     componentRate));
         }
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, @NotNull List<String> tooltip, boolean advanced) {
-        tooltip.add(I18n.format("susy.machine.dumper.tooltip.1", getBaseVoidingRate()));
+        tooltip.add(I18n.format("symtech.machine.dumper.tooltip.1", getBaseVoidingRate()));
         super.addInformation(stack, world, tooltip, advanced);
     }
 
@@ -139,6 +139,6 @@ public class MetaTileEntityDumper extends VoidingMultiblockBase {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.DUMPER_OVERLAY;
+        return SymtechTextures.DUMPER_OVERLAY;
     }
 }

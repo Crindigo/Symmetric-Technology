@@ -26,7 +26,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.IFluidTank;
-import symtech.common.materials.SusyMaterials;
+import symtech.common.materials.SymtechMaterials;
 import gregtech.common.blocks.wood.BlockGregPlanks;
 
 import javax.annotation.Nonnull;
@@ -57,7 +57,7 @@ public class MetaTileEntityPrimitiveMudPump extends MultiblockControllerBase imp
             if (biomeModifier == 0) {
                 biomeModifier = getAmount();
             } else if (biomeModifier > 0) {
-                mudTank.fill(SusyMaterials.Mud.getFluid(getFluidProduction()), true);
+                mudTank.fill(SymtechMaterials.Mud.getFluid(getFluidProduction()), true);
             }
         }
     }
@@ -159,7 +159,7 @@ public class MetaTileEntityPrimitiveMudPump extends MultiblockControllerBase imp
     @Override
     public String[] getDescription() {
         return Stream.of(
-                new String[]{I18n.format("susy.multiblock.primitive_mud_pump.description")}).flatMap(Stream::of).toArray(String[]::new);
+                new String[]{I18n.format("symtech.multiblock.primitive_mud_pump.description")}).flatMap(Stream::of).toArray(String[]::new);
     }
 
     @Override

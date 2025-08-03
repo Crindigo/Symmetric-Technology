@@ -19,13 +19,13 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import org.jetbrains.annotations.NotNull;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockSinteringBrick;
-import symtech.api.metatileentity.multiblock.SuSyPredicates;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.metatileentity.multiblock.SymtechPredicates;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.SinterProperty;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -35,7 +35,7 @@ public class MetaTileEntitySinteringOven extends RecipeMapMultiblockController {
     private boolean canUsePlasma;
 
     public MetaTileEntitySinteringOven(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.SINTERING_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.SINTERING_RECIPES);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this);
     }
 
@@ -47,8 +47,8 @@ public class MetaTileEntitySinteringOven extends RecipeMapMultiblockController {
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         if (isStructureFormed()) {
-            textList.add(new TextComponentTranslation("susy.multiblock.sintering_oven.can_use_plasma",
-                    new TextComponentTranslation(canUsePlasma ? "susy.multiblocks.sintering_oven.use_plasma.affirmative" : "susy.multiblocks.sintering_oven.use_plasma.negative")
+            textList.add(new TextComponentTranslation("symtech.multiblock.sintering_oven.can_use_plasma",
+                    new TextComponentTranslation(canUsePlasma ? "symtech.multiblocks.sintering_oven.use_plasma.affirmative" : "symtech.multiblocks.sintering_oven.use_plasma.negative")
                             .setStyle(new Style().setColor(TextFormatting.LIGHT_PURPLE))));
         }
         super.addDisplayText(textList);
@@ -56,17 +56,17 @@ public class MetaTileEntitySinteringOven extends RecipeMapMultiblockController {
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart multiblockPart) {
-        return SusyTextures.ULV_STRUCTURAL_CASING;
+        return SymtechTextures.ULV_STRUCTURAL_CASING;
     }
 
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.SINTERING_OVERLAY;
+        return SymtechTextures.SINTERING_OVERLAY;
     }
 
     protected static IBlockState getCasingState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.ULV_STRUCTURAL_CASING);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.ULV_STRUCTURAL_CASING);
     }
 
     @NotNull
@@ -93,7 +93,7 @@ public class MetaTileEntitySinteringOven extends RecipeMapMultiblockController {
                 .where('C', casingPredicate
                         .or(autoAbilities(false, false, true, false, false, true, false)))
                 .where('F', frames(Materials.Steel))
-                .where('B', SuSyPredicates.sinteringBricks())
+                .where('B', SymtechPredicates.sinteringBricks())
                 .where('#', air())
                 .where(' ', any())
                 .build();

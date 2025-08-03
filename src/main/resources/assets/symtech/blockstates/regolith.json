@@ -3,20 +3,20 @@
   "defaults" : {
     "model" : "minecraft:cube_all",
     "textures" : {
-      "all" : "gregtech:blocks/susy_stones/regolith/lowland"
+      "all" : "gregtech:blocks/symtech_stones/regolith/lowland"
     }
   },
   "variants" : {
     "variant=highland" : {
       "model" : "minecraft:cube_all",
       "textures" : {
-        "all" : "gregtech:blocks/susy_stones/regolith/highland"
+        "all" : "gregtech:blocks/symtech_stones/regolith/highland"
       }
     },
     "variant=lowland" : {
       "model" : "minecraft:cube_all",
       "textures" : {
-        "all" : "gregtech:blocks/susy_stones/regolith/lowland"
+        "all" : "gregtech:blocks/symtech_stones/regolith/lowland"
       }
     }
   }

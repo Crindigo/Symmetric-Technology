@@ -18,14 +18,14 @@ import gregtech.common.blocks.StoneVariantBlock;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityRotaryKiln extends RecipeMapMultiblockController {
     public MetaTileEntityRotaryKiln(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.ROTARY_KILN);
+        super(metaTileEntityId, SymtechRecipeMaps.ROTARY_KILN);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this);
     }
 
@@ -74,6 +74,6 @@ public class MetaTileEntityRotaryKiln extends RecipeMapMultiblockController {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.ROTARY_KILN_OVERLAY;
+        return SymtechTextures.ROTARY_KILN_OVERLAY;
     }
 }

@@ -24,8 +24,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.capability.impl.ExtendedDTLogicHandler;
 import symtech.api.metatileentity.multiblock.MetaTileEntityOrderedDT;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -36,7 +36,7 @@ import static gregtech.api.util.RelativeDirection.*;
 public class MetaTileEntityVacuumDistillationTower extends MetaTileEntityOrderedDT {
 
     public MetaTileEntityVacuumDistillationTower(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.VACUUM_DISTILLATION_RECIPES, true);
+        super(metaTileEntityId, SymtechRecipeMaps.VACUUM_DISTILLATION_RECIPES, true);
     }
 
     @Override
@@ -106,7 +106,7 @@ public class MetaTileEntityVacuumDistillationTower extends MetaTileEntityOrdered
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.VDT_OVERLAY;
+        return SymtechTextures.VDT_OVERLAY;
     }
 
     @Override

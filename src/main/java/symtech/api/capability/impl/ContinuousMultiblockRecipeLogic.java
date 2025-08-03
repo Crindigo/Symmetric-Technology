@@ -12,7 +12,7 @@ import net.minecraft.util.Tuple;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.SymtechLog;
-import symtech.api.recipes.builders.logic.SuSyOverclockingLogic;
+import symtech.api.recipes.builders.logic.SymtechOverclockingLogic;
 import symtech.api.recipes.catalysts.CatalystInfo;
 import symtech.api.recipes.properties.CatalystProperty;
 import symtech.api.recipes.properties.CatalystPropertyValue;
@@ -156,7 +156,7 @@ public class ContinuousMultiblockRecipeLogic extends MultiblockRecipeLogic {
 
     protected double[] runContinuousOverclockingLogic(int recipeEUt, long maxVoltage, int duration, int amountOC) {
         if (requiredCatalystTier != CatalystInfo.NO_TIER && catalystInfo != null) {
-            return SuSyOverclockingLogic.continuousCatalystOverclockingLogic(
+            return SymtechOverclockingLogic.continuousCatalystOverclockingLogic(
                     recipeEUt,
                     maxVoltage,
                     duration,
@@ -167,7 +167,7 @@ public class ContinuousMultiblockRecipeLogic extends MultiblockRecipeLogic {
                     getOverclockingVoltageMultiplier()
             );
         } else {
-            return SuSyOverclockingLogic.continuousOverclockingLogic(
+            return SymtechOverclockingLogic.continuousOverclockingLogic(
                     recipeEUt,
                     maxVoltage,
                     duration,

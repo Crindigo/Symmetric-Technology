@@ -12,15 +12,15 @@ import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
 import symtech.api.capability.impl.NoEnergyMultiblockRecipeLogic;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityCondenser extends RecipeMapMultiblockController {
 
     public MetaTileEntityCondenser(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.CONDENSER_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.CONDENSER_RECIPES);
         this.recipeMapWorkable = new NoEnergyMultiblockRecipeLogic(this);
     }
 
@@ -50,7 +50,7 @@ public class MetaTileEntityCondenser extends RecipeMapMultiblockController {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.CONDENSER_OVERLAY;
+        return SymtechTextures.CONDENSER_OVERLAY;
     }
 
     @Override

@@ -24,8 +24,8 @@ import java.util.Map;
         moduleID = SymtechModules.MODULE_VINTAGEFIX,
         containerID = Symtech.MODID,
         modDependencies = "vintagefix",
-        name = "SuSy VintageFix Integration",
-        description = "SuSy VintageFix Integration Module")
+        name = "Symtech VintageFix Integration",
+        description = "Symtech VintageFix Integration Module")
 public class VintageFixModule extends IntegrationSubmodule {
 
     @NotNull

@@ -38,12 +38,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import symtech.api.capability.SuSyDataCodes;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.capability.SymtechDataCodes;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.EvaporationEnergyProperty;
-import symtech.api.util.SuSyUtility;
-import symtech.common.blocks.SuSyBlocks;
-import symtech.common.metatileentities.SuSyMetaTileEntities;
+import symtech.api.util.SymtechUtility;
+import symtech.common.blocks.SymtechBlocks;
+import symtech.common.metatileentities.SymtechMetaTileEntities;
 import symtech.integration.theoneprobe.provider.EvaporationPoolInfoProvider;
 
 import javax.annotation.Nonnull;
@@ -58,7 +58,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static gregtech.api.metatileentity.MetaTileEntityHolder.TRACKED_TICKS;
-import static symtech.api.metatileentity.multiblock.SuSyPredicates.coilsOrBeds;
+import static symtech.api.metatileentity.multiblock.SymtechPredicates.coilsOrBeds;
 
 public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController {
 
@@ -93,7 +93,7 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
     private int statsIndex = 0;
 
     public MetaTileEntityEvaporationPool(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.EVAPORATION_POOL);
+        super(metaTileEntityId, SymtechRecipeMaps.EVAPORATION_POOL);
         this.recipeMapWorkable = new EvapRecipeLogic(this);
     }
 
@@ -200,7 +200,7 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
     }
 
     protected static IBlockState getEvaporationBedState() {
-        return SuSyBlocks.EVAPORATION_BED.getDefaultState();
+        return SymtechBlocks.EVAPORATION_BED.getDefaultState();
     }
 
     protected String line(Slice slice) {
@@ -263,7 +263,7 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
                 .aisle(Slice.B_START.gen(l, r), Slice.T_MIDDLE.gen(l, r))
                 .aisle(Slice.B_ALL.gen(l, r), Slice.T_SIDES.gen(l, r))
                 .aisle(Slice.B_SELF.gen(l, r), Slice.T_NONE.gen(l, r))
-                .where('S', SuSyMetaTileEntities.EVAPORATION_POOL, EnumFacing.SOUTH)
+                .where('S', SymtechMetaTileEntities.EVAPORATION_POOL, EnumFacing.SOUTH)
                 .where('C', getConcreteState())
                 .where('B', getEvaporationBedState())
                 .where('#', Blocks.AIR.getDefaultState())
@@ -409,13 +409,13 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
                         ITextComponent isHeatingString = isHeating() ?
                                 TextComponentUtil.translationWithColor(
                                         TextFormatting.GREEN,
-                                        "susy.multiblock.evaporation_pool.is_heating") :
+                                        "symtech.multiblock.evaporation_pool.is_heating") :
                                 TextComponentUtil.translationWithColor(
                                         TextFormatting.RED,
-                                        "susy.multiblock.evaporation_pool.is_not_heating");
+                                        "symtech.multiblock.evaporation_pool.is_not_heating");
                         tl.add(TextComponentUtil.translationWithColor(
                                 TextFormatting.GRAY,
-                                "susy.multiblock.evaporation_pool_heated_preface",
+                                "symtech.multiblock.evaporation_pool_heated_preface",
                                 isHeatingString));
                     }
 
@@ -426,7 +426,7 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
                                 TextFormattingUtil.formatNumbers(exposedBlocks));
                         tl.add(TextComponentUtil.translationWithColor(
                                 TextFormatting.GRAY,
-                                "susy.multiblock.evaporation_pool.exposed_blocks",
+                                "symtech.multiblock.evaporation_pool.exposed_blocks",
                                 exposedBlocksString));
                     }
 
@@ -437,7 +437,7 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
                                 String.format("%.2f", getAverageSpeed()));
                         tl.add(TextComponentUtil.translationWithColor(
                                 TextFormatting.GRAY,
-                                "susy.multiblock.evaporation_pool.average_speed",
+                                "symtech.multiblock.evaporation_pool.average_speed",
                                 averageSpeedString));
                     }
                 })
@@ -447,9 +447,9 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
     @Override
     public void addInformation(ItemStack stack, World player, @NotNull List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("susy.machine.evaporation_pool.tooltip.info", MAX_DIAMETER, MIN_DIAMETER));
+        tooltip.add(I18n.format("symtech.machine.evaporation_pool.tooltip.info", MAX_DIAMETER, MIN_DIAMETER));
         if (TooltipHelper.isShiftDown()) {
-            tooltip.add(I18n.format("susy.machine.evaporation_pool.tooltip.structure_info", MAX_DIAMETER, MIN_DIAMETER));
+            tooltip.add(I18n.format("symtech.machine.evaporation_pool.tooltip.structure_info", MAX_DIAMETER, MIN_DIAMETER));
         }
     }
 
@@ -663,10 +663,10 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
                 int baseHeat = getHeatFromSunlight() + heatBuffer;
                 int coilHeat = 0;
                 int maxEnergy2Draw = (int) Math.min(Math.min(getEnergyStored(), getMaxEnergyInput()),
-                        getMaxHeatFromCoils() / SuSyUtility.JOULES_PER_EU);
+                        getMaxHeatFromCoils() / SymtechUtility.JOULES_PER_EU);
                 if (drawEnergy(maxEnergy2Draw, true)) {
                     drawEnergy(maxEnergy2Draw, false);
-                    coilHeat = maxEnergy2Draw * SuSyUtility.JOULES_PER_EU;
+                    coilHeat = maxEnergy2Draw * SymtechUtility.JOULES_PER_EU;
                 }
 
                 int totalHeat = (baseHeat + coilHeat);
@@ -678,7 +678,7 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
                 boolean halted = maxProgress == 0;
                 if (this.isHalted != halted) {
                     this.isHalted = halted;
-                    writeCustomData(SuSyDataCodes.UPDATE_WORK_HALTED, buf -> buf.writeBoolean(halted));
+                    writeCustomData(SymtechDataCodes.UPDATE_WORK_HALTED, buf -> buf.writeBoolean(halted));
                 }
                 this.isHeating = coilHeat > 0;
 
@@ -719,7 +719,7 @@ public class MetaTileEntityEvaporationPool extends RecipeMapMultiblockController
         @Override
         public void receiveCustomData(int dataId, @NotNull PacketBuffer buf) {
             super.receiveCustomData(dataId, buf);
-            if (dataId == SuSyDataCodes.UPDATE_WORK_HALTED) {
+            if (dataId == SymtechDataCodes.UPDATE_WORK_HALTED) {
                 this.isHalted = buf.readBoolean();
             }
         }

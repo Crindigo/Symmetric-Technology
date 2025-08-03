@@ -17,10 +17,10 @@ import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.capability.impl.ExtendedDTLogicHandler;
 import symtech.api.metatileentity.multiblock.MetaTileEntityOrderedDT;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 
@@ -28,7 +28,7 @@ import static gregtech.api.util.RelativeDirection.*;
 
 public class MetaTileEntityHighPressureCryogenicDistillationPlant extends MetaTileEntityOrderedDT {
     public MetaTileEntityHighPressureCryogenicDistillationPlant(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.HIGH_PRESSURE_CRYOGENIC_DISTILLATION);
+        super(metaTileEntityId, SymtechRecipeMaps.HIGH_PRESSURE_CRYOGENIC_DISTILLATION);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class MetaTileEntityHighPressureCryogenicDistillationPlant extends MetaTi
                         .or(abilities(MultiblockAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(2))
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
                         .or(autoAbilities(true, false).setExactLimit(1)))
-                .where('F', states(SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.SIEVE_TRAY)))
+                .where('F', states(SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.SIEVE_TRAY)))
                 .where('X', states(getCasingState())
                         .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.EXPORT_FLUIDS).stream()
                                 .filter(mte -> !(mte instanceof MetaTileEntityMultiFluidHatch))
@@ -83,7 +83,7 @@ public class MetaTileEntityHighPressureCryogenicDistillationPlant extends MetaTi
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.HPCDT_OVERLAY;
+        return SymtechTextures.HPCDT_OVERLAY;
     }
 
     @Override

@@ -7,14 +7,14 @@ import symtech.Symtech;
 @ModuleContainer
 public class SymtechModules implements IModuleContainer {
 
-    public static final String MODULE_CORE = "susy_core";
-    public static final String MODULE_BDSAndM = "susy_bdsandm_integration";
-    public static final String MODULE_BAUBLES = "susy_baubles_integration";
-    public static final String MODULE_TOP = "susy_top_integration";
-    public static final String MODULE_JEI = "susy_jei_integration";
-    public static final String MODULE_PYROTECH = "susy_pyrotech_integration";
-    public static final String MODULE_VINTAGEFIX = "susy_vintagefix_integration";
-    public static final String MODULE_LITTLETILES = "susy_littletiles_integration";
+    public static final String MODULE_CORE = "symtech_core";
+    public static final String MODULE_BDSAndM = "symtech_bdsandm_integration";
+    public static final String MODULE_BAUBLES = "symtech_baubles_integration";
+    public static final String MODULE_TOP = "symtech_top_integration";
+    public static final String MODULE_JEI = "symtech_jei_integration";
+    public static final String MODULE_PYROTECH = "symtech_pyrotech_integration";
+    public static final String MODULE_VINTAGEFIX = "symtech_vintagefix_integration";
+    public static final String MODULE_LITTLETILES = "symtech_littletiles_integration";
 
     @Override
     public String getID() {

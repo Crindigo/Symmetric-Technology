@@ -12,15 +12,15 @@ import gregtech.common.blocks.BlockBoilerCasing.BoilerCasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityPressureSwingAdsorber extends RecipeMapMultiblockController {
 
     public MetaTileEntityPressureSwingAdsorber(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.PRESSURE_SWING_ADSORBER_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.PRESSURE_SWING_ADSORBER_RECIPES);
     }
 
     @Override
@@ -49,6 +49,6 @@ public class MetaTileEntityPressureSwingAdsorber extends RecipeMapMultiblockCont
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.PRESSURE_SWING_ABSORBER_OVERLAY;
+        return SymtechTextures.PRESSURE_SWING_ABSORBER_OVERLAY;
     }
 }

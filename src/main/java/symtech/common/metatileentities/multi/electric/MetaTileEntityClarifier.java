@@ -22,10 +22,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import symtech.api.metatileentity.multiblock.FluidRenderRecipeMapMultiBlock;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockMultiblockTank;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -34,7 +34,7 @@ import java.util.List;
 public class MetaTileEntityClarifier extends FluidRenderRecipeMapMultiBlock {
 
     public MetaTileEntityClarifier(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.CLARIFIER, true);
+        super(metaTileEntityId, SymtechRecipeMaps.CLARIFIER, true);
     }
 
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
@@ -64,7 +64,7 @@ public class MetaTileEntityClarifier extends FluidRenderRecipeMapMultiBlock {
                         .or(autoAbilities()))
                 .where('B', states(MetaBlocks.METAL_CASING.getState(MetalCasingType.STEEL_SOLID)))
                 .where('C', states(MetaBlocks.BOILER_CASING.getState((BoilerCasingType.STEEL_PIPE))))
-                .where('D', states(SuSyBlocks.MULTIBLOCK_TANK.getState(BlockMultiblockTank.MultiblockTankType.CLARIFIER)))
+                .where('D', states(SymtechBlocks.MULTIBLOCK_TANK.getState(BlockMultiblockTank.MultiblockTankType.CLARIFIER)))
                 .where('E', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX)))
                 .where('F', frames(Materials.Steel))
                 .where(' ', any())
@@ -83,7 +83,7 @@ public class MetaTileEntityClarifier extends FluidRenderRecipeMapMultiBlock {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.CLARIFIER_OVERLAY;
+        return SymtechTextures.CLARIFIER_OVERLAY;
     }
 
     @Override

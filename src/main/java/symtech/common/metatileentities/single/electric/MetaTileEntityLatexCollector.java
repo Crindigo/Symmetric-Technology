@@ -21,9 +21,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 import symtech.api.metatileentity.PseudoMultiMachineMetaTileEntity;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.api.util.SuSyUtility;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.api.util.SymtechUtility;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -33,7 +33,7 @@ public class MetaTileEntityLatexCollector extends PseudoMultiMachineMetaTileEnti
     private final int tankSize = 16000;
 
     public MetaTileEntityLatexCollector(ResourceLocation metaTileEntityId, int tier) {
-        super(metaTileEntityId, SuSyRecipeMaps.LATEX_COLLECTOR_RECIPES, SusyTextures.LATEX_COLLECTOR_OVERLAY, tier, true, SuSyUtility.collectorTankSizeFunction);
+        super(metaTileEntityId, SymtechRecipeMaps.LATEX_COLLECTOR_RECIPES, SymtechTextures.LATEX_COLLECTOR_OVERLAY, tier, true, SymtechUtility.collectorTankSizeFunction);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class MetaTileEntityLatexCollector extends PseudoMultiMachineMetaTileEnti
     @Override
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
         super.renderMetaTileEntity(renderState, translation, pipeline);
-        SusyTextures.LATEX_COLLECTOR_OVERLAY.renderOrientedState(renderState, translation, pipeline, this.getFrontFacing(), this.isActive(), true);
+        SymtechTextures.LATEX_COLLECTOR_OVERLAY.renderOrientedState(renderState, translation, pipeline, this.getFrontFacing(), this.isActive(), true);
     }
 
     @Override
@@ -103,7 +103,7 @@ public class MetaTileEntityLatexCollector extends PseudoMultiMachineMetaTileEnti
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.set(1, I18n.format("susy.machine.latex_collector.tooltip"));
+        tooltip.set(1, I18n.format("symtech.machine.latex_collector.tooltip"));
     }
 
     @Override

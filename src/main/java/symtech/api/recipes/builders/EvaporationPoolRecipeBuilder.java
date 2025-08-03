@@ -8,7 +8,7 @@ import gregtech.api.util.ValidationResult;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.SymtechLog;
 import symtech.api.recipes.properties.EvaporationEnergyProperty;
-import symtech.api.util.SuSyUtility;
+import symtech.api.util.SymtechUtility;
 
 public class EvaporationPoolRecipeBuilder extends RecipeBuilder<EvaporationPoolRecipeBuilder> {
 
@@ -67,7 +67,7 @@ public class EvaporationPoolRecipeBuilder extends RecipeBuilder<EvaporationPoolR
                 this.Jt(408 * 55 * getFluidInputs().get(0).getAmount() / (100 * (getDuration() == 0 ? 200 : getDuration())));
             } else {
                 //calculate joules needed per tick from EUt -> J/t and use eutStorage as variable, as it will no longer be needed
-                this.Jt(eutStorage * SuSyUtility.JOULES_PER_EU);
+                this.Jt(eutStorage * SymtechUtility.JOULES_PER_EU);
             }
         }
 

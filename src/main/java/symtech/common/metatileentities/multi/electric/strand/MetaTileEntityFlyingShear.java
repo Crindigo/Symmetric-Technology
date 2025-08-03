@@ -17,10 +17,10 @@ import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.blocks.VariantHorizontalRotatableBlock;
 import symtech.api.capability.Strand;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockMetallurgy2;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 public class MetaTileEntityFlyingShear extends MetaTileEntityStrandShaper {
     public MetaTileEntityFlyingShear(ResourceLocation metaTileEntityId) {
@@ -55,8 +55,8 @@ public class MetaTileEntityFlyingShear extends MetaTileEntityStrandShaper {
                 .where('S', this.selfPredicate())
                 .where('A', air())
                 .where('C', states(getCasingState()).or(autoAbilities()))
-                .where('I', abilities(SuSyMultiblockAbilities.STRAND_IMPORT))
-                .where('O', abilities(SuSyMultiblockAbilities.STRAND_EXPORT))
+                .where('I', abilities(SymtechMultiblockAbilities.STRAND_IMPORT))
+                .where('O', abilities(SymtechMultiblockAbilities.STRAND_EXPORT))
                 .where('X', orientation(getSawbladeState(), RelativeDirection.RIGHT, VariantHorizontalRotatableBlock.FACING))
                 .where('F', frames(Materials.Steel))
                 .where('R', rollOrientation(RelativeDirection.FRONT))
@@ -66,7 +66,7 @@ public class MetaTileEntityFlyingShear extends MetaTileEntityStrandShaper {
     }
 
     private IBlockState getSawbladeState() {
-        return SuSyBlocks.METALLURGY_2.getState(BlockMetallurgy2.BlockMetallurgy2Type.FLYING_SHEAR_SAW);
+        return SymtechBlocks.METALLURGY_2.getState(BlockMetallurgy2.BlockMetallurgy2Type.FLYING_SHEAR_SAW);
     }
 
     private IBlockState getCasingState() {
@@ -90,6 +90,6 @@ public class MetaTileEntityFlyingShear extends MetaTileEntityStrandShaper {
 
     @Override
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.FLYING_SHEAR_OVERLAY;
+        return SymtechTextures.FLYING_SHEAR_OVERLAY;
     }
 }

@@ -33,7 +33,7 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.unification.material.info.SuSyMaterialIconType;
+import symtech.api.unification.material.info.SymtechMaterialIconType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -377,14 +377,14 @@ public class BlockSheetedFrame extends Block {
     @SideOnly(Side.CLIENT)
     public void onModelRegister() {
         ModelLoader.setCustomStateMapper(this, new MaterialStateMapper(
-                SuSyMaterialIconType.sheetedFrame, s -> s.getValue(this.variantProperty).getMaterialIconSet()));
+                SymtechMaterialIconType.sheetedFrame, s -> s.getValue(this.variantProperty).getMaterialIconSet()));
 
         for (IBlockState state : this.getBlockState().getValidStates()) {
             //hopefully stop null materials from getting to register
             if (state.getValue(variantProperty) == Materials.NULL) continue;
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), this.getMetaFromState(state),
                     MaterialBlockModelLoader.registerItemModel(
-                            SuSyMaterialIconType.sheetedFrame,
+                            SymtechMaterialIconType.sheetedFrame,
                             state.getValue(this.variantProperty).getMaterialIconSet()));
         }
     }
@@ -396,12 +396,12 @@ public class BlockSheetedFrame extends Block {
         Map<IBlockState, ModelResourceLocation> map = new Object2ObjectOpenHashMap<>();
         for (IBlockState state : this.getBlockState().getValidStates()) {
             Material material = getGtMaterial(state);
-            map.put(state, symtech.api.util.MaterialBlockModelLoader.loadBlockModel(SuSyMaterialIconType.sheetedFrame, material.getMaterialIconSet(),
+            map.put(state, symtech.api.util.MaterialBlockModelLoader.loadBlockModel(SymtechMaterialIconType.sheetedFrame, material.getMaterialIconSet(),
                     "axis=" + state.getValue(SHEETED_FRAME_AXIS).getName()));
 
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this),
                     this.getMetaFromState(state),
-                    symtech.api.util.MaterialBlockModelLoader.loadItemModel(SuSyMaterialIconType.sheetedFrame, material.getMaterialIconSet()));
+                    symtech.api.util.MaterialBlockModelLoader.loadItemModel(SymtechMaterialIconType.sheetedFrame, material.getMaterialIconSet()));
         }
         ModelLoader.setCustomStateMapper(this, b -> map);
     }

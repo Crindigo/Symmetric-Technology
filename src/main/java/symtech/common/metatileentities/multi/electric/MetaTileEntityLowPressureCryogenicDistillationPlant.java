@@ -19,10 +19,10 @@ import symtech.api.capability.impl.ExtendedDTLogicHandler;
 import symtech.api.metatileentity.multiblock.ICryogenicProvider;
 import symtech.api.metatileentity.multiblock.ICryogenicReceiver;
 import symtech.api.metatileentity.multiblock.MetaTileEntityOrderedDT;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -35,7 +35,7 @@ public class MetaTileEntityLowPressureCryogenicDistillationPlant extends MetaTil
     private ICryogenicReceiver receiver;
 
     public MetaTileEntityLowPressureCryogenicDistillationPlant(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.LOW_PRESSURE_CRYOGENIC_DISTILLATION);
+        super(metaTileEntityId, SymtechRecipeMaps.LOW_PRESSURE_CRYOGENIC_DISTILLATION);
     }
 
     @Override
@@ -63,7 +63,7 @@ public class MetaTileEntityLowPressureCryogenicDistillationPlant extends MetaTil
                         .or(abilities(MultiblockAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(2))
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
                         .or(autoAbilities(true, false).setExactLimit(1)))
-                .where('F', states(SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.STRUCTURAL_PACKING)))
+                .where('F', states(SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.STRUCTURAL_PACKING)))
                 .where('X', states(getCasingState())
                         .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.EXPORT_FLUIDS).stream()
                                 .filter(mte->!(mte instanceof MetaTileEntityMultiFluidHatch))
@@ -102,7 +102,7 @@ public class MetaTileEntityLowPressureCryogenicDistillationPlant extends MetaTil
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.LPCDT_OVERLAY;
+        return SymtechTextures.LPCDT_OVERLAY;
     }
 
     @Override

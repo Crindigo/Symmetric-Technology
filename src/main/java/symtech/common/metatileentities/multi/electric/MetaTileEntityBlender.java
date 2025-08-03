@@ -28,7 +28,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import symtech.api.metatileentity.multiblock.FluidRenderRecipeMapMultiBlock;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -41,7 +41,7 @@ public class MetaTileEntityBlender extends FluidRenderRecipeMapMultiBlock {
     private final static Vec3i PATTERN_OFFSET = new Vec3i(-1, 1, 1);
 
     public MetaTileEntityBlender(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.BLENDER_RECIPES, true);
+        super(metaTileEntityId, SymtechRecipeMaps.BLENDER_RECIPES, true);
     }
 
     @Override

@@ -11,10 +11,10 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import symtech.api.capability.impl.PseudoMultiSteamRecipeLogic;
-import symtech.api.metatileentity.steam.SuSySteamProgressIndicator;
-import symtech.common.metatileentities.single.steam.SuSySimpleSteamMetaTileEntity;
+import symtech.api.metatileentity.steam.SymtechSteamProgressIndicator;
+import symtech.common.metatileentities.single.steam.SymtechSimpleSteamMetaTileEntity;
 
-public class PseudoMultiSteamMachineMetaTileEntity extends SuSySimpleSteamMetaTileEntity {
+public class PseudoMultiSteamMachineMetaTileEntity extends SymtechSimpleSteamMetaTileEntity {
 
     private IBlockState targetBlockState;
 
@@ -22,7 +22,7 @@ public class PseudoMultiSteamMachineMetaTileEntity extends SuSySimpleSteamMetaTi
         return targetBlockState;
     }
 
-    public PseudoMultiSteamMachineMetaTileEntity(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap, SuSySteamProgressIndicator progressIndicator, ICubeRenderer renderer, boolean isBrickedCasing, boolean isHighPressure) {
+    public PseudoMultiSteamMachineMetaTileEntity(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap, SymtechSteamProgressIndicator progressIndicator, ICubeRenderer renderer, boolean isBrickedCasing, boolean isHighPressure) {
         super(metaTileEntityId, recipeMap, progressIndicator, renderer, isBrickedCasing, isHighPressure);
         this.workableHandler = new PseudoMultiSteamRecipeLogic(this, recipeMap, isHighPressure, steamFluidTank, 1.0);
     }

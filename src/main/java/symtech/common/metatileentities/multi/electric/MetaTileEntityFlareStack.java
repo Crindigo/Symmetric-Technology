@@ -31,7 +31,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.metatileentities.multi.VoidingMultiblockBase;
 
 import javax.annotation.Nonnull;
@@ -189,14 +189,14 @@ public class MetaTileEntityFlareStack extends VoidingMultiblockBase {
             ITextComponent componentRateBonus = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE,
                     this.rateBonus + "x");
             ITextComponent componentRateBase = TextComponentUtil.translationWithColor(TextFormatting.GRAY,
-                    "susy.machine.flare_stack.rate",
+                    "symtech.machine.flare_stack.rate",
                     componentRateBonus);
             ITextComponent componentRateHover = TextComponentUtil.translationWithColor(TextFormatting.GRAY,
-                    "susy.machine.flare_stack.rate_hover");
+                    "symtech.machine.flare_stack.rate_hover");
 
             textList.add(TextComponentUtil.translationWithColor(
                     TextFormatting.GRAY,
-                    "susy.machine.flare_stack.height",
+                    "symtech.machine.flare_stack.height",
                     componentHeight));
             textList.add(TextComponentUtil.setHover(componentRateBase, componentRateHover));
         }
@@ -204,8 +204,8 @@ public class MetaTileEntityFlareStack extends VoidingMultiblockBase {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, @NotNull List<String> tooltip, boolean advanced) {
-        tooltip.add(I18n.format("susy.machine.flare_stack.tooltip.1", getBaseVoidingRate()));
-        tooltip.add(I18n.format("susy.machine.flare_stack.tooltip.2"));
+        tooltip.add(I18n.format("symtech.machine.flare_stack.tooltip.1", getBaseVoidingRate()));
+        tooltip.add(I18n.format("symtech.machine.flare_stack.tooltip.2"));
         super.addInformation(stack, world, tooltip, advanced);
     }
 
@@ -220,7 +220,7 @@ public class MetaTileEntityFlareStack extends VoidingMultiblockBase {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.FLARE_STACK_OVERLAY;
+        return SymtechTextures.FLARE_STACK_OVERLAY;
     }
 
     @Override

@@ -19,8 +19,8 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.items.IItemHandlerModifiable;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.capability.impl.NoEnergyMultiblockRecipeLogic;
 
 import javax.annotation.Nonnull;
@@ -30,7 +30,7 @@ import java.util.List;
 public class MetaTileEntityReverberatoryFurnace extends RecipeMapMultiblockController {
 
     public MetaTileEntityReverberatoryFurnace(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.REVERBERATORY_FURNACE);
+        super(metaTileEntityId, SymtechRecipeMaps.REVERBERATORY_FURNACE);
         this.recipeMapWorkable = new NoEnergyMultiblockRecipeLogic(this);
     }
 
@@ -51,8 +51,8 @@ public class MetaTileEntityReverberatoryFurnace extends RecipeMapMultiblockContr
                 .where('Y', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS)))
                 .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS))
                         .or(autoAbilities(false, false, true, true, true, true, false))
-                        .or(abilities(SuSyMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS).setPreviewCount(0))
-                        .or(abilities(SuSyMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS).setPreviewCount(0)))
+                        .or(abilities(SymtechMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS).setPreviewCount(0))
+                        .or(abilities(SymtechMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS).setPreviewCount(0)))
                 .where('#', air())
                 .where('S', selfPredicate())
                 .build();
@@ -61,12 +61,12 @@ public class MetaTileEntityReverberatoryFurnace extends RecipeMapMultiblockContr
     @Override
     protected void initializeAbilities() {
         List<IItemHandlerModifiable> imports = new ArrayList<>();
-        imports.addAll(getAbilities(SuSyMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS));
+        imports.addAll(getAbilities(SymtechMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS));
         imports.addAll(getAbilities(MultiblockAbility.IMPORT_ITEMS));
         this.importItems = new ItemHandlerList(imports);
 
         List<IItemHandlerModifiable> exports = new ArrayList<>();
-        exports.addAll(getAbilities(SuSyMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS));
+        exports.addAll(getAbilities(SymtechMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS));
         exports.addAll(getAbilities(MultiblockAbility.EXPORT_ITEMS));
         this.exportItems = new ItemHandlerList(exports);
     }

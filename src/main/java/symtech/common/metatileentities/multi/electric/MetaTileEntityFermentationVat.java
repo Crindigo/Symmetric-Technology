@@ -13,14 +13,14 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockMachineCasing.MachineCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityFermentationVat extends RecipeMapMultiblockController {
 
     public MetaTileEntityFermentationVat(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.FERMENTATION_VAT_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.FERMENTATION_VAT_RECIPES);
     }
 
     @Override

@@ -4,7 +4,7 @@ import gregtech.api.unification.material.properties.IMaterialProperty;
 import gregtech.api.unification.material.properties.MaterialProperties;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.material.info.MaterialFlags;
-import symtech.api.unification.material.info.SuSyMaterialFlags;
+import symtech.api.unification.material.info.SymtechMaterialFlags;
 
 
 public class FiberProperty implements IMaterialProperty {
@@ -32,9 +32,9 @@ public class FiberProperty implements IMaterialProperty {
     @Override
     public void verifyProperty(MaterialProperties properties) {
         if (properties.hasProperty(PropertyKey.FLUID) && !this.meltSpun) { throw new IllegalStateException("Material " + properties.getMaterial() + " has both a fluid property and is not a melt spun fiber, which is not allowed!"); }
-        if (this.solutionSpun) { properties.getMaterial().addFlags(SuSyMaterialFlags.GENERATE_WET_FIBER); }
+        if (this.solutionSpun) { properties.getMaterial().addFlags(SymtechMaterialFlags.GENERATE_WET_FIBER); }
         if (this.weaving) { properties.getMaterial().addFlags(MaterialFlags.GENERATE_PLATE); }
 
-        properties.getMaterial().addFlags(SuSyMaterialFlags.GENERATE_FIBER, SuSyMaterialFlags.GENERATE_THREAD, MaterialFlags.DISABLE_DECOMPOSITION);
+        properties.getMaterial().addFlags(SymtechMaterialFlags.GENERATE_FIBER, SymtechMaterialFlags.GENERATE_THREAD, MaterialFlags.DISABLE_DECOMPOSITION);
     }
 }

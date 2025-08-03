@@ -17,8 +17,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.capability.Strand;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import java.util.List;
 
@@ -65,8 +65,8 @@ public class MetaTileEntityClusterMill extends MetaTileEntityRollingMill {
                 .where('h', hydraulicOrientation(RelativeDirection.DOWN))
                 .where('F', frames(Materials.Steel))
                 .where('S', selfPredicate())
-                .where('I', abilities(SuSyMultiblockAbilities.STRAND_IMPORT))
-                .where('O', abilities(SuSyMultiblockAbilities.STRAND_EXPORT))
+                .where('I', abilities(SymtechMultiblockAbilities.STRAND_IMPORT))
+                .where('O', abilities(SymtechMultiblockAbilities.STRAND_EXPORT))
                 .where('C', autoAbilities().or(states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID))))
                 .where('G', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX)))
                 .where('P', states(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.STEEL_PIPE)))
@@ -87,7 +87,7 @@ public class MetaTileEntityClusterMill extends MetaTileEntityRollingMill {
 
     @Override
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.CLUSTER_MILL_OVERLAY;
+        return SymtechTextures.CLUSTER_MILL_OVERLAY;
     }
 
     @Override

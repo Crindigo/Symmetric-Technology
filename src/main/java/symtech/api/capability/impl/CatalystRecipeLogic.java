@@ -13,7 +13,7 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import symtech.api.SymtechLog;
-import symtech.api.recipes.builders.logic.SuSyOverclockingLogic;
+import symtech.api.recipes.builders.logic.SymtechOverclockingLogic;
 import symtech.api.recipes.catalysts.CatalystInfo;
 import symtech.api.recipes.properties.CatalystProperty;
 import symtech.api.recipes.properties.CatalystPropertyValue;
@@ -109,7 +109,7 @@ public class CatalystRecipeLogic extends RecipeLogicEnergy {
     @Override
     protected int[] runOverclockingLogic(@NotNull IRecipePropertyStorage propertyStorage, int recipeEUt, long maxVoltage, int duration, int amountOC) {
         if (requiredCatalystTier != CatalystInfo.NO_TIER && catalystInfo != null) {
-            return SuSyOverclockingLogic.catalystOverclockingLogic(
+            return SymtechOverclockingLogic.catalystOverclockingLogic(
                     recipeEUt,
                     maxVoltage,
                     duration,

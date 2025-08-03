@@ -15,14 +15,14 @@ import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityReactionFurnace extends RecipeMapMultiblockController {
 
     public MetaTileEntityReactionFurnace(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.REACTION_FURNACE_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.REACTION_FURNACE_RECIPES);
     }
 
     @Override

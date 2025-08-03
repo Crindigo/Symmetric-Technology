@@ -12,7 +12,7 @@ import gregtech.api.GTValues;
 import gregtech.api.metatileentity.MetaTileEntity;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.gui.SusyGuiTextures;
+import symtech.api.gui.SymtechGuiTextures;
 
 @Deprecated
 @ApiStatus.ScheduledForRemoval(inVersion = "Next CEu update")
@@ -20,7 +20,7 @@ public interface IMui2MetaTileEntity extends IGuiHolder<PosGuiData> {
 
     @NotNull
     static UITexture getLogo() {
-        return GTValues.XMAS.get() ? SusyGuiTextures.GREGTECH_LOGO_XMAS : SusyGuiTextures.GREGTECH_LOGO;
+        return GTValues.XMAS.get() ? SymtechGuiTextures.GREGTECH_LOGO_XMAS : SymtechGuiTextures.GREGTECH_LOGO;
     }
 
     static ModularPanel createPanel(String name, int width, int height) {
@@ -58,7 +58,7 @@ public interface IMui2MetaTileEntity extends IGuiHolder<PosGuiData> {
                           boolean closeOnOutsideClick) {
             super(name);
             size(width, height).align(Alignment.Center);
-            background(SusyGuiTextures.BACKGROUND_POPUP);
+            background(SymtechGuiTextures.BACKGROUND_POPUP);
             child(ButtonWidget.panelCloseButton().top(5).right(5)
                     .onMousePressed(mouseButton -> {
                         if (mouseButton == 0 || mouseButton == 1) {

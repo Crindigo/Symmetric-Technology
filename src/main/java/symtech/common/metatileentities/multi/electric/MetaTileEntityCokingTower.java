@@ -19,7 +19,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -29,7 +29,7 @@ import static gregtech.api.util.RelativeDirection.*;
 
 public class MetaTileEntityCokingTower extends RecipeMapMultiblockController {
     public MetaTileEntityCokingTower(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.COKING_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.COKING_RECIPES);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 

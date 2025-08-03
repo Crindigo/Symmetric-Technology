@@ -25,10 +25,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandlerModifiable;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockDrillHead;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -37,7 +37,7 @@ import java.util.List;
 public class MetaTileEntityMiningDrill extends RecipeMapMultiblockController {
     protected BlockPos targetBlock = null;
     public MetaTileEntityMiningDrill(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.MINING_DRILL_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.MINING_DRILL_RECIPES);
         this.recipeMapWorkable = new IndustrialDrillWorkableHandler(this, true);
     }
 
@@ -71,7 +71,7 @@ public class MetaTileEntityMiningDrill extends RecipeMapMultiblockController {
                 .where('C', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX)))
                 .where('D', states(MetaBlocks.STONE_BLOCKS.get(StoneVariantBlock.StoneVariant.SMOOTH).getState(StoneVariantBlock.StoneType.CONCRETE_LIGHT)))
                 .where('E', states(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.STEEL_PIPE)))
-                .where('F', states(SuSyBlocks.DRILL_HEAD.getState(BlockDrillHead.DrillHeadType.STEEL)))
+                .where('F', states(SymtechBlocks.DRILL_HEAD.getState(BlockDrillHead.DrillHeadType.STEEL)))
                 .where('G', states(MetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING)))
                 .where('H', depositPredicate())
                 .where(' ', any())
@@ -113,7 +113,7 @@ public class MetaTileEntityMiningDrill extends RecipeMapMultiblockController {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.MINING_DRILL_OVERLAY;
+        return SymtechTextures.MINING_DRILL_OVERLAY;
     }
 
     @Override

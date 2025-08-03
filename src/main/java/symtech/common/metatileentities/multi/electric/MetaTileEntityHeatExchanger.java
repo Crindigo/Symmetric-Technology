@@ -11,18 +11,18 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 import gregtech.common.blocks.BlockBoilerCasing.BoilerCasingType;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import symtech.api.capability.impl.NoEnergyMultiblockRecipeLogic;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityHeatExchanger extends RecipeMapMultiblockController {
 
     public MetaTileEntityHeatExchanger(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.HEAT_EXCHANGER_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.HEAT_EXCHANGER_RECIPES);
         this.recipeMapWorkable = new NoEnergyMultiblockRecipeLogic(this);
     }
 
@@ -62,6 +62,6 @@ public class MetaTileEntityHeatExchanger extends RecipeMapMultiblockController {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.HEAT_EXCHANGER_OVERLAY;
+        return SymtechTextures.HEAT_EXCHANGER_OVERLAY;
     }
 }

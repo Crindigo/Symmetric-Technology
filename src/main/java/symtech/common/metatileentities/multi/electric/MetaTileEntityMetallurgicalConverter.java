@@ -30,11 +30,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.api.recipes.logic.SuSyParallelLogic;
-import symtech.client.renderer.textures.SusyTextures;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.api.recipes.logic.SymtechParallelLogic;
+import symtech.client.renderer.textures.SymtechTextures;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -42,7 +42,7 @@ import java.util.List;
 public class MetaTileEntityMetallurgicalConverter extends RecipeMapMultiblockController {
 
     public MetaTileEntityMetallurgicalConverter(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.METALLURGICAL_CONVERTER);
+        super(metaTileEntityId, SymtechRecipeMaps.METALLURGICAL_CONVERTER);
         this.recipeMapWorkable = new MetallurgicalConverterLogic(this);
     }
 
@@ -85,7 +85,7 @@ public class MetaTileEntityMetallurgicalConverter extends RecipeMapMultiblockCon
     }
 
     private IBlockState getRefractoryState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.ADVANCED_REFRACTORY_LINING);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.ADVANCED_REFRACTORY_LINING);
     }
 
     @Override
@@ -95,7 +95,7 @@ public class MetaTileEntityMetallurgicalConverter extends RecipeMapMultiblockCon
 
     @Override
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.METALLURGICAL_CONVERTER_OVERLAY;
+        return SymtechTextures.METALLURGICAL_CONVERTER_OVERLAY;
     }
 
     @Override
@@ -105,7 +105,7 @@ public class MetaTileEntityMetallurgicalConverter extends RecipeMapMultiblockCon
 
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("susy.machine.parallel_pure", 64));
+        tooltip.add(I18n.format("symtech.machine.parallel_pure", 64));
     }
 
     private class MetallurgicalConverterLogic extends MultiblockRecipeLogic {
@@ -127,7 +127,7 @@ public class MetaTileEntityMetallurgicalConverter extends RecipeMapMultiblockCon
         public Recipe findParallelRecipe(@NotNull Recipe currentRecipe, @NotNull IItemHandlerModifiable inputs, @NotNull IMultipleTankHandler fluidInputs, @NotNull IItemHandlerModifiable outputs, @NotNull IMultipleTankHandler fluidOutputs, long maxVoltage, int parallelLimit) {
             if (parallelLimit > 1 && this.getRecipeMap() != null) {
                 RecipeBuilder<?> parallelBuilder;
-                parallelBuilder = SuSyParallelLogic.pureParallelRecipe(currentRecipe, this.getRecipeMap(), inputs, fluidInputs, outputs, fluidOutputs, parallelLimit, maxVoltage, this.getMetaTileEntity());
+                parallelBuilder = SymtechParallelLogic.pureParallelRecipe(currentRecipe, this.getRecipeMap(), inputs, fluidInputs, outputs, fluidOutputs, parallelLimit, maxVoltage, this.getMetaTileEntity());
 
                 if (parallelBuilder == null) {
                     this.invalidateInputs();

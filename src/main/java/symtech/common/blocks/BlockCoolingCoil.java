@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import symtech.common.materials.SusyMaterials;
+import symtech.common.materials.SymtechMaterials;
 
 import java.util.List;
 
@@ -61,9 +61,9 @@ public class BlockCoolingCoil extends VariantActiveBlock<BlockCoolingCoil.Coolin
 
     public enum CoolingCoilType implements IStringSerializable {
 
-        MANGANESE_IRON_ARSENIC_PHOSPHIDE("manganese_iron_arsenic_phosphide", 160, SusyMaterials.ManganeseIronArsenicPhosphide),
-        PRASEODYMIUM_NICKEL("praseodymium_nickel", 50, SusyMaterials.PraseodymiumNickel),
-        GADOLINIUM_SILICON_GERMANIUM("gadolinium_silicon_germanium", 1, SusyMaterials.GadoliniumSiliconGermanium);
+        MANGANESE_IRON_ARSENIC_PHOSPHIDE("manganese_iron_arsenic_phosphide", 160, SymtechMaterials.ManganeseIronArsenicPhosphide),
+        PRASEODYMIUM_NICKEL("praseodymium_nickel", 50, SymtechMaterials.PraseodymiumNickel),
+        GADOLINIUM_SILICON_GERMANIUM("gadolinium_silicon_germanium", 1, SymtechMaterials.GadoliniumSiliconGermanium);
 
         public final String name;
         public final int coilTemperature;

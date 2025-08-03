@@ -21,18 +21,18 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockElectrodeAssembly;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import java.util.function.Supplier;
 
 public class MetaTileEntityGasAtomizer extends RecipeMapMultiblockController {
 
     public MetaTileEntityGasAtomizer(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.GAS_ATOMIZER);
+        super(metaTileEntityId, SymtechRecipeMaps.GAS_ATOMIZER);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class MetaTileEntityGasAtomizer extends RecipeMapMultiblockController {
     }
 
     public IBlockState getElectrodeCasingState() {
-        return SuSyBlocks.ELECTRODE_ASSEMBLY.getState(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON);
+        return SymtechBlocks.ELECTRODE_ASSEMBLY.getState(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON);
     }
 
     protected TraceabilityPredicate orientation(IBlockState state, RelativeDirection direction, IProperty<EnumFacing> facingProperty) {
@@ -87,7 +87,7 @@ public class MetaTileEntityGasAtomizer extends RecipeMapMultiblockController {
     }
 
     public IBlockState getHighTempCasingState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.SILICON_CARBIDE_CASING);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.SILICON_CARBIDE_CASING);
     }
 
     public IBlockState getCasingState() {
@@ -106,7 +106,7 @@ public class MetaTileEntityGasAtomizer extends RecipeMapMultiblockController {
 
     @Override
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.GAS_ATOMIZER_OVERLAY;
+        return SymtechTextures.GAS_ATOMIZER_OVERLAY;
     }
 
     @Override

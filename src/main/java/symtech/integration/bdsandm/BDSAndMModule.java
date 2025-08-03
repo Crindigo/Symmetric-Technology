@@ -17,8 +17,8 @@ import symtech.modules.SymtechModules;
         moduleID = SymtechModules.MODULE_BDSAndM,
         containerID = Symtech.MODID,
         modDependencies = "bdsandm",
-        name = "SuSy BDSAndM Integration",
-        description = "SuSy BDSAndM Integration Module")
+        name = "Symtech BDSAndM Integration",
+        description = "Symtech BDSAndM Integration Module")
 public class BDSAndMModule extends IntegrationSubmodule {
 
     public static final ICustomRotationBehavior BDSAndM_BARREL_BEHAVIOR = (state, world, pos, hitResult) -> {

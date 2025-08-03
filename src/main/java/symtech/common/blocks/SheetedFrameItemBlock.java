@@ -7,7 +7,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import symtech.api.unification.ore.SusyOrePrefix;
+import symtech.api.unification.ore.SymtechOrePrefix;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -38,7 +38,7 @@ public class SheetedFrameItemBlock extends ItemBlock {
         Material material = getBlockState(stack).getValue(frameBlock.variantProperty);
         //String localizedPartialName = net.minecraft.client.resources.I18n.format("tile.sheeted_frame");
         //return String.format(localizedPartialName, material.getLocalizedName());
-        return SusyOrePrefix.sheetedFrame.getLocalNameForItem(material);
+        return SymtechOrePrefix.sheetedFrame.getLocalNameForItem(material);
     }
 
     @Override

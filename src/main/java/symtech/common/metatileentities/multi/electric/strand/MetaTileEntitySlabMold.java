@@ -8,8 +8,8 @@ import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.client.renderer.ICubeRenderer;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.client.renderer.textures.SymtechTextures;
 
 public class MetaTileEntitySlabMold extends MetaTileEntityStrandMold {
     public MetaTileEntitySlabMold(ResourceLocation metaTileEntityId) {
@@ -41,7 +41,7 @@ public class MetaTileEntitySlabMold extends MetaTileEntityStrandMold {
                 .aisle("#CCCCC#", "#CCCCC#", "#CCSCC#", "#CCCCC#", "#CCCCC#")
                 .where('C', states(getCasingState()).or(autoAbilities()))
                 .where('P', states(getPipeCasingState()))
-                .where('M', abilities(SuSyMultiblockAbilities.STRAND_EXPORT))
+                .where('M', abilities(SymtechMultiblockAbilities.STRAND_EXPORT))
                 .where('I', abilities(MultiblockAbility.IMPORT_FLUIDS).setPreviewCount(2).or(states(getPipeCasingState())))
                 .where('O', abilities(MultiblockAbility.EXPORT_FLUIDS).setPreviewCount(1).or(states(getPipeCasingState())))
                 .where('S', selfPredicate())
@@ -57,6 +57,6 @@ public class MetaTileEntitySlabMold extends MetaTileEntityStrandMold {
 
     @Override
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.SLAB_MOLD_OVERLAY;
+        return SymtechTextures.SLAB_MOLD_OVERLAY;
     }
 }

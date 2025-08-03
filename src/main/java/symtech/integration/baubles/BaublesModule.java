@@ -16,7 +16,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
 import symtech.Symtech;
 import symtech.api.SymtechLog;
-import symtech.common.item.SuSyMetaItems;
 import symtech.common.item.behavior.ArmorBaubleBehavior;
 import symtech.modules.SymtechModules;
 
@@ -27,8 +26,8 @@ import java.util.List;
         moduleID = SymtechModules.MODULE_BAUBLES,
         containerID = Symtech.MODID,
         modDependencies = "baubles",
-        name = "SuSy Baubles Integration",
-        description = "SuSy Baubles Integration Module")
+        name = "Symtech Baubles Integration",
+        description = "Symtech Baubles Integration Module")
 public class BaublesModule extends IntegrationSubmodule {
 
     @SubscribeEvent(priority = EventPriority.LOW)

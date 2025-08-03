@@ -12,7 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.capability.SuSyCapabilities;
+import symtech.api.capability.SymtechCapabilities;
 import symtech.integration.baubles.BaublesModule;
 import symtech.modules.SymtechModules;
 
@@ -32,8 +32,8 @@ public class ElytraFlyingUtils {
     }
 
     public static boolean isFlying(@NotNull EntityLivingBase entity, ItemStack itemstack) {
-        if (itemstack.hasCapability(SuSyCapabilities.ELYTRA_FLYING_PROVIDER, null)) {
-            return itemstack.getCapability(SuSyCapabilities.ELYTRA_FLYING_PROVIDER, null).isElytraFlying(
+        if (itemstack.hasCapability(SymtechCapabilities.ELYTRA_FLYING_PROVIDER, null)) {
+            return itemstack.getCapability(SymtechCapabilities.ELYTRA_FLYING_PROVIDER, null).isElytraFlying(
                     entity, itemstack,
                     entity.onGround ||
                             entity instanceof EntityPlayer && ((EntityPlayer) entity).capabilities.isFlying ||

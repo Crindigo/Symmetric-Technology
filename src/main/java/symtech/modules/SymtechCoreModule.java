@@ -13,8 +13,8 @@ import symtech.common.network.SPacketRemoveFluidState;
 @GregTechModule(
         moduleID = SymtechModules.MODULE_CORE,
         containerID = Symtech.MODID,
-        name = "SuSy Core",
-        description = "Core module of SuSy Core, so this should be called SuSy Core Core ngl.",
+        name = "Symtech Core",
+        description = "Core module of Symtech Core, so this should be called Symtech Core Core ngl.",
         coreModule = true)
 public class SymtechCoreModule implements IGregTechModule {
 

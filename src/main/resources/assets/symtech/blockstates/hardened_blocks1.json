@@ -3,28 +3,28 @@
   "defaults": {
     "model": "minecraft:cube_bottom_top",
     "textures": {
-      "bottom": "gregtech:blocks/susy_stones/industrial_concrete_bricks",
-      "top": "gregtech:blocks/susy_stones/industrial_concrete_bricks",
-      "side": "gregtech:blocks/susy_stones/industrial_concrete_bricks"
+      "bottom": "gregtech:blocks/symtech_stones/industrial_concrete_bricks",
+      "top": "gregtech:blocks/symtech_stones/industrial_concrete_bricks",
+      "side": "gregtech:blocks/symtech_stones/industrial_concrete_bricks"
     }
   },
   "variants" : {
     "variant=industrial_concrete_hardened" : {
       "model" : "minecraft:cube_all",
       "textures" : {
-        "all" : "gregtech:blocks/susy_stones/industrial_concrete_bricks"
+        "all" : "gregtech:blocks/symtech_stones/industrial_concrete_bricks"
       }
     },
     "variant=military_concrete_hardened" : {
       "model" : "minecraft:cube_all",
       "textures" : {
-        "all" : "gregtech:blocks/susy_stones/military_concrete"
+        "all" : "gregtech:blocks/symtech_stones/military_concrete"
       }
     },
     "variant=military_concrete_cobblestone_hardened" : {
       "model" : "minecraft:cube_all",
       "textures" : {
-        "all" : "gregtech:blocks/susy_stones/military_concrete_cobble"
+        "all" : "gregtech:blocks/symtech_stones/military_concrete_cobble"
       }
     }
   }

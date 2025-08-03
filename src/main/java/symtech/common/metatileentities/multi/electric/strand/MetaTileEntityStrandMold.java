@@ -24,11 +24,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import symtech.api.capability.Strand;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.api.unification.material.info.SuSyMaterialFlags;
-import symtech.client.renderer.textures.SusyTextures;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.api.unification.material.info.SymtechMaterialFlags;
+import symtech.client.renderer.textures.SymtechTextures;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import java.util.List;
 
@@ -63,7 +63,7 @@ public abstract class MetaTileEntityStrandMold extends MetaTileEntityStrandShape
             return null;
         }
         Material mat = FluidUnifier.getMaterialFromFluid(stack.getFluid());
-        if (mat == null || !mat.hasProperty(PropertyKey.INGOT) || !mat.hasFlag(SuSyMaterialFlags.CONTINUOUSLY_CAST)) {
+        if (mat == null || !mat.hasProperty(PropertyKey.INGOT) || !mat.hasFlag(SymtechMaterialFlags.CONTINUOUSLY_CAST)) {
             return null;
         }
         if (mat.getFluid(GCYMFluidStorageKeys.MOLTEN) != null) {
@@ -95,8 +95,8 @@ public abstract class MetaTileEntityStrandMold extends MetaTileEntityStrandShape
             MultiblockAbility<?> ability = abilityPart.getAbility();
             if (ability == MultiblockAbility.IMPORT_FLUIDS
                     || ability == MultiblockAbility.EXPORT_FLUIDS
-                    || ability == SuSyMultiblockAbilities.STRAND_EXPORT) {
-                return SusyTextures.CONDUCTIVE_COPPER_PIPE;
+                    || ability == SymtechMultiblockAbilities.STRAND_EXPORT) {
+                return SymtechTextures.CONDUCTIVE_COPPER_PIPE;
             }
         }
         return Textures.SOLID_STEEL_CASING;
@@ -108,7 +108,7 @@ public abstract class MetaTileEntityStrandMold extends MetaTileEntityStrandShape
     }
 
     protected IBlockState getPipeCasingState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.COPPER_PIPE);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.COPPER_PIPE);
     }
 
     protected IBlockState getCasingState() {
@@ -118,6 +118,6 @@ public abstract class MetaTileEntityStrandMold extends MetaTileEntityStrandShape
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, @NotNull List<String> tooltip, boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-        tooltip.add(I18n.format("susy.multiblock.strand_mold.tooltip"));
+        tooltip.add(I18n.format("symtech.multiblock.strand_mold.tooltip"));
     }
 }

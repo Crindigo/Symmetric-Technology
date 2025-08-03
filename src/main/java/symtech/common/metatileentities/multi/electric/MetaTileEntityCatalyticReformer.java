@@ -14,14 +14,14 @@ import gregtech.common.blocks.BlockBoilerCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityCatalyticReformer extends RecipeMapMultiblockController {
 
     public MetaTileEntityCatalyticReformer(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.CATALYTIC_REFORMER_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.CATALYTIC_REFORMER_RECIPES);
     }
 
     @Override

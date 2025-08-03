@@ -16,15 +16,15 @@ import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityLargeWeaponsFactory extends RecipeMapMultiblockController {
 
     public MetaTileEntityLargeWeaponsFactory(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.LARGE_WEAPONS_FACTORY_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.LARGE_WEAPONS_FACTORY_RECIPES);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class MetaTileEntityLargeWeaponsFactory extends RecipeMapMultiblockContro
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.LARGE_WEAPONS_FACTORY_OVERLAY;
+        return SymtechTextures.LARGE_WEAPONS_FACTORY_OVERLAY;
     }
 
     protected static IBlockState getCasingState() {

@@ -96,6 +96,6 @@ public enum PipeNetWalkerBehavior implements IToolBehavior {
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(@NotNull ItemStack stack, World world, List<String> tooltip, @NotNull ITooltipFlag flag) {
-        tooltip.add(I18n.format("item.susy.tool.behavior.pipeliner"));
+        tooltip.add(I18n.format("item.symtech.tool.behavior.pipeliner"));
     }
 }

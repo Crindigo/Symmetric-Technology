@@ -14,11 +14,11 @@ import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 
 public class MetaTileEntityScrapRecycler extends RecipeMapMultiblockController {
     public MetaTileEntityScrapRecycler(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.SCRAP_RECYCLER);
+        super(metaTileEntityId, SymtechRecipeMaps.SCRAP_RECYCLER);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 

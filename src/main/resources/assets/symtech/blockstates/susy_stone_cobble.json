@@ -7,72 +7,72 @@
     "variant": {
       "gabbro" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/gabbro_cobble"
+          "all" : "gregtech:blocks/symtech_stones/gabbro_cobble"
         }
       },
       "gneiss" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/gneiss_cobble"
+          "all" : "gregtech:blocks/symtech_stones/gneiss_cobble"
         }
       },
       "graphite" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/graphite_cobble"
+          "all" : "gregtech:blocks/symtech_stones/graphite_cobble"
         }
       },
       "limestone" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/limestone_cobble"
+          "all" : "gregtech:blocks/symtech_stones/limestone_cobble"
         }
       },
       "mica" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/mica_cobble"
+          "all" : "gregtech:blocks/symtech_stones/mica_cobble"
         }
       },
       "phyllite" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/phyllite_cobble"
+          "all" : "gregtech:blocks/symtech_stones/phyllite_cobble"
         }
       },
       "quartzite" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/quartzite_cobble"
+          "all" : "gregtech:blocks/symtech_stones/quartzite_cobble"
         }
       },
       "shale" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/shale_cobble"
+          "all" : "gregtech:blocks/symtech_stones/shale_cobble"
         }
       },
       "slate" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/slate_cobble"
+          "all" : "gregtech:blocks/symtech_stones/slate_cobble"
         }
       },
       "soapstone" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/soapstone_cobble"
+          "all" : "gregtech:blocks/symtech_stones/soapstone_cobble"
         }
       },
       "kimberlite" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/kimberlite_cobble"
+          "all" : "gregtech:blocks/symtech_stones/kimberlite_cobble"
         }
       },
       "anorthosite" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/anorthosite_cobble"
+          "all" : "gregtech:blocks/symtech_stones/anorthosite_cobble"
         }
       },
       "industrial_concrete" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/industrial_concrete_cobble"
+          "all" : "gregtech:blocks/symtech_stones/industrial_concrete_cobble"
         }
       },
       "minitary_concrete" : {
         "textures" : {
-          "all" : "gregtech:blocks/susy_stones/military_concrete_cobble"
+          "all" : "gregtech:blocks/symtech_stones/military_concrete_cobble"
         }
       }
     }

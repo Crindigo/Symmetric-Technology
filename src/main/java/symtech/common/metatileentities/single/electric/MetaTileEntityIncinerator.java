@@ -36,7 +36,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import java.util.List;
 
@@ -65,7 +65,7 @@ public class MetaTileEntityIncinerator extends TieredMetaTileEntity implements I
     @Override
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
         super.renderMetaTileEntity(renderState, translation, pipeline);
-        SusyTextures.INCINERATOR_OVERLAY.renderOrientedState(renderState, translation, pipeline, getFrontFacing(), this.isActive(), true);
+        SymtechTextures.INCINERATOR_OVERLAY.renderOrientedState(renderState, translation, pipeline, getFrontFacing(), this.isActive(), true);
     }
 
     @Override
@@ -215,7 +215,7 @@ public class MetaTileEntityIncinerator extends TieredMetaTileEntity implements I
     }
 
     public void getDisplayText(List<ITextComponent> list) {
-        list.add(new TextComponentTranslation(isClogged ? "susy.multiblock.incinerator.clogged" : "susy.multiblock.incinerator.working"));
+        list.add(new TextComponentTranslation(isClogged ? "symtech.multiblock.incinerator.clogged" : "symtech.multiblock.incinerator.working"));
     }
 
     @Override
@@ -282,8 +282,8 @@ public class MetaTileEntityIncinerator extends TieredMetaTileEntity implements I
         tooltip.add(I18n.format("gregtech.universal.tooltip.max_voltage_in", energyContainer.getInputVoltage(), GTValues.VNF[getTier()]));
         tooltip.add(I18n.format("gregtech.universal.tooltip.energy_storage_capacity", energyContainer.getEnergyCapacity()));
         tooltip.add(I18n.format("gregtech.universal.tooltip.item_storage_capacity", getInventorySize()));
-        tooltip.add(I18n.format("susy.machine.incinerator.tooltip.1", itemsPerRun, maxProgress));
-        tooltip.add(I18n.format("susy.machine.incinerator.tooltip.2"));
-        tooltip.add(I18n.format("susy.machine.incinerator.tooltip.3"));
+        tooltip.add(I18n.format("symtech.machine.incinerator.tooltip.1", itemsPerRun, maxProgress));
+        tooltip.add(I18n.format("symtech.machine.incinerator.tooltip.2"));
+        tooltip.add(I18n.format("symtech.machine.incinerator.tooltip.3"));
     }
 }

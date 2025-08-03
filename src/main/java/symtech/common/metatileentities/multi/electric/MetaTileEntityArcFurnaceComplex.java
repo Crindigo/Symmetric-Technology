@@ -22,11 +22,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.logic.SuSyParallelLogic;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.logic.SymtechParallelLogic;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockElectrodeAssembly;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -61,8 +61,8 @@ public class MetaTileEntityArcFurnaceComplex extends MetaTileEntityAdvancedArcFu
                 .aisle("               ", "  AAA     AAA  ", "  AAA     AAA  ", "  EEE     EEE  ", "  AAA     AAA  ", "  EEE     EEE  ", "  AAA     AAA  ", "               ", "               ", "               ", "               ", "               ")
                 .where('S', selfPredicate())
                 .where('A', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.STRESS_PROOF_CASING)))
-                .where('B', states(SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.ADVANCED_REFRACTORY_LINING)))
-                .where('C', states(SuSyBlocks.ELECTRODE_ASSEMBLY.getState(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON)))
+                .where('B', states(SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.ADVANCED_REFRACTORY_LINING)))
+                .where('C', states(SymtechBlocks.ELECTRODE_ASSEMBLY.getState(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON)))
                 .where('D', states(GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.STRESS_PROOF_CASING)).setMinGlobalLimited(8).or(autoAbilities(true, false, false, false, false, false, false)))
                 .where('E', states(GCYMMetaBlocks.UNIQUE_CASING.getState(BlockUniqueCasing.UniqueCasingType.HEAT_VENT)))
                 .where('F', frames(Materials.Steel))
@@ -78,13 +78,13 @@ public class MetaTileEntityArcFurnaceComplex extends MetaTileEntityAdvancedArcFu
 
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("susy.machine.parallel_pure", 256));
+        tooltip.add(I18n.format("symtech.machine.parallel_pure", 256));
     }
 
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.ARC_FURNACE_OVERLAY;
+        return SymtechTextures.ARC_FURNACE_OVERLAY;
     }
 
     @Override
@@ -111,7 +111,7 @@ public class MetaTileEntityArcFurnaceComplex extends MetaTileEntityAdvancedArcFu
         public Recipe findParallelRecipe(@NotNull Recipe currentRecipe, @NotNull IItemHandlerModifiable inputs, @NotNull IMultipleTankHandler fluidInputs, @NotNull IItemHandlerModifiable outputs, @NotNull IMultipleTankHandler fluidOutputs, long maxVoltage, int parallelLimit) {
             if (parallelLimit > 1 && this.getRecipeMap() != null) {
                 RecipeBuilder<?> parallelBuilder;
-                parallelBuilder = SuSyParallelLogic.pureParallelRecipe(currentRecipe, this.getRecipeMap(), inputs, fluidInputs, outputs, fluidOutputs, parallelLimit, maxVoltage, this.getMetaTileEntity());
+                parallelBuilder = SymtechParallelLogic.pureParallelRecipe(currentRecipe, this.getRecipeMap(), inputs, fluidInputs, outputs, fluidOutputs, parallelLimit, maxVoltage, this.getMetaTileEntity());
 
                 if (parallelBuilder == null) {
                     this.invalidateInputs();

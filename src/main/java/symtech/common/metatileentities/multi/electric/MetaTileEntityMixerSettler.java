@@ -32,10 +32,10 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.MixerSettlerCellsProperty;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class MetaTileEntityMixerSettler extends RecipeMapMultiblockController {
     private int sDist;
 
     public MetaTileEntityMixerSettler(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.MIXER_SETTLER_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.MIXER_SETTLER_RECIPES);
         this.recipeMapWorkable = new MixerSettlerRecipeLogic(this);
     }
 
@@ -290,7 +290,7 @@ public class MetaTileEntityMixerSettler extends RecipeMapMultiblockController {
                 .where('S', selfPredicate())
                 .where('I', abilities(MultiblockAbility.IMPORT_FLUIDS))
                 .where('O', abilities(MultiblockAbility.EXPORT_FLUIDS))
-                .where('T', states(SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.COALESCENCE_PLATE)))
+                .where('T', states(SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.COALESCENCE_PLATE)))
                 .where('P', states(getPipeCasingState()))
                 //.where('B', abilities(MultiblockAbility.IMPORT_ITEMS, MultiblockAbility.EXPORT_ITEMS))
                 .where('D', states(getCasingState()))
@@ -355,8 +355,8 @@ public class MetaTileEntityMixerSettler extends RecipeMapMultiblockController {
     public void addInformation(ItemStack stack, @Nullable World world, @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-        tooltip.add(TextFormatting.AQUA + I18n.format("susy.machine.mixer_settler.tooltip.1"));
-        tooltip.add(TextFormatting.AQUA + I18n.format("susy.machine.mixer_settler.tooltip.2"));
+        tooltip.add(TextFormatting.AQUA + I18n.format("symtech.machine.mixer_settler.tooltip.1"));
+        tooltip.add(TextFormatting.AQUA + I18n.format("symtech.machine.mixer_settler.tooltip.2"));
     }
 
 

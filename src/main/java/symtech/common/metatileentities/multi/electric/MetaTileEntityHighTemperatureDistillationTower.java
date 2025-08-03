@@ -12,10 +12,10 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.metatileentity.multiblock.MetaTileEntityOrderedDT;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 
@@ -24,7 +24,7 @@ import static gregtech.api.util.RelativeDirection.*;
 public class MetaTileEntityHighTemperatureDistillationTower extends MetaTileEntityOrderedDT {
 
     public MetaTileEntityHighTemperatureDistillationTower(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.HIGH_TEMPERATURE_DISTILLATION);
+        super(metaTileEntityId, SymtechRecipeMaps.HIGH_TEMPERATURE_DISTILLATION);
     }
 
     @Override
@@ -57,17 +57,17 @@ public class MetaTileEntityHighTemperatureDistillationTower extends MetaTileEnti
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        return SusyTextures.SILICON_CARBIDE_CASING;
+        return SymtechTextures.SILICON_CARBIDE_CASING;
     }
 
     protected static IBlockState getCasingState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.SILICON_CARBIDE_CASING);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.SILICON_CARBIDE_CASING);
     }
 
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.HTDT_OVERLAY;
+        return SymtechTextures.HTDT_OVERLAY;
     }
 
     @Override

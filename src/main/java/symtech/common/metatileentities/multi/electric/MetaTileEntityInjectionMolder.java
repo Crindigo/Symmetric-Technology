@@ -23,9 +23,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.api.recipes.logic.SuSyParallelLogic;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.api.recipes.logic.SymtechParallelLogic;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -33,7 +33,7 @@ import java.util.List;
 public class MetaTileEntityInjectionMolder extends RecipeMapMultiblockController {
 
     public MetaTileEntityInjectionMolder(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.INJECTION_MOLDER);
+        super(metaTileEntityId, SymtechRecipeMaps.INJECTION_MOLDER);
         this.recipeMapWorkable = new InjectionMolderLogic(this);
     }
 
@@ -86,12 +86,12 @@ public class MetaTileEntityInjectionMolder extends RecipeMapMultiblockController
 
     @Override
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.INJECTION_MOLDER_OVERLAY;
+        return SymtechTextures.INJECTION_MOLDER_OVERLAY;
     }
 
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("susy.machine.parallel_pure", 16));
+        tooltip.add(I18n.format("symtech.machine.parallel_pure", 16));
     }
 
     private class InjectionMolderLogic extends MultiblockRecipeLogic {
@@ -113,7 +113,7 @@ public class MetaTileEntityInjectionMolder extends RecipeMapMultiblockController
         public Recipe findParallelRecipe(@NotNull Recipe currentRecipe, @NotNull IItemHandlerModifiable inputs, @NotNull IMultipleTankHandler fluidInputs, @NotNull IItemHandlerModifiable outputs, @NotNull IMultipleTankHandler fluidOutputs, long maxVoltage, int parallelLimit) {
             if (parallelLimit > 1 && this.getRecipeMap() != null) {
                 RecipeBuilder<?> parallelBuilder;
-                parallelBuilder = SuSyParallelLogic.pureParallelRecipe(currentRecipe, this.getRecipeMap(), inputs, fluidInputs, outputs, fluidOutputs, parallelLimit, maxVoltage, this.getMetaTileEntity());
+                parallelBuilder = SymtechParallelLogic.pureParallelRecipe(currentRecipe, this.getRecipeMap(), inputs, fluidInputs, outputs, fluidOutputs, parallelLimit, maxVoltage, this.getMetaTileEntity());
 
                 if (parallelBuilder == null) {
                     this.invalidateInputs();

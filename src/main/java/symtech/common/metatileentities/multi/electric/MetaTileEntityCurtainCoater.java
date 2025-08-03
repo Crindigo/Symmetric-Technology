@@ -21,22 +21,22 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.tuple.Pair;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.common.blocks.BlockConveyor;
-import symtech.common.blocks.SuSyBlocks;
-import symtech.common.metatileentities.SuSyMetaTileEntities;
+import symtech.common.blocks.SymtechBlocks;
+import symtech.common.metatileentities.SymtechMetaTileEntities;
 
 import javax.annotation.Nonnull;
 import java.util.*;
 
-import static symtech.api.metatileentity.multiblock.SuSyPredicates.conveyorBelts;
+import static symtech.api.metatileentity.multiblock.SymtechPredicates.conveyorBelts;
 
 public class MetaTileEntityCurtainCoater extends RecipeMapMultiblockController {
 
     private final List<Pair<BlockPos, RelativeDirection>> conveyorBlocks = new ArrayList<>();
 
     public MetaTileEntityCurtainCoater(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.CURTAIN_COATER);
+        super(metaTileEntityId, SymtechRecipeMaps.CURTAIN_COATER);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class MetaTileEntityCurtainCoater extends RecipeMapMultiblockController {
     public List<MultiblockShapeInfo> getMatchingShapes() {
         ArrayList<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
         MultiblockShapeInfo.Builder baseBuilder = MultiblockShapeInfo.builder()
-                .where('S', SuSyMetaTileEntities.CURTAIN_COATER, EnumFacing.SOUTH)
+                .where('S', SymtechMetaTileEntities.CURTAIN_COATER, EnumFacing.SOUTH)
                 .where('C', getCasingState())
                 .where('I', MetaTileEntities.ITEM_IMPORT_BUS[GTValues.LV], EnumFacing.WEST)
                 .where('i', MetaTileEntities.ITEM_IMPORT_BUS[GTValues.LV], EnumFacing.EAST)
@@ -77,8 +77,8 @@ public class MetaTileEntityCurtainCoater extends RecipeMapMultiblockController {
                 .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[GTValues.LV], EnumFacing.NORTH)
                 .where('G', getGearBoxState())
                 .where('W', getGlassState())
-                .where('>', SuSyBlocks.CONVEYOR_BELT.getDefaultState().withProperty(BlockConveyor.FACING, EnumFacing.EAST))
-                .where('<', SuSyBlocks.CONVEYOR_BELT.getDefaultState().withProperty(BlockConveyor.FACING, EnumFacing.WEST))
+                .where('>', SymtechBlocks.CONVEYOR_BELT.getDefaultState().withProperty(BlockConveyor.FACING, EnumFacing.EAST))
+                .where('<', SymtechBlocks.CONVEYOR_BELT.getDefaultState().withProperty(BlockConveyor.FACING, EnumFacing.WEST))
                 .where('M',
                         () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : getCasingState(), EnumFacing.SOUTH);
         shapeInfo.add(baseBuilder.shallowCopy()

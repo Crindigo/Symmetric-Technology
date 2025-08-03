@@ -84,7 +84,7 @@ public class PipeNetPainterBehavior extends AbstractUsableBehaviour {
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, List<String> lines) {
-        lines.add(I18n.format("item.susy.tool.tooltip.pipeliner",
+        lines.add(I18n.format("item.symtech.tool.tooltip.pipeliner",
                 GameSettings.getKeyDisplayString(KeyBind.TOOL_AOE_CHANGE.toMinecraft().getKeyCode())));
     }
 }

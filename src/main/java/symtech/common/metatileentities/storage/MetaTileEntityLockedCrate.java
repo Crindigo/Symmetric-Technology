@@ -1,36 +1,26 @@
 package symtech.common.metatileentities.storage;
 
 import codechicken.lib.colour.ColourRGBA;
-import codechicken.lib.raytracer.CuboidRayTraceResult;
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Cuboid6;
 import codechicken.lib.vec.Matrix4;
 import gregtech.api.metatileentity.MetaTileEntity;
-import gregtech.api.metatileentity.MetaTileEntityUIFactory;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.unification.material.Material;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.storage.MetaTileEntityCrate;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import symtech.api.capability.impl.InaccessibleHandlerDelegate;
-import symtech.api.sound.SusySounds;
-import symtech.client.renderer.textures.SusyTextures;
-import symtech.common.item.SuSyMetaItems;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.mixins.gregtech.MetaTileEntityCrateAccessor;
 
 import java.util.List;
@@ -73,7 +63,7 @@ public class MetaTileEntityLockedCrate extends MetaTileEntityCrate {
             Textures.METAL_CRATE.render(renderState, translation, baseColor, pipeline);
         }
         // Always render the overlay texture on the TOP face only
-        SusyTextures.CODE_BREACHER_OVERLAY.renderOrientedState(renderState, translation, pipeline, Cuboid6.full, EnumFacing.UP, false, false);
+        SymtechTextures.CODE_BREACHER_OVERLAY.renderOrientedState(renderState, translation, pipeline, Cuboid6.full, EnumFacing.UP, false, false);
     }
 
     @Override

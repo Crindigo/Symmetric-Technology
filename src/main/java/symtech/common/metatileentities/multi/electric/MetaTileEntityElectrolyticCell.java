@@ -18,8 +18,8 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -27,7 +27,7 @@ import java.util.List;
 
 public class MetaTileEntityElectrolyticCell extends RecipeMapMultiblockController {
     public MetaTileEntityElectrolyticCell(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.ELECTROLYTIC_CELL_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.ELECTROLYTIC_CELL_RECIPES);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 
@@ -66,6 +66,6 @@ public class MetaTileEntityElectrolyticCell extends RecipeMapMultiblockControlle
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.ELECTROLYTIC_CELL_OVERLAY;
+        return SymtechTextures.ELECTROLYTIC_CELL_OVERLAY;
     }
 }

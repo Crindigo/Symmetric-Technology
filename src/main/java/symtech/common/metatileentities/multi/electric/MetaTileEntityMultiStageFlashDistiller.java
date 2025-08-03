@@ -20,7 +20,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -28,7 +28,7 @@ import java.util.List;
 
 public class MetaTileEntityMultiStageFlashDistiller extends RecipeMapMultiblockController {
     public MetaTileEntityMultiStageFlashDistiller(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.MULTI_STAGE_FLASH_DISTILLATION);
+        super(metaTileEntityId, SymtechRecipeMaps.MULTI_STAGE_FLASH_DISTILLATION);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 

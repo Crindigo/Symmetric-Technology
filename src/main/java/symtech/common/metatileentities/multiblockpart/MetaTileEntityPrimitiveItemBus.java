@@ -11,8 +11,8 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityItemBus;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.items.IItemHandlerModifiable;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class MetaTileEntityPrimitiveItemBus extends MetaTileEntityItemBus {
             }
             return this.hatchTexture;
         } else {
-            return SusyTextures.MASONRY_BRICK;
+            return SymtechTextures.MASONRY_BRICK;
         }
     }
 
@@ -45,7 +45,7 @@ public class MetaTileEntityPrimitiveItemBus extends MetaTileEntityItemBus {
 
     @Override
     public MultiblockAbility<IItemHandlerModifiable> getAbility() {
-        return isExportHatch ? SuSyMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS : SuSyMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS;
+        return isExportHatch ? SymtechMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS : SymtechMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS;
     }
 
     @Override

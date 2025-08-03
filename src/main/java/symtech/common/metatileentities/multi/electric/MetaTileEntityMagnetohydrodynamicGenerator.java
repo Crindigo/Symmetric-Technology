@@ -13,14 +13,14 @@ import gregtech.common.blocks.BlockFusionCasing;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityMagnetohydrodynamicGenerator extends RecipeMapMultiblockController {
 
     public MetaTileEntityMagnetohydrodynamicGenerator(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.MAGNETOHYDRODYNAMIC_FUELS);
+        super(metaTileEntityId, SymtechRecipeMaps.MAGNETOHYDRODYNAMIC_FUELS);
     }
 
     @Override

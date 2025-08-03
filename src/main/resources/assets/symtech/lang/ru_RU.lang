@@ -16,12 +16,12 @@ tile.alternator_coil.copper.name=Медная катушка генератор�
 tile.turbine_rotor.steel.name=Стальной турбинный блок
 tile.drill_head.steel.name=Стальная буровая головка
 
-tile.susy_multiblock_casing.silicon_carbide_casing.name=Прочный корпус из карбида кремния
+tile.symtech_multiblock_casing.silicon_carbide_casing.name=Прочный корпус из карбида кремния
 
-tile.susy_multiblock_casing.sieve_tray.name=Сито Лоток
-tile.susy_multiblock_casing.structural_packing.name=Структурная упаковка
-tile.susy_multiblock_casing.ulv_structural_casing.name=Базовый структурный корпус
-tile.susy_multiblock_casing.drone_pad.name=Площадка для дронов
+tile.symtech_multiblock_casing.sieve_tray.name=Сито Лоток
+tile.symtech_multiblock_casing.structural_packing.name=Структурная упаковка
+tile.symtech_multiblock_casing.ulv_structural_casing.name=Базовый структурный корпус
+tile.symtech_multiblock_casing.drone_pad.name=Площадка для дронов
 
 tile.serpentine.basic.name=Медный трубчатый змеевики
 
@@ -101,72 +101,72 @@ tile.home_block.home_scifi.name=Домашний блок
 tile.home_block.home_scifi.tooltip=Научная фантастика
 
 # Rocks
-tile.susy_stone_smooth.gabbro.name=Габбро
-tile.susy_stone_smooth.gneiss.name=Гнейс
-tile.susy_stone_smooth.graphite.name=Графит
-tile.susy_stone_smooth.limestone.name=Известняк
-tile.susy_stone_smooth.mica.name=Слюда
-tile.susy_stone_smooth.phyllite.name=Филлит
-tile.susy_stone_smooth.quartzite.name=Кварцит
-tile.susy_stone_smooth.shale.name=Сланец
-tile.susy_stone_smooth.slate.name=сланец
-tile.susy_stone_smooth.soapstone.name=Мыльный камень
-tile.susy_stone_smooth.kimberlite.name=Кимберлит
-tile.susy_stone_smooth.industrial_concrete.name=Промышленный бетон
-tile.susy_stone_cobble.gabbro.name=Габбро Булыжник
-tile.susy_stone_cobble.gneiss.name=Гнейсовый булыжник
-tile.susy_stone_cobble.graphite.name=Графитовый булыжник
-tile.susy_stone_cobble.limestone.name=Известняковый булыжник
-tile.susy_stone_cobble.mica.name=Слюда Булыжник
-tile.susy_stone_cobble.phyllite.name=Филлитовый булыжник
-tile.susy_stone_cobble.quartzite.name=Кварцитовый булыжник
-tile.susy_stone_cobble.shale.name=Сланцевый булыжник
-tile.susy_stone_cobble.slate.name=Сланцевый булыжник
-tile.susy_stone_cobble.soapstone.name=Мыльный камень Булыжник
-tile.susy_stone_cobble.kimberlite.name=Кимберлитовый булыжник
-tile.susy_stone_cobble.industrial_concrete.name=Промышленный бетонный булыжник
-tile.susy_stone_bricks.gabbro.name=Габбро Кирпичи
-tile.susy_stone_bricks.gneiss.name=Гнейсовые кирпичи
-tile.susy_stone_bricks.graphite.name=Графитовый кирпич
-tile.susy_stone_bricks.limestone.name=Известняковые кирпичи
-tile.susy_stone_bricks.mica.name=Слюдяные кирпичи
-tile.susy_stone_bricks.phyllite.name=Филлитовый кирпич
-tile.susy_stone_bricks.quartzite.name=Кварцитовый кирпич
-tile.susy_stone_bricks.shale.name=Сланцевый кирпич
-tile.susy_stone_bricks.slate.name=Сланцевые Кирпичи
-tile.susy_stone_bricks.soapstone.name=Кирпичи из мыльного камня
-tile.susy_stone_bricks.kimberlite.name=Кимберлитовые кирпичи
-tile.susy_stone_bricks.industrial_concrete.name=Industrial Concrete Bricks
+tile.symtech_stone_smooth.gabbro.name=Габбро
+tile.symtech_stone_smooth.gneiss.name=Гнейс
+tile.symtech_stone_smooth.graphite.name=Графит
+tile.symtech_stone_smooth.limestone.name=Известняк
+tile.symtech_stone_smooth.mica.name=Слюда
+tile.symtech_stone_smooth.phyllite.name=Филлит
+tile.symtech_stone_smooth.quartzite.name=Кварцит
+tile.symtech_stone_smooth.shale.name=Сланец
+tile.symtech_stone_smooth.slate.name=сланец
+tile.symtech_stone_smooth.soapstone.name=Мыльный камень
+tile.symtech_stone_smooth.kimberlite.name=Кимберлит
+tile.symtech_stone_smooth.industrial_concrete.name=Промышленный бетон
+tile.symtech_stone_cobble.gabbro.name=Габбро Булыжник
+tile.symtech_stone_cobble.gneiss.name=Гнейсовый булыжник
+tile.symtech_stone_cobble.graphite.name=Графитовый булыжник
+tile.symtech_stone_cobble.limestone.name=Известняковый булыжник
+tile.symtech_stone_cobble.mica.name=Слюда Булыжник
+tile.symtech_stone_cobble.phyllite.name=Филлитовый булыжник
+tile.symtech_stone_cobble.quartzite.name=Кварцитовый булыжник
+tile.symtech_stone_cobble.shale.name=Сланцевый булыжник
+tile.symtech_stone_cobble.slate.name=Сланцевый булыжник
+tile.symtech_stone_cobble.soapstone.name=Мыльный камень Булыжник
+tile.symtech_stone_cobble.kimberlite.name=Кимберлитовый булыжник
+tile.symtech_stone_cobble.industrial_concrete.name=Промышленный бетонный булыжник
+tile.symtech_stone_bricks.gabbro.name=Габбро Кирпичи
+tile.symtech_stone_bricks.gneiss.name=Гнейсовые кирпичи
+tile.symtech_stone_bricks.graphite.name=Графитовый кирпич
+tile.symtech_stone_bricks.limestone.name=Известняковые кирпичи
+tile.symtech_stone_bricks.mica.name=Слюдяные кирпичи
+tile.symtech_stone_bricks.phyllite.name=Филлитовый кирпич
+tile.symtech_stone_bricks.quartzite.name=Кварцитовый кирпич
+tile.symtech_stone_bricks.shale.name=Сланцевый кирпич
+tile.symtech_stone_bricks.slate.name=Сланцевые Кирпичи
+tile.symtech_stone_bricks.soapstone.name=Кирпичи из мыльного камня
+tile.symtech_stone_bricks.kimberlite.name=Кимберлитовые кирпичи
+tile.symtech_stone_bricks.industrial_concrete.name=Industrial Concrete Bricks
 
 # Materials
-susy.material.manganese_iron_arsenic_phosphide=Марганец-железо-мышьяк-фосфид
-susy.material.praseodymium_nickel=Празеодим-никель
-susy.material.gadolinium_silicon_germanium=Гадолиний Кремний Германий
-susy.material.latex=Латекс
-susy.material.mud=Грязь
-susy.material.sea_water=Морская вода
+symtech.material.manganese_iron_arsenic_phosphide=Марганец-железо-мышьяк-фосфид
+symtech.material.praseodymium_nickel=Празеодим-никель
+symtech.material.gadolinium_silicon_germanium=Гадолиний Кремний Германий
+symtech.material.latex=Латекс
+symtech.material.mud=Грязь
+symtech.material.sea_water=Морская вода
 
 # Rock/Mineral Materials
-susy.material.fluorite=Флюорит
-susy.material.gabbro=Габбро
-susy.material.slate=сланец
-susy.material.shale=Сланец
-susy.material.phyllite=Филлит
-susy.material.limestone=Известняк
-susy.material.gneiss=Гнейс
-susy.material.kimberlite=Кимберлит
-susy.material.muscovite=Мусковит
-susy.material.dolomite=Доломит
-susy.material.augite=авгит
-susy.material.chlinochlore=Клинохлор
-susy.material.bytownite=Битовнит
-susy.material.labradorite=Лабрадорит
-susy.material.andesine=Андезин
-susy.material.oligoclase=Олигоклаз
-susy.material.albite=Альбит
-susy.material.anorthite=Анортит
-susy.material.forsterite=Форстерит
-susy.material.lizardite=Лизардит
+symtech.material.fluorite=Флюорит
+symtech.material.gabbro=Габбро
+symtech.material.slate=сланец
+symtech.material.shale=Сланец
+symtech.material.phyllite=Филлит
+symtech.material.limestone=Известняк
+symtech.material.gneiss=Гнейс
+symtech.material.kimberlite=Кимберлит
+symtech.material.muscovite=Мусковит
+symtech.material.dolomite=Доломит
+symtech.material.augite=авгит
+symtech.material.chlinochlore=Клинохлор
+symtech.material.bytownite=Битовнит
+symtech.material.labradorite=Лабрадорит
+symtech.material.andesine=Андезин
+symtech.material.oligoclase=Олигоклаз
+symtech.material.albite=Альбит
+symtech.material.anorthite=Анортит
+symtech.material.forsterite=Форстерит
+symtech.material.lizardite=Лизардит
 
 # Ore Prefixes (%s is the localised material name)
 item.material.oreprefix.oreGabbro=Габбро %s руды
@@ -191,496 +191,496 @@ item.material.oreprefix.fiberWet=Мокрые волокна %s
 item.material.oreprefix.thread=%s Нить
 item.material.oreprefix.dustWet=Мокрая %s пыль
 
-susy.fluid.impure_slurry=Нечистая суспензия %s
-susy.fluid.slurry=%s суспензия
-susy.fluid.slurry=%s Шлам
+symtech.fluid.impure_slurry=Нечистая суспензия %s
+symtech.fluid.slurry=%s суспензия
+symtech.fluid.slurry=%s Шлам
 
 # Tooltip Warnings
-susy.machine.steam_extractor_cannot_melt_items.warning=Паровые экстракторы не могут расплавить предметы!
+symtech.machine.steam_extractor_cannot_melt_items.warning=Паровые экстракторы не могут расплавить предметы!
 
 # Machines/Multiblocks
-susy.machine.magnetic_refrigerator.name=Магнитный Холодильник
-susy.multiblock.magnetic_refrigerator.min_temperature=§Предел температуры: %s
+symtech.machine.magnetic_refrigerator.name=Магнитный Холодильник
+symtech.multiblock.magnetic_refrigerator.min_temperature=§Предел температуры: %s
 
-susy.machine.sintering_oven.name=Спекающая печь
-susy.multiblock.sintering_oven.can_use_plasma=Плазма включена: %s
-susy.multiblocks.sintering_oven.use_plasma.affirmative=Да
-susy.multiblocks.sintering_oven.use_plasma.negative=Нет
+symtech.machine.sintering_oven.name=Спекающая печь
+symtech.multiblock.sintering_oven.can_use_plasma=Плазма включена: %s
+symtech.multiblocks.sintering_oven.use_plasma.affirmative=Да
+symtech.multiblocks.sintering_oven.use_plasma.negative=Нет
 
-susy.machine.coagulation_tank.name=Коагуляционный резервуар
-susy.machine.coagulation_tank.tooltip=Нельзя использовать для остановки кровотечения..
-susy.machine.coagulation_tank.tooltip.1=Получает одну параллель на блок дольше
-susy.machine.drum.lead.name=Свинцовая бочка
-susy.machine.drum.brass.name=Латунная бочка
-susy.machine.drum.pe.name=Полиэтиленовая  бочка
-susy.machine.drum.pp.name=Полипропиленовая банка
-susy.machine.drum.ptfe.name=Политетрафторэтиленовая бочка
-susy.machine.drum.uhmwpe.name=Сверхвысокомолекулярная полиэтиленовая бочка
+symtech.machine.coagulation_tank.name=Коагуляционный резервуар
+symtech.machine.coagulation_tank.tooltip=Нельзя использовать для остановки кровотечения..
+symtech.machine.coagulation_tank.tooltip.1=Получает одну параллель на блок дольше
+symtech.machine.drum.lead.name=Свинцовая бочка
+symtech.machine.drum.brass.name=Латунная бочка
+symtech.machine.drum.pe.name=Полиэтиленовая  бочка
+symtech.machine.drum.pp.name=Полипропиленовая банка
+symtech.machine.drum.ptfe.name=Политетрафторэтиленовая бочка
+symtech.machine.drum.uhmwpe.name=Сверхвысокомолекулярная полиэтиленовая бочка
 
-susy.machine.crate.pe.name=Герметично запечатанный ящик
+symtech.machine.crate.pe.name=Герметично запечатанный ящик
 
-susy.machine.polymerization_tank.name=Бак для полимеризации
-susy.machine.fluidized_bed_reactor.name=Реактор с псевдоожиженным слоем
+symtech.machine.polymerization_tank.name=Бак для полимеризации
+symtech.machine.fluidized_bed_reactor.name=Реактор с псевдоожиженным слоем
 
-susy.machine.electrolytic_cell.name=Электролитическая ячейка
+symtech.machine.electrolytic_cell.name=Электролитическая ячейка
 
-susy.machine.coking_tower.name=Коксовая башня
-susy.machine.vacuum_distillation_tower.name=Вакуумная дистилляционная башня
-susy.machine.catalytic_reformer.name=Каталитический риформер
-susy.machine.pressure_swing_adsorber.name=Адсорбер с переменным давлением
-susy.machine.reaction_furnace.name=Реакционная печь
+symtech.machine.coking_tower.name=Коксовая башня
+symtech.machine.vacuum_distillation_tower.name=Вакуумная дистилляционная башня
+symtech.machine.catalytic_reformer.name=Каталитический риформер
+symtech.machine.pressure_swing_adsorber.name=Адсорбер с переменным давлением
+symtech.machine.reaction_furnace.name=Реакционная печь
 
-susy.machine.fermentation_vat.name=Бродильный чан
-susy.machine.ore_sorter.name=Сортировщик руды
-susy.machine.gravity_separator.name=Гравитационный сепаратор
-susy.machine.condenser.name=Конденсатор
-susy.machine.natural_draft_cooling_tower.name=Охлаждающий агрегат
-susy.machine.gas_turbine.name=Газовая турбина
-susy.machine.heat_exchanger.name=Теплообменник
-susy.machine.heat_radiator.name=Тепловой радиатор
-susy.multiblock.heat_radiator.tooltip.1=КПД пропорционален площади рассеивания.
-susy.multiblock.heat_radiator.tooltip.2=§bРазмер: от §f3x3 до 11x16.
-susy.machine.heat_radiator.parallel=Максимальная параллель: %s
-susy.machine.heat_radiator.parallel_hover=Параллельное количество определяется размером трубного блока.
-susy.machine.large_weapons_factory.name=Большой оружейный завод
-susy.machine.magnetohydrodynamic_generator.name=Магнитогидродинамический (МГД) генератор
-susy.machine.mining_drill.name=Горный бур
-susy.machine.quencher.name=Утопитель
-susy.machine.railroad_engineering_station.name=Железнодорожная инженерная станция
-susy.machine.railroad_engineering_station.tooltip=Поместите иммерсивные железнодорожные пути посередине, чтобы сформировать мультиблок.
-susy.machine.railroad_engineering_station.tooltip.1=Бетон под путями можно заменить любым блоком, в том числе трубным или воздушным.
+symtech.machine.fermentation_vat.name=Бродильный чан
+symtech.machine.ore_sorter.name=Сортировщик руды
+symtech.machine.gravity_separator.name=Гравитационный сепаратор
+symtech.machine.condenser.name=Конденсатор
+symtech.machine.natural_draft_cooling_tower.name=Охлаждающий агрегат
+symtech.machine.gas_turbine.name=Газовая турбина
+symtech.machine.heat_exchanger.name=Теплообменник
+symtech.machine.heat_radiator.name=Тепловой радиатор
+symtech.multiblock.heat_radiator.tooltip.1=КПД пропорционален площади рассеивания.
+symtech.multiblock.heat_radiator.tooltip.2=§bРазмер: от §f3x3 до 11x16.
+symtech.machine.heat_radiator.parallel=Максимальная параллель: %s
+symtech.machine.heat_radiator.parallel_hover=Параллельное количество определяется размером трубного блока.
+symtech.machine.large_weapons_factory.name=Большой оружейный завод
+symtech.machine.magnetohydrodynamic_generator.name=Магнитогидродинамический (МГД) генератор
+symtech.machine.mining_drill.name=Горный бур
+symtech.machine.quencher.name=Утопитель
+symtech.machine.railroad_engineering_station.name=Железнодорожная инженерная станция
+symtech.machine.railroad_engineering_station.tooltip=Поместите иммерсивные железнодорожные пути посередине, чтобы сформировать мультиблок.
+symtech.machine.railroad_engineering_station.tooltip.1=Бетон под путями можно заменить любым блоком, в том числе трубным или воздушным.
 
-susy.machine.evaporation_pool.name=Испарительный бассейн
-susy.machine.evaporation_pool.tooltip.info=Максимальный внутренний квадрат %dx%d, минимум 1x1. Читайте вкладку информации и информацию об инструменте для получения более подробной информации.
-susy.machine.evaporation_pool.tooltip.structure_info=Бассейны испарения могут быть сформированы с любыми внутренними размерами от 1x1 до %dx%d, даже если они неквадратные. Чтобы сформировать полноценный испарительный бассейн с подогревом, змеевики следует разместить по схеме, показанной на предварительном просмотре. Более подробное объяснение можно найти на вкладке «Информация» в JEI.
-susy.top.evaporation_pool_heated_preface=Схема катушки:
-susy.top.evaporation_pool_is_heated=ДЕЙСТВИТЕЛЬНЫЙ; Может быть с подогревом.
-susy.top.evaporation_pool_not_heated=НЕВЕРНЫЙ; Не будет нагреваться.
-susy.top.evaporation_pool.energy_transferred=Сохраненная тепловая энергия:
-susy.mutliblock.evaporation_pool.rolling_average=Средняя энергия в:
-susy.multiblock.evaporation_pool.joules_per_tick=J/t
-susy.top.evaporation_pool.kilojoules=кДж
-susy.multiblock.evaporation_pool.description=Испарительный бассейн имеет внутренние размеры, указанные в его описании, и бетонную внешнюю поверхность для размещения входов/контроллеров, не более двух входов каждого типа. Контроллер можно разместить в любом месте выступающего нижнего ряда «перед» салоном. Испарительный бассейн может выполнять рецепты как без питания, так и с питанием. Для питания рецептов мультиблок необходимо будет сформировать со «змееподобным» рисунком катушки однородного типа, как показано на превью. Испарительные бассейны без электропитания не требуют никаких змеевиков. Скорость любого рецепта зависит от тепла, подаваемого в мульти, которое зависит от количества внутренних блоков, подвергающихся воздействию солнечного света, подаваемой энергии и уровня катушки. [1 EU = 10 Дж в настоящее время]
-susy.multiblock.evaporation_pool.average_speed=Средняя скорость:
-susy.multiblock.evaporation_pool.exposed_blocks=Количество открытых блоков:
+symtech.machine.evaporation_pool.name=Испарительный бассейн
+symtech.machine.evaporation_pool.tooltip.info=Максимальный внутренний квадрат %dx%d, минимум 1x1. Читайте вкладку информации и информацию об инструменте для получения более подробной информации.
+symtech.machine.evaporation_pool.tooltip.structure_info=Бассейны испарения могут быть сформированы с любыми внутренними размерами от 1x1 до %dx%d, даже если они неквадратные. Чтобы сформировать полноценный испарительный бассейн с подогревом, змеевики следует разместить по схеме, показанной на предварительном просмотре. Более подробное объяснение можно найти на вкладке «Информация» в JEI.
+symtech.top.evaporation_pool_heated_preface=Схема катушки:
+symtech.top.evaporation_pool_is_heated=ДЕЙСТВИТЕЛЬНЫЙ; Может быть с подогревом.
+symtech.top.evaporation_pool_not_heated=НЕВЕРНЫЙ; Не будет нагреваться.
+symtech.top.evaporation_pool.energy_transferred=Сохраненная тепловая энергия:
+symtech.mutliblock.evaporation_pool.rolling_average=Средняя энергия в:
+symtech.multiblock.evaporation_pool.joules_per_tick=J/t
+symtech.top.evaporation_pool.kilojoules=кДж
+symtech.multiblock.evaporation_pool.description=Испарительный бассейн имеет внутренние размеры, указанные в его описании, и бетонную внешнюю поверхность для размещения входов/контроллеров, не более двух входов каждого типа. Контроллер можно разместить в любом месте выступающего нижнего ряда «перед» салоном. Испарительный бассейн может выполнять рецепты как без питания, так и с питанием. Для питания рецептов мультиблок необходимо будет сформировать со «змееподобным» рисунком катушки однородного типа, как показано на превью. Испарительные бассейны без электропитания не требуют никаких змеевиков. Скорость любого рецепта зависит от тепла, подаваемого в мульти, которое зависит от количества внутренних блоков, подвергающихся воздействию солнечного света, подаваемой энергии и уровня катушки. [1 EU = 10 Дж в настоящее время]
+symtech.multiblock.evaporation_pool.average_speed=Средняя скорость:
+symtech.multiblock.evaporation_pool.exposed_blocks=Количество открытых блоков:
 
-susy.machine.primitive_mud_pump.name=Примитивный грязевой насос
-susy.machine.primitive_mud_pump.tooltip=Работает только в речных биомах между Y=64 и Y=80.
-susy.machine.basic_steam_turbine.name=Большая паровая турбина
-susy.machine.basic_gas_turbine.name=Большая газовая турбина
-gregtsusy.machine.large_fluid_pump.name=Большой жидкостный насос
-susy.machine.large_fluid_pump.tooltip.1=Это определенно повлияет на местную популяцию форели.
-susy.machine.large_fluid_pump.tooltip.2=Работает только в том случае, если контроллер находится в положении Y=64, а нижняя обшивка стальной трубы расположена в правильном биоме.
+symtech.machine.primitive_mud_pump.name=Примитивный грязевой насос
+symtech.machine.primitive_mud_pump.tooltip=Работает только в речных биомах между Y=64 и Y=80.
+symtech.machine.basic_steam_turbine.name=Большая паровая турбина
+symtech.machine.basic_gas_turbine.name=Большая газовая турбина
+gregtsymtech.machine.large_fluid_pump.name=Большой жидкостный насос
+symtech.machine.large_fluid_pump.tooltip.1=Это определенно повлияет на местную популяцию форели.
+symtech.machine.large_fluid_pump.tooltip.2=Работает только в том случае, если контроллер находится в положении Y=64, а нижняя обшивка стальной трубы расположена в правильном биоме.
 ech.machine.ocean_pumper.name=Океанский насос
-susy.machine.ocean_pumper.tooltip=Работает только в биомах океана между Y=70 и Y=75.
-susy.machine.advanced_arc_furnace.name=Усовершенствованная дуговая печь
-susy.machine.clarifier.name=Осветлитель
-susy.machine.dumper.name=Самосвал
-susy.machine.evaporation_pool.name=Испарительный бассейн
-susy.machine.flare_stack.name=Факельная установка
-susy.machine.flare_stack.height=Высота стека: %s §9блоков
-susy.machine.flare_stack.rate=Скорость сжигания: %s
-susy.machine.flare_stack.rate_hover=Множитель скорости сжигания, устанавливаемый высотой факельной трубы.
-susy.machine.flare_stack.tooltip=Промышленный распространитель рака легких.
-susy.machine.flare_stack.tooltip.1=§6Базовая скорость разгорания:§7 §f%d L каждые 10 тиков
-susy.machine.flare_stack.tooltip.2=Удваивает скорость за каждый блок выше 5.
-susy.machine.smoke_stack.name=Дымовая труба
-susy.machine.smoke_stack.height=Высота стека: %s §9блоков
-susy.machine.smoke_stack.rate=Скорость истощения: %s
-susy.machine.smoke_stack.rate_hover=Множитель скорости истощения, зависящий от высоты дымовой трубы.
-susy.machine.smoke_stack.tooltip=Для обогащения атмосферы вашей планеты.
-susy.machine.smoke_stack.tooltip.1=§8Базовый уровень истощения:§7 §f%d L каждые 10 тиков
-susy.machine.smoke_stack.tooltip.2=Удваивает скорость за каждый блок выше 5.
-susy.machine.dumper.name=Самосвал
-susy.machine.dumper.rate=Уровень сброса: %s
-susy.machine.dumper.tooltip=Загрязняет все ваши местные экосистемы.
-susy.machine.dumper.tooltip.1=§2Базовая ставка сброса:§7 §f %d L каждые 10 тиков
-susy.machine.froth_flotation_tank.name=Пенный флотационный резервуар
-susy.machine.multi_stage_flash_distiller.name=Многоступенчатый флэш-дистиллятор
-susy.machine.high_temperature_distillation_tower.name=Высокотемпературная дистилляционная башня
-susy.machine.rotary_kiln.name=Вращающаяся печь
-susy.machine.low_pressure_cryogenic_distillation_plant.name=Криогенная перегонная установка низкого давления
-susy.machine.high_pressure_cryogenic_distillation_plant.name=Криогенная перегонная установка высокого давления
-susy.machine.single_column_cryogenic_distillation_plant.name=Одноколонная криогенная дистилляционная установка
-susy.machine.reverberatory_furnace.name=Реверберационная печь
-susy.machine.blender.name=Блендер
-susy.machine.sieve_distillation_tower.name=Ситовая дистилляционная башня
+symtech.machine.ocean_pumper.tooltip=Работает только в биомах океана между Y=70 и Y=75.
+symtech.machine.advanced_arc_furnace.name=Усовершенствованная дуговая печь
+symtech.machine.clarifier.name=Осветлитель
+symtech.machine.dumper.name=Самосвал
+symtech.machine.evaporation_pool.name=Испарительный бассейн
+symtech.machine.flare_stack.name=Факельная установка
+symtech.machine.flare_stack.height=Высота стека: %s §9блоков
+symtech.machine.flare_stack.rate=Скорость сжигания: %s
+symtech.machine.flare_stack.rate_hover=Множитель скорости сжигания, устанавливаемый высотой факельной трубы.
+symtech.machine.flare_stack.tooltip=Промышленный распространитель рака легких.
+symtech.machine.flare_stack.tooltip.1=§6Базовая скорость разгорания:§7 §f%d L каждые 10 тиков
+symtech.machine.flare_stack.tooltip.2=Удваивает скорость за каждый блок выше 5.
+symtech.machine.smoke_stack.name=Дымовая труба
+symtech.machine.smoke_stack.height=Высота стека: %s §9блоков
+symtech.machine.smoke_stack.rate=Скорость истощения: %s
+symtech.machine.smoke_stack.rate_hover=Множитель скорости истощения, зависящий от высоты дымовой трубы.
+symtech.machine.smoke_stack.tooltip=Для обогащения атмосферы вашей планеты.
+symtech.machine.smoke_stack.tooltip.1=§8Базовый уровень истощения:§7 §f%d L каждые 10 тиков
+symtech.machine.smoke_stack.tooltip.2=Удваивает скорость за каждый блок выше 5.
+symtech.machine.dumper.name=Самосвал
+symtech.machine.dumper.rate=Уровень сброса: %s
+symtech.machine.dumper.tooltip=Загрязняет все ваши местные экосистемы.
+symtech.machine.dumper.tooltip.1=§2Базовая ставка сброса:§7 §f %d L каждые 10 тиков
+symtech.machine.froth_flotation_tank.name=Пенный флотационный резервуар
+symtech.machine.multi_stage_flash_distiller.name=Многоступенчатый флэш-дистиллятор
+symtech.machine.high_temperature_distillation_tower.name=Высокотемпературная дистилляционная башня
+symtech.machine.rotary_kiln.name=Вращающаяся печь
+symtech.machine.low_pressure_cryogenic_distillation_plant.name=Криогенная перегонная установка низкого давления
+symtech.machine.high_pressure_cryogenic_distillation_plant.name=Криогенная перегонная установка высокого давления
+symtech.machine.single_column_cryogenic_distillation_plant.name=Одноколонная криогенная дистилляционная установка
+symtech.machine.reverberatory_furnace.name=Реверберационная печь
+symtech.machine.blender.name=Блендер
+symtech.machine.sieve_distillation_tower.name=Ситовая дистилляционная башня
 
-susy.machine.drone_pad.name=Drone Pad
-susy.machine.primitive_smelter.name=Примитивный плавильный печь
+symtech.machine.drone_pad.name=Drone Pad
+symtech.machine.primitive_smelter.name=Примитивный плавильный печь
 
-susy.machine.primitive_item_import.name=Примитивная шина импорта  предметов
-susy.machine.primitive_item_import.tooltip=Только для использования с примитивной плавильной печью.
-susy.machine.primitive_item_export.name=Примитивная шина экспорта  предметов экспорта
-susy.machine.primitive_item_export.tooltip=Только для использования с примитивной плавильной печью.
+symtech.machine.primitive_item_import.name=Примитивная шина импорта  предметов
+symtech.machine.primitive_item_import.tooltip=Только для использования с примитивной плавильной печью.
+symtech.machine.primitive_item_export.name=Примитивная шина экспорта  предметов экспорта
+symtech.machine.primitive_item_export.tooltip=Только для использования с примитивной плавильной печью.
 
 # Properties
-susy.recipe.plasma_requirement=Требуется плазма: %s
-susy.recipe.catalyst=Катализатор: %s %s
-susy.recipe.blocks=Блоки: %s
-susy.recipe.evaporation=Требуемая энергия: %d Дж/т
-susy.recipe.cryogenic_environment=Требуется криогенная среда
+symtech.recipe.plasma_requirement=Требуется плазма: %s
+symtech.recipe.catalyst=Катализатор: %s %s
+symtech.recipe.blocks=Блоки: %s
+symtech.recipe.evaporation=Требуемая энергия: %d Дж/т
+symtech.recipe.cryogenic_environment=Требуется криогенная среда
 
 # Latex Collector
-susy.machine.latex_collector.steam=Нужен Пар!
-susy.machine.latex_collector.tooltip=Извлекает жидкости из соседних бревен.
-susy.machine.latex_collector.bronze.name=Паровой сборщик латекса
-susy.machine.latex_collector.steel.name=Паровой сборщик латекса высокого давления
-susy.machine.latex_collector.lv.name=Обычный сборщик латекса
-susy.machine.latex_collector.mv.name=Улучшеный сборщик латекса
-susy.machine.latex_collector.hv.name=Улучшеный сборщик латекса II
-susy.machine.latex_collector.ev.name=Улучшеный сборщик латекса III
+symtech.machine.latex_collector.steam=Нужен Пар!
+symtech.machine.latex_collector.tooltip=Извлекает жидкости из соседних бревен.
+symtech.machine.latex_collector.bronze.name=Паровой сборщик латекса
+symtech.machine.latex_collector.steel.name=Паровой сборщик латекса высокого давления
+symtech.machine.latex_collector.lv.name=Обычный сборщик латекса
+symtech.machine.latex_collector.mv.name=Улучшеный сборщик латекса
+symtech.machine.latex_collector.hv.name=Улучшеный сборщик латекса II
+symtech.machine.latex_collector.ev.name=Улучшеный сборщик латекса III
 
 # Vulcanizing Press
-susy.machine.vulcanizing_press.bronze.name=Паровой вулканизационный пресс
-susy.machine.vulcanizing_press.steel.name=Паровой вулканизационный пресс высокого давления
-susy.machine.vulcanizing_press.lv.name=Базовый вулканизационный пресс
-susy.machine.vulcanizing_press.mv.name=Улучшеный вулканизационный пресс
-susy.machine.vulcanizing_press.hv.name=Улучшеный вулканизационный пресс II
-susy.machine.vulcanizing_press.ev.name=Улучшеный вулканизационный пресс III
+symtech.machine.vulcanizing_press.bronze.name=Паровой вулканизационный пресс
+symtech.machine.vulcanizing_press.steel.name=Паровой вулканизационный пресс высокого давления
+symtech.machine.vulcanizing_press.lv.name=Базовый вулканизационный пресс
+symtech.machine.vulcanizing_press.mv.name=Улучшеный вулканизационный пресс
+symtech.machine.vulcanizing_press.hv.name=Улучшеный вулканизационный пресс II
+symtech.machine.vulcanizing_press.ev.name=Улучшеный вулканизационный пресс III
 
 # Steam Mixer
-susy.machine.mixer.bronze.name=Паровой смеситель
-susy.machine.mixer.steel.name=Паровой смеситель высокого давления
+symtech.machine.mixer.bronze.name=Паровой смеситель
+symtech.machine.mixer.steel.name=Паровой смеситель высокого давления
 
 # Roaster
-susy.machine.roaster.bronze.name=Паровой ростер
-susy.machine.roaster.steel.name=Паровая жаровня высокого давления
-susy.machine.roaster.lv.name=Обычный ростер
-susy.machine.roaster.mv.name=Улучшеный ростер
-susy.machine.roaster.hv.name=Улучшеный ростер II
-susy.machine.roaster.ev.name=Улучшеный ростер III
-susy.machine.roaster.iv.name=Превосходный ростер
-susy.machine.roaster.luv.name=Превосходный ростер II
-susy.machine.roaster.zpm.name=Превосходный ростер III
-susy.machine.roaster.uv.name=Безупречный ростер
-susy.machine.roaster.uhv.name=Идеальный ростер
-susy.machine.roaster.uev.name=Идеальный ростер II
-susy.machine.roaster.uiv.name=Идеальный ростер III
-susy.machine.roaster.uxv.name=Идеальный ростер IV
-susy.machine.roaster.opv.name=Совершенный ростер
+symtech.machine.roaster.bronze.name=Паровой ростер
+symtech.machine.roaster.steel.name=Паровая жаровня высокого давления
+symtech.machine.roaster.lv.name=Обычный ростер
+symtech.machine.roaster.mv.name=Улучшеный ростер
+symtech.machine.roaster.hv.name=Улучшеный ростер II
+symtech.machine.roaster.ev.name=Улучшеный ростер III
+symtech.machine.roaster.iv.name=Превосходный ростер
+symtech.machine.roaster.luv.name=Превосходный ростер II
+symtech.machine.roaster.zpm.name=Превосходный ростер III
+symtech.machine.roaster.uv.name=Безупречный ростер
+symtech.machine.roaster.uhv.name=Идеальный ростер
+symtech.machine.roaster.uev.name=Идеальный ростер II
+symtech.machine.roaster.uiv.name=Идеальный ростер III
+symtech.machine.roaster.uxv.name=Идеальный ростер IV
+symtech.machine.roaster.opv.name=Совершенный ростер
 
 # Vacuum Chamber
-susy.machine.vacuum_chamber.bronze.name=Паровая вакуумная камера
-susy.machine.vacuum_chamber.steel.name=Паровая вакуумная камера высокого давления
-susy.machine.vacuum_chamber.lv.name=Обычная вакуумная камера
-susy.machine.vacuum_chamber.mv.name=Улучшеная вакуумная камера
-susy.machine.vacuum_chamber.hv.name=Улучшеная вакуумная камера II
-susy.machine.vacuum_chamber.ev.name=Улучшеная вакуумная камера III
-susy.machine.vacuum_chamber.iv.name=Превосходная вакуумная камера
-susy.machine.vacuum_chamber.luv.name=Превосходная вакуумная камера II
-susy.machine.vacuum_chamber.zpm.name=Превосходная вакуумная камера III
-susy.machine.vacuum_chamber.uv.name=Безупречная вакуумная камера
-susy.machine.vacuum_chamber.uhv.name=Идеальная вакуумная камера
-susy.machine.vacuum_chamber.uev.name=Идеальная вакуумная камера II
-susy.machine.vacuum_chamber.uiv.name=Идеальная вакуумная камера III
-susy.machine.vacuum_chamber.uxv.name=Идеальная вакуумная камера IV
-susy.machine.vacuum_chamber.opv.name=Совершенная вакуумная камера
+symtech.machine.vacuum_chamber.bronze.name=Паровая вакуумная камера
+symtech.machine.vacuum_chamber.steel.name=Паровая вакуумная камера высокого давления
+symtech.machine.vacuum_chamber.lv.name=Обычная вакуумная камера
+symtech.machine.vacuum_chamber.mv.name=Улучшеная вакуумная камера
+symtech.machine.vacuum_chamber.hv.name=Улучшеная вакуумная камера II
+symtech.machine.vacuum_chamber.ev.name=Улучшеная вакуумная камера III
+symtech.machine.vacuum_chamber.iv.name=Превосходная вакуумная камера
+symtech.machine.vacuum_chamber.luv.name=Превосходная вакуумная камера II
+symtech.machine.vacuum_chamber.zpm.name=Превосходная вакуумная камера III
+symtech.machine.vacuum_chamber.uv.name=Безупречная вакуумная камера
+symtech.machine.vacuum_chamber.uhv.name=Идеальная вакуумная камера
+symtech.machine.vacuum_chamber.uev.name=Идеальная вакуумная камера II
+symtech.machine.vacuum_chamber.uiv.name=Идеальная вакуумная камера III
+symtech.machine.vacuum_chamber.uxv.name=Идеальная вакуумная камера IV
+symtech.machine.vacuum_chamber.opv.name=Совершенная вакуумная камера
 
 # Р.Р.Н.П (CSTR)
-susy.machine.continuous_stirred_tank_reactor.lv.name=Обычный Р.Н.П. реактор
-susy.machine.continuous_stirred_tank_reactor.mv.name=Улучшеный Р.Н.П. реактор
-susy.machine.continuous_stirred_tank_reactor.hv.name=Улучшеный Р.Н.П. реактор II
-susy.machine.continuous_stirred_tank_reactor.ev.name=Улучшеный Р.Н.П. реактор III
-susy.machine.continuous_stirred_tank_reactor.iv.name=Превосходный Р.Н.П. реактор
-susy.machine.continuous_stirred_tank_reactor.luv.name=Превосходный Р.Н.П. реактор II
-susy.machine.continuous_stirred_tank_reactor.zpm.name=Превосходный Р.Н.П. реактор III
-susy.machine.continuous_stirred_tank_reactor.uv.name=Безупречный Р.Н.П. реактор
-susy.machine.continuous_stirred_tank_reactor.uhv.name=Идеальный Р.Н.П. реактор 
-susy.machine.continuous_stirred_tank_reactor.uev.name=Идеальный Р.Н.П. реактор II
-susy.machine.continuous_stirred_tank_reactor.uiv.name=Идеальный Р.Н.П. реактор III
-susy.machine.continuous_stirred_tank_reactor.uxv.name=Идеальный Р.Н.П. реактор IV
-susy.machine.continuous_stirred_tank_reactor.opv.name=Совершенный Р.Н.П. реактор
+symtech.machine.continuous_stirred_tank_reactor.lv.name=Обычный Р.Н.П. реактор
+symtech.machine.continuous_stirred_tank_reactor.mv.name=Улучшеный Р.Н.П. реактор
+symtech.machine.continuous_stirred_tank_reactor.hv.name=Улучшеный Р.Н.П. реактор II
+symtech.machine.continuous_stirred_tank_reactor.ev.name=Улучшеный Р.Н.П. реактор III
+symtech.machine.continuous_stirred_tank_reactor.iv.name=Превосходный Р.Н.П. реактор
+symtech.machine.continuous_stirred_tank_reactor.luv.name=Превосходный Р.Н.П. реактор II
+symtech.machine.continuous_stirred_tank_reactor.zpm.name=Превосходный Р.Н.П. реактор III
+symtech.machine.continuous_stirred_tank_reactor.uv.name=Безупречный Р.Н.П. реактор
+symtech.machine.continuous_stirred_tank_reactor.uhv.name=Идеальный Р.Н.П. реактор
+symtech.machine.continuous_stirred_tank_reactor.uev.name=Идеальный Р.Н.П. реактор II
+symtech.machine.continuous_stirred_tank_reactor.uiv.name=Идеальный Р.Н.П. реактор III
+symtech.machine.continuous_stirred_tank_reactor.uxv.name=Идеальный Р.Н.П. реактор IV
+symtech.machine.continuous_stirred_tank_reactor.opv.name=Совершенный Р.Н.П. реактор
 
 # реактор с неподвижным слоем (Р.Н.С)
-susy.machine.fixed_bed_reactor.lv.name=Обычный реактор Р.Н.С
-susy.machine.fixed_bed_reactor.mv.name=Улучшеный реактор Р.Н.С
-susy.machine.fixed_bed_reactor.hv.name=Улучшеный реактор Р.Н.С II
-susy.machine.fixed_bed_reactor.ev.name=Улучшеный реактор Р.Н.С III
-susy.machine.fixed_bed_reactor.iv.name=Превосходный реактор Р.Н.С
-susy.machine.fixed_bed_reactor.luv.name=Превосходный реактор Р.Н.С II
-susy.machine.fixed_bed_reactor.zpm.name=Превосходный реактор Р.Н.С III
-susy.machine.fixed_bed_reactor.uv.name=Безупречный реактор Р.Н.С
-susy.machine.fixed_bed_reactor.uhv.name=Идеальный реактор Р.Н.С
-susy.machine.fixed_bed_reactor.uev.name=Идеальный реактор Р.Н.С II
-susy.machine.fixed_bed_reactor.uiv.name=Идеальный реактор Р.Н.С III
-susy.machine.fixed_bed_reactor.uxv.name=Идеальный реактор Р.Н.С IV
-susy.machine.fixed_bed_reactor.opv.name=Совершенный реактор Р.Н.С
+symtech.machine.fixed_bed_reactor.lv.name=Обычный реактор Р.Н.С
+symtech.machine.fixed_bed_reactor.mv.name=Улучшеный реактор Р.Н.С
+symtech.machine.fixed_bed_reactor.hv.name=Улучшеный реактор Р.Н.С II
+symtech.machine.fixed_bed_reactor.ev.name=Улучшеный реактор Р.Н.С III
+symtech.machine.fixed_bed_reactor.iv.name=Превосходный реактор Р.Н.С
+symtech.machine.fixed_bed_reactor.luv.name=Превосходный реактор Р.Н.С II
+symtech.machine.fixed_bed_reactor.zpm.name=Превосходный реактор Р.Н.С III
+symtech.machine.fixed_bed_reactor.uv.name=Безупречный реактор Р.Н.С
+symtech.machine.fixed_bed_reactor.uhv.name=Идеальный реактор Р.Н.С
+symtech.machine.fixed_bed_reactor.uev.name=Идеальный реактор Р.Н.С II
+symtech.machine.fixed_bed_reactor.uiv.name=Идеальный реактор Р.Н.С III
+symtech.machine.fixed_bed_reactor.uxv.name=Идеальный реактор Р.Н.С IV
+symtech.machine.fixed_bed_reactor.opv.name=Совершенный реактор Р.Н.С
 
 # Реактор с орошаемым слоем (Trickle Bed Reactor)
-susy.machine.trickle_bed_reactor.lv.name=Обычный Р.О.С реактор
-susy.machine.trickle_bed_reactor.mv.name=Улучшеный Р.О.С реактор
-susy.machine.trickle_bed_reactor.hv.name=Улучшеный Р.О.С реактор II
-susy.machine.trickle_bed_reactor.ev.name=Улучшеный Р.О.С реактор III
-susy.machine.trickle_bed_reactor.iv.name=Превосходный Р.О.С реактор
-susy.machine.trickle_bed_reactor.luv.name=Превосходный Р.О.С реактор II
-susy.machine.trickle_bed_reactor.zpm.name=Превосходный Р.О.С реактор III
-susy.machine.trickle_bed_reactor.uv.name=Безупречный Р.О.С реактор
-susy.machine.trickle_bed_reactor.uhv.name=Идеальный Р.О.С реактор
-susy.machine.trickle_bed_reactor.uev.name=Идеальный Р.О.С реактор II
-susy.machine.trickle_bed_reactor.uiv.name=Идеальный Р.О.С реактор III
-susy.machine.trickle_bed_reactor.uxv.name=Идеальный Р.О.С реактор IV
-susy.machine.trickle_bed_reactor.opv.name=Совершенный Р.О.С реактор
+symtech.machine.trickle_bed_reactor.lv.name=Обычный Р.О.С реактор
+symtech.machine.trickle_bed_reactor.mv.name=Улучшеный Р.О.С реактор
+symtech.machine.trickle_bed_reactor.hv.name=Улучшеный Р.О.С реактор II
+symtech.machine.trickle_bed_reactor.ev.name=Улучшеный Р.О.С реактор III
+symtech.machine.trickle_bed_reactor.iv.name=Превосходный Р.О.С реактор
+symtech.machine.trickle_bed_reactor.luv.name=Превосходный Р.О.С реактор II
+symtech.machine.trickle_bed_reactor.zpm.name=Превосходный Р.О.С реактор III
+symtech.machine.trickle_bed_reactor.uv.name=Безупречный Р.О.С реактор
+symtech.machine.trickle_bed_reactor.uhv.name=Идеальный Р.О.С реактор
+symtech.machine.trickle_bed_reactor.uev.name=Идеальный Р.О.С реактор II
+symtech.machine.trickle_bed_reactor.uiv.name=Идеальный Р.О.С реактор III
+symtech.machine.trickle_bed_reactor.uxv.name=Идеальный Р.О.С реактор IV
+symtech.machine.trickle_bed_reactor.opv.name=Совершенный Р.О.С реактор
 
 # реактор с барботажной колонной (Р.Б.К) (Bubble Column Reactor)
-susy.machine.bubble_column_reactor.lv.name=Обычный Р.Б.К реактор
-susy.machine.bubble_column_reactor.mv.name=Улучшеный Р.Б.К реактор
-susy.machine.bubble_column_reactor.hv.name=Улучшеный Р.Б.К реактор II
-susy.machine.bubble_column_reactor.ev.name=Улучшеный Р.Б.К реактор III
-susy.machine.bubble_column_reactor.iv.name=Превосходный Р.Б.К реактор
-susy.machine.bubble_column_reactor.luv.name=Превосходный Р.Б.К реактор II
-susy.machine.bubble_column_reactor.zpm.name=Превосходный Р.Б.К реактор III
-susy.machine.bubble_column_reactor.uv.name=Безупречный Р.Б.К реактор
-susy.machine.bubble_column_reactor.uhv.name=Идеальный Р.Б.К реактор
-susy.machine.bubble_column_reactor.uev.name=Идеальный Р.Б.К реактор II
-susy.machine.bubble_column_reactor.uiv.name=Идеальный Р.Б.К реактор III
-susy.machine.bubble_column_reactor.uxv.name=Идеальный Р.Б.К реактор IV
-susy.machine.bubble_column_reactor.opv.name=Совершенный Р.Б.К реактор
+symtech.machine.bubble_column_reactor.lv.name=Обычный Р.Б.К реактор
+symtech.machine.bubble_column_reactor.mv.name=Улучшеный Р.Б.К реактор
+symtech.machine.bubble_column_reactor.hv.name=Улучшеный Р.Б.К реактор II
+symtech.machine.bubble_column_reactor.ev.name=Улучшеный Р.Б.К реактор III
+symtech.machine.bubble_column_reactor.iv.name=Превосходный Р.Б.К реактор
+symtech.machine.bubble_column_reactor.luv.name=Превосходный Р.Б.К реактор II
+symtech.machine.bubble_column_reactor.zpm.name=Превосходный Р.Б.К реактор III
+symtech.machine.bubble_column_reactor.uv.name=Безупречный Р.Б.К реактор
+symtech.machine.bubble_column_reactor.uhv.name=Идеальный Р.Б.К реактор
+symtech.machine.bubble_column_reactor.uev.name=Идеальный Р.Б.К реактор II
+symtech.machine.bubble_column_reactor.uiv.name=Идеальный Р.Б.К реактор III
+symtech.machine.bubble_column_reactor.uxv.name=Идеальный Р.Б.К реактор IV
+symtech.machine.bubble_column_reactor.opv.name=Совершенный Р.Б.К реактор
 
 # реактор периодического действия (Р.П.Д) (Batch Reactor)
-susy.machine.batch_reactor.lv.name=Обычный Р.П.Д реактор 
-susy.machine.batch_reactor.mv.name=Улучшеный Р.П.Д реактор
-susy.machine.batch_reactor.hv.name=Улучшеный Р.П.Д реактор II
-susy.machine.batch_reactor.ev.name=Улучшеный Р.П.Д реактор III
-susy.machine.batch_reactor.iv.name=Превосходный Р.П.Д реактор
-susy.machine.batch_reactor.luv.name=Превосходный Р.П.Д реактор II
-susy.machine.batch_reactor.zpm.name=Превосходный Р.П.Д реактор III
-susy.machine.batch_reactor.uv.name=Безупречный Р.П.Д реактор
-susy.machine.batch_reactor.uhv.name=Идеальный Р.П.Д реактор
-susy.machine.batch_reactor.uev.name=Идеальный Р.П.Д реактор II
-susy.machine.batch_reactor.uiv.name=Идеальный Р.П.Д реактор III
-susy.machine.batch_reactor.uxv.name=Идеальный Р.П.Д реактор IV
-susy.machine.batch_reactor.opv.name=Совершенный Р.П.Д реактор
+symtech.machine.batch_reactor.lv.name=Обычный Р.П.Д реактор
+symtech.machine.batch_reactor.mv.name=Улучшеный Р.П.Д реактор
+symtech.machine.batch_reactor.hv.name=Улучшеный Р.П.Д реактор II
+symtech.machine.batch_reactor.ev.name=Улучшеный Р.П.Д реактор III
+symtech.machine.batch_reactor.iv.name=Превосходный Р.П.Д реактор
+symtech.machine.batch_reactor.luv.name=Превосходный Р.П.Д реактор II
+symtech.machine.batch_reactor.zpm.name=Превосходный Р.П.Д реактор III
+symtech.machine.batch_reactor.uv.name=Безупречный Р.П.Д реактор
+symtech.machine.batch_reactor.uhv.name=Идеальный Р.П.Д реактор
+symtech.machine.batch_reactor.uev.name=Идеальный Р.П.Д реактор II
+symtech.machine.batch_reactor.uiv.name=Идеальный Р.П.Д реактор III
+symtech.machine.batch_reactor.uxv.name=Идеальный Р.П.Д реактор IV
+symtech.machine.batch_reactor.opv.name=Совершенный Р.П.Д реактор
 
 # Crystallizer
-susy.machine.crystallizer.lv.name=Обычный кристаллизатор
-susy.machine.crystallizer.mv.name=Улучшеный кристаллизатор
-susy.machine.crystallizer.hv.name=Улучшеный кристаллизатор II
-susy.machine.crystallizer.ev.name=Улучшеный кристаллизатор III
-susy.machine.crystallizer.iv.name=Превосходный кристаллизатор
-susy.machine.crystallizer.luv.name=Превосходный кристаллизатор II
-susy.machine.crystallizer.zpm.name=Превосходный кристаллизатор III
-susy.machine.crystallizer.uv.name=Безупречный кристаллизатор
-susy.machine.crystallizer.uhv.name=Идеальный кристаллизатор
-susy.machine.crystallizer.uev.name=Идеальный кристаллизатор II
-susy.machine.crystallizer.uiv.name=Идеальный кристаллизатор III
-susy.machine.crystallizer.uxv.name=Идеальный кристаллизатор IV
-susy.machine.crystallizer.opv.name=Совершенный кристаллизатор
+symtech.machine.crystallizer.lv.name=Обычный кристаллизатор
+symtech.machine.crystallizer.mv.name=Улучшеный кристаллизатор
+symtech.machine.crystallizer.hv.name=Улучшеный кристаллизатор II
+symtech.machine.crystallizer.ev.name=Улучшеный кристаллизатор III
+symtech.machine.crystallizer.iv.name=Превосходный кристаллизатор
+symtech.machine.crystallizer.luv.name=Превосходный кристаллизатор II
+symtech.machine.crystallizer.zpm.name=Превосходный кристаллизатор III
+symtech.machine.crystallizer.uv.name=Безупречный кристаллизатор
+symtech.machine.crystallizer.uhv.name=Идеальный кристаллизатор
+symtech.machine.crystallizer.uev.name=Идеальный кристаллизатор II
+symtech.machine.crystallizer.uiv.name=Идеальный кристаллизатор III
+symtech.machine.crystallizer.uxv.name=Идеальный кристаллизатор IV
+symtech.machine.crystallizer.opv.name=Совершенный кристаллизатор
 
 # Dryer
-susy.machine.dryer.lv.name=Обычная сушилка
-susy.machine.dryer.mv.name=Улучшеная сушилка
-susy.machine.dryer.hv.name=Улучшеная сушилка II
-susy.machine.dryer.ev.name=Улучшеная сушилка III
-susy.machine.dryer.iv.name=Превосходная сушилка
-susy.machine.dryer.luv.name=Превосходная сушилка II
-susy.machine.dryer.zpm.name=Превосходная сушилка III
-susy.machine.dryer.uv.name=Безупречная сушилка
-susy.machine.dryer.uhv.name=Идеальная сушилка
-susy.machine.dryer.uev.name=Идеальная сушилка II
-susy.machine.dryer.uiv.name=Идеальная сушилка III
-susy.machine.dryer.uxv.name=Идеальная сушилка IV
-susy.machine.dryer.opv.name=Совершенная сушилка
+symtech.machine.dryer.lv.name=Обычная сушилка
+symtech.machine.dryer.mv.name=Улучшеная сушилка
+symtech.machine.dryer.hv.name=Улучшеная сушилка II
+symtech.machine.dryer.ev.name=Улучшеная сушилка III
+symtech.machine.dryer.iv.name=Превосходная сушилка
+symtech.machine.dryer.luv.name=Превосходная сушилка II
+symtech.machine.dryer.zpm.name=Превосходная сушилка III
+symtech.machine.dryer.uv.name=Безупречная сушилка
+symtech.machine.dryer.uhv.name=Идеальная сушилка
+symtech.machine.dryer.uev.name=Идеальная сушилка II
+symtech.machine.dryer.uiv.name=Идеальная сушилка III
+symtech.machine.dryer.uxv.name=Идеальная сушилка IV
+symtech.machine.dryer.opv.name=Совершенная сушилка
 
 # Ion Exchange Column
-susy.machine.ion_exchange_column.lv.name=Обычная ионообменная колонка
-susy.machine.ion_exchange_column.mv.name=Улучшеная ионообменная колонка
-susy.machine.ion_exchange_column.hv.name=Улучшеная ионообменная колонка II
-susy.machine.ion_exchange_column.ev.name=Улучшеная ионообменная колонка III
-susy.machine.ion_exchange_column.iv.name=Превосходная ионообменная колонка
-susy.machine.ion_exchange_column.luv.name=Превосходная ионообменная колонка II
-susy.machine.ion_exchange_column.zpm.name=Превосходная ионообменная колонка III
-susy.machine.ion_exchange_column.uv.name=Безупречная ионообменная колонка
-susy.machine.ion_exchange_column.uhv.name=Идеальная ионообменная колонка
-susy.machine.ion_exchange_column.uev.name=Идеальная ионообменная колонка II
-susy.machine.ion_exchange_column.uiv.name=Идеальная ионообменная колонка III
-susy.machine.ion_exchange_column.uxv.name=Идеальная ионообменная колонка IV
-susy.machine.ion_exchange_column.opv.name=Совершенная ионообменная колонка
+symtech.machine.ion_exchange_column.lv.name=Обычная ионообменная колонка
+symtech.machine.ion_exchange_column.mv.name=Улучшеная ионообменная колонка
+symtech.machine.ion_exchange_column.hv.name=Улучшеная ионообменная колонка II
+symtech.machine.ion_exchange_column.ev.name=Улучшеная ионообменная колонка III
+symtech.machine.ion_exchange_column.iv.name=Превосходная ионообменная колонка
+symtech.machine.ion_exchange_column.luv.name=Превосходная ионообменная колонка II
+symtech.machine.ion_exchange_column.zpm.name=Превосходная ионообменная колонка III
+symtech.machine.ion_exchange_column.uv.name=Безупречная ионообменная колонка
+symtech.machine.ion_exchange_column.uhv.name=Идеальная ионообменная колонка
+symtech.machine.ion_exchange_column.uev.name=Идеальная ионообменная колонка II
+symtech.machine.ion_exchange_column.uiv.name=Идеальная ионообменная колонка III
+symtech.machine.ion_exchange_column.uxv.name=Идеальная ионообменная колонка IV
+symtech.machine.ion_exchange_column.opv.name=Совершенная ионообменная колонка
 
 # Zone Refiner
-susy.machine.zone_refiner.lv.name=Обычный зонный рафинер
-susy.machine.zone_refiner.mv.name=Улучшеный зонный рафинер
-susy.machine.zone_refiner.hv.name=Улучшеный зонный рафинер II
-susy.machine.zone_refiner.ev.name=Улучшеный зонный рафинер III
-susy.machine.zone_refiner.iv.name=Превосходный зонный рафинер
-susy.machine.zone_refiner.luv.name=Превосходный зонный рафинер II
-susy.machine.zone_refiner.zpm.name=Превосходный зонный рафинер III
-susy.machine.zone_refiner.uv.name=Безупречный зонный рафинер
-susy.machine.zone_refiner.uhv.name=Идеальный зонный рафинер
-susy.machine.zone_refiner.uev.name=Идеальный зонный рафинер II
-susy.machine.zone_refiner.uiv.name=Идеальный зонный рафинер III
-susy.machine.zone_refiner.uxv.name=Идеальный зонный рафинер IV
-susy.machine.zone_refiner.opv.name=Совершенный зонный рафинер
+symtech.machine.zone_refiner.lv.name=Обычный зонный рафинер
+symtech.machine.zone_refiner.mv.name=Улучшеный зонный рафинер
+symtech.machine.zone_refiner.hv.name=Улучшеный зонный рафинер II
+symtech.machine.zone_refiner.ev.name=Улучшеный зонный рафинер III
+symtech.machine.zone_refiner.iv.name=Превосходный зонный рафинер
+symtech.machine.zone_refiner.luv.name=Превосходный зонный рафинер II
+symtech.machine.zone_refiner.zpm.name=Превосходный зонный рафинер III
+symtech.machine.zone_refiner.uv.name=Безупречный зонный рафинер
+symtech.machine.zone_refiner.uhv.name=Идеальный зонный рафинер
+symtech.machine.zone_refiner.uev.name=Идеальный зонный рафинер II
+symtech.machine.zone_refiner.uiv.name=Идеальный зонный рафинер III
+symtech.machine.zone_refiner.uxv.name=Идеальный зонный рафинер IV
+symtech.machine.zone_refiner.opv.name=Совершенный зонный рафинер
 
 # Tube Furnace
-susy.machine.tube_furnace.lv.name=Обычная трубчатая печь
-susy.machine.tube_furnace.mv.name=Улучшеная трубчатая печь
-susy.machine.tube_furnace.hv.name=Улучшеная трубчатая печь II
-susy.machine.tube_furnace.ev.name=Улучшеная трубчатая печь III
-susy.machine.tube_furnace.iv.name=Превосходная трубчатая печь
-susy.machine.tube_furnace.luv.name=Превосходная трубчатая печь II
-susy.machine.tube_furnace.zpm.name=Превосходная трубчатая печь III
-susy.machine.tube_furnace.uv.name=Безупречная трубчатая печь
-susy.machine.tube_furnace.uhv.name=Идеальная трубчатая печь
-susy.machine.tube_furnace.uev.name=Идеальная трубчатая печь II
-susy.machine.tube_furnace.uiv.name=Идеальная трубчатая печь III
-susy.machine.tube_furnace.uxv.name=Идеальная трубчатая печь IV
-susy.machine.tube_furnace.opv.name=Совершенная трубчатая печь
+symtech.machine.tube_furnace.lv.name=Обычная трубчатая печь
+symtech.machine.tube_furnace.mv.name=Улучшеная трубчатая печь
+symtech.machine.tube_furnace.hv.name=Улучшеная трубчатая печь II
+symtech.machine.tube_furnace.ev.name=Улучшеная трубчатая печь III
+symtech.machine.tube_furnace.iv.name=Превосходная трубчатая печь
+symtech.machine.tube_furnace.luv.name=Превосходная трубчатая печь II
+symtech.machine.tube_furnace.zpm.name=Превосходная трубчатая печь III
+symtech.machine.tube_furnace.uv.name=Безупречная трубчатая печь
+symtech.machine.tube_furnace.uhv.name=Идеальная трубчатая печь
+symtech.machine.tube_furnace.uev.name=Идеальная трубчатая печь II
+symtech.machine.tube_furnace.uiv.name=Идеальная трубчатая печь III
+symtech.machine.tube_furnace.uxv.name=Идеальная трубчатая печь IV
+symtech.machine.tube_furnace.opv.name=Совершенная трубчатая печь
 
 # UV Light Box
-susy.machine.uv_light_box.lv.name=Обычный УФ-световой короб
-susy.machine.uv_light_box.mv.name=Улучшеный УФ-световой короб
-susy.machine.uv_light_box.hv.name=Улучшеный УФ-световой короб II
-susy.machine.uv_light_box.ev.name=Улучшеный УФ-световой короб III
-susy.machine.uv_light_box.iv.name=Превосходный УФ-световой короб
-susy.machine.uv_light_box.luv.name=Превосходный УФ-световой короб II
-susy.machine.uv_light_box.zpm.name=Превосходный УФ-световой короб III
-susy.machine.uv_light_box.uv.name=Безупречный УФ-световая коробка
-susy.machine.uv_light_box.uhv.name=Идеальный УФ-световой короб
-susy.machine.uv_light_box.uev.name=Идеальный УФ-световой короб II
-susy.machine.uv_light_box.uiv.name=Идеальный УФ-световой короб III
-susy.machine.uv_light_box.uxv.name=Идеальный УФ-световой короб IV
-susy.machine.uv_light_box.opv.name=Совершенный УФ-световой короб
+symtech.machine.uv_light_box.lv.name=Обычный УФ-световой короб
+symtech.machine.uv_light_box.mv.name=Улучшеный УФ-световой короб
+symtech.machine.uv_light_box.hv.name=Улучшеный УФ-световой короб II
+symtech.machine.uv_light_box.ev.name=Улучшеный УФ-световой короб III
+symtech.machine.uv_light_box.iv.name=Превосходный УФ-световой короб
+symtech.machine.uv_light_box.luv.name=Превосходный УФ-световой короб II
+symtech.machine.uv_light_box.zpm.name=Превосходный УФ-световой короб III
+symtech.machine.uv_light_box.uv.name=Безупречный УФ-световая коробка
+symtech.machine.uv_light_box.uhv.name=Идеальный УФ-световой короб
+symtech.machine.uv_light_box.uev.name=Идеальный УФ-световой короб II
+symtech.machine.uv_light_box.uiv.name=Идеальный УФ-световой короб III
+symtech.machine.uv_light_box.uxv.name=Идеальный УФ-световой короб IV
+symtech.machine.uv_light_box.opv.name=Совершенный УФ-световой короб
 
 # Установка химического осаждения из газовой фазы (Х.О.Г.Ф.) (CVD) 
-susy.machine.cvd.lv.name=Обычная Х.О.Г.Ф. установка
-susy.machine.cvd.mv.name=Улучшеная Х.О.Г.Ф. установка
-susy.machine.cvd.hv.name=Улучшеная Х.О.Г.Ф. установка II
-susy.machine.cvd.ev.name=Улучшеная Х.О.Г.Ф. установка III
-susy.machine.cvd.iv.name=Превосходная Х.О.Г.Ф. установка
-susy.machine.cvd.luv.name=Превосходная Х.О.Г.Ф. установка II
-susy.machine.cvd.zpm.name=Превосходная Х.О.Г.Ф. установка III
-susy.machine.cvd.uv.name=Безупречная Х.О.Г.Ф. установка
-susy.machine.cvd.uhv.name=Идеальная Х.О.Г.Ф. установка
-susy.machine.cvd.uev.name=Идеальная Х.О.Г.Ф. установка II
-susy.machine.cvd.uiv.name=Идеальная Х.О.Г.Ф. установка III
-susy.machine.cvd.uxv.name=Идеальная Х.О.Г.Ф. установка IV
-susy.machine.cvd.opv.name=Совершенная Х.О.Г.Ф. установка
+symtech.machine.cvd.lv.name=Обычная Х.О.Г.Ф. установка
+symtech.machine.cvd.mv.name=Улучшеная Х.О.Г.Ф. установка
+symtech.machine.cvd.hv.name=Улучшеная Х.О.Г.Ф. установка II
+symtech.machine.cvd.ev.name=Улучшеная Х.О.Г.Ф. установка III
+symtech.machine.cvd.iv.name=Превосходная Х.О.Г.Ф. установка
+symtech.machine.cvd.luv.name=Превосходная Х.О.Г.Ф. установка II
+symtech.machine.cvd.zpm.name=Превосходная Х.О.Г.Ф. установка III
+symtech.machine.cvd.uv.name=Безупречная Х.О.Г.Ф. установка
+symtech.machine.cvd.uhv.name=Идеальная Х.О.Г.Ф. установка
+symtech.machine.cvd.uev.name=Идеальная Х.О.Г.Ф. установка II
+symtech.machine.cvd.uiv.name=Идеальная Х.О.Г.Ф. установка III
+symtech.machine.cvd.uxv.name=Идеальная Х.О.Г.Ф. установка IV
+symtech.machine.cvd.opv.name=Совершенная Х.О.Г.Ф. установка
 
 # Ion Implanter
-susy.machine.ion_implanter.lv.name=Обычный ионный имплантатор
-susy.machine.ion_implanter.mv.name=Улучшеный ионный имплантатор
-susy.machine.ion_implanter.hv.name=Улучшеный ионный имплантатор II
-susy.machine.ion_implanter.ev.name=Улучшеный ионный имплантатор III
-susy.machine.ion_implanter.iv.name=Превосходный ионный имплантатор
-susy.machine.ion_implanter.luv.name=Превосходный ионный имплантатор II
-susy.machine.ion_implanter.zpm.name=Превосходный ионный имплантатор III
-susy.machine.ion_implanter.uv.name=Безупречный ионный имплантатор
-susy.machine.ion_implanter.uhv.name=Идеальный ионный имплантатор
-susy.machine.ion_implanter.uev.name=Идеальный ионный имплантатор II
-susy.machine.ion_implanter.uiv.name=Идеальный ионный имплантатор III
-susy.machine.ion_implanter.uxv.name=Идеальный ионный имплантатор IV
-susy.machine.ion_implanter.opv.name=Совершенный ионный имплантатор
+symtech.machine.ion_implanter.lv.name=Обычный ионный имплантатор
+symtech.machine.ion_implanter.mv.name=Улучшеный ионный имплантатор
+symtech.machine.ion_implanter.hv.name=Улучшеный ионный имплантатор II
+symtech.machine.ion_implanter.ev.name=Улучшеный ионный имплантатор III
+symtech.machine.ion_implanter.iv.name=Превосходный ионный имплантатор
+symtech.machine.ion_implanter.luv.name=Превосходный ионный имплантатор II
+symtech.machine.ion_implanter.zpm.name=Превосходный ионный имплантатор III
+symtech.machine.ion_implanter.uv.name=Безупречный ионный имплантатор
+symtech.machine.ion_implanter.uhv.name=Идеальный ионный имплантатор
+symtech.machine.ion_implanter.uev.name=Идеальный ионный имплантатор II
+symtech.machine.ion_implanter.uiv.name=Идеальный ионный имплантатор III
+symtech.machine.ion_implanter.uxv.name=Идеальный ионный имплантатор IV
+symtech.machine.ion_implanter.opv.name=Совершенный ионный имплантатор
 
 # Fluid Compressor
-susy.machine.fluid_compressor.lv.name=Обычный жидкостный компрессор
-susy.machine.fluid_compressor.mv.name=Улучшеный жидкостный компрессор
-susy.machine.fluid_compressor.hv.name=Улучшеный жидкостный компрессор II
-susy.machine.fluid_compressor.ev.name=Улучшеный жидкостный компрессор III
-susy.machine.fluid_compressor.iv.name=Превосходный жидкостный компрессор
-susy.machine.fluid_compressor.luv.name=Превосходный жидкостный компрессор II
-susy.machine.fluid_compressor.zpm.name=Превосходный жидкостный компрессор III
-susy.machine.fluid_compressor.uv.name=Безупречный жидкостный компрессор
-susy.machine.fluid_compressor.uhv.name=Идеальный жидкостный компрессор
-susy.machine.fluid_compressor.uev.name=Идеальный жидкостный компрессор II
-susy.machine.fluid_compressor.uiv.name=Идеальный жидкостный компрессор III
-susy.machine.fluid_compressor.uxv.name=Идеальный жидкостный компрессор IV
-susy.machine.fluid_compressor.opv.name=Совершенный жидкостный компрессор
+symtech.machine.fluid_compressor.lv.name=Обычный жидкостный компрессор
+symtech.machine.fluid_compressor.mv.name=Улучшеный жидкостный компрессор
+symtech.machine.fluid_compressor.hv.name=Улучшеный жидкостный компрессор II
+symtech.machine.fluid_compressor.ev.name=Улучшеный жидкостный компрессор III
+symtech.machine.fluid_compressor.iv.name=Превосходный жидкостный компрессор
+symtech.machine.fluid_compressor.luv.name=Превосходный жидкостный компрессор II
+symtech.machine.fluid_compressor.zpm.name=Превосходный жидкостный компрессор III
+symtech.machine.fluid_compressor.uv.name=Безупречный жидкостный компрессор
+symtech.machine.fluid_compressor.uhv.name=Идеальный жидкостный компрессор
+symtech.machine.fluid_compressor.uev.name=Идеальный жидкостный компрессор II
+symtech.machine.fluid_compressor.uiv.name=Идеальный жидкостный компрессор III
+symtech.machine.fluid_compressor.uxv.name=Идеальный жидкостный компрессор IV
+symtech.machine.fluid_compressor.opv.name=Совершенный жидкостный компрессор
 
 # Fluid Decompressor
-susy.machine.fluid_decompressor.lv.name=Обычный декомпрессор жидкости
-susy.machine.fluid_decompressor.mv.name=Улучшеный декомпрессор жидкости
-susy.machine.fluid_decompressor.hv.name=Улучшеный декомпрессор жидкости II
-susy.machine.fluid_decompressor.ev.name=Улучшеный декомпрессор жидкости III
-susy.machine.fluid_decompressor.iv.name=Превосходный декомпрессор жидкости
-susy.machine.fluid_decompressor.luv.name=Превосходный декомпрессор жидкости II
-susy.machine.fluid_decompressor.zpm.name=Превосходный декомпрессор жидкости III
-susy.machine.fluid_decompressor.uv.name=Безупречный декомпрессор жидкости
-susy.machine.fluid_decompressor.uhv.name=Идеальный жидкостный декомпрессор
-susy.machine.fluid_decompressor.uev.name=Идеальный жидкостный декомпрессор II
-susy.machine.fluid_decompressor.uiv.name=Идеальный жидкостный декомпрессор III
-susy.machine.fluid_decompressor.uxv.name=Идеальный жидкостный декомпрессор IV
-susy.machine.fluid_decompressor.opv.name=Совершенный декомпрессор жидкости
+symtech.machine.fluid_decompressor.lv.name=Обычный декомпрессор жидкости
+symtech.machine.fluid_decompressor.mv.name=Улучшеный декомпрессор жидкости
+symtech.machine.fluid_decompressor.hv.name=Улучшеный декомпрессор жидкости II
+symtech.machine.fluid_decompressor.ev.name=Улучшеный декомпрессор жидкости III
+symtech.machine.fluid_decompressor.iv.name=Превосходный декомпрессор жидкости
+symtech.machine.fluid_decompressor.luv.name=Превосходный декомпрессор жидкости II
+symtech.machine.fluid_decompressor.zpm.name=Превосходный декомпрессор жидкости III
+symtech.machine.fluid_decompressor.uv.name=Безупречный декомпрессор жидкости
+symtech.machine.fluid_decompressor.uhv.name=Идеальный жидкостный декомпрессор
+symtech.machine.fluid_decompressor.uev.name=Идеальный жидкостный декомпрессор II
+symtech.machine.fluid_decompressor.uiv.name=Идеальный жидкостный декомпрессор III
+symtech.machine.fluid_decompressor.uxv.name=Идеальный жидкостный декомпрессор IV
+symtech.machine.fluid_decompressor.opv.name=Совершенный декомпрессор жидкости
 
 # Weapons Factory
-susy.machine.weapons_factory.lv.name=Обычный оружейный завод
-susy.machine.weapons_factory.mv.name=Улучшеный оружейный завод
-susy.machine.weapons_factory.hv.name=Улучшеный оружейный завод II
-susy.machine.weapons_factory.ev.name=Улучшеный оружейный завод III
-susy.machine.weapons_factory.iv.name=Превосходный оружейный завод
-susy.machine.weapons_factory.luv.name=Превосходный оружейный завод II
-susy.machine.weapons_factory.zpm.name=Превосходный оружейный завод III
-susy.machine.weapons_factory.uv.name=Безупречный оружейный завод
-susy.machine.weapons_factory.uhv.name=Идеальный оружейный завод
-susy.machine.weapons_factory.uev.name=Идеальный оружейный завод II
-susy.machine.weapons_factory.uiv.name=Идеальный оружейный завод III
-susy.machine.weapons_factory.uxv.name=Идеальный оружейный завод IV
-susy.machine.weapons_factory.opv.name=Совершенный оружейный завод
+symtech.machine.weapons_factory.lv.name=Обычный оружейный завод
+symtech.machine.weapons_factory.mv.name=Улучшеный оружейный завод
+symtech.machine.weapons_factory.hv.name=Улучшеный оружейный завод II
+symtech.machine.weapons_factory.ev.name=Улучшеный оружейный завод III
+symtech.machine.weapons_factory.iv.name=Превосходный оружейный завод
+symtech.machine.weapons_factory.luv.name=Превосходный оружейный завод II
+symtech.machine.weapons_factory.zpm.name=Превосходный оружейный завод III
+symtech.machine.weapons_factory.uv.name=Безупречный оружейный завод
+symtech.machine.weapons_factory.uhv.name=Идеальный оружейный завод
+symtech.machine.weapons_factory.uev.name=Идеальный оружейный завод II
+symtech.machine.weapons_factory.uiv.name=Идеальный оружейный завод III
+symtech.machine.weapons_factory.uxv.name=Идеальный оружейный завод IV
+symtech.machine.weapons_factory.opv.name=Совершенный оружейный завод
 
 # Phase Separator
-susy.machine.phase_separator.name=Фазовый сепаратор
+symtech.machine.phase_separator.name=Фазовый сепаратор
 
 # RTG
-susy.machine.rtg.lv.name=Basic RTG
+symtech.machine.rtg.lv.name=Basic RTG
 
 
 # Electrostatic Separator
-susy.machine.electrostatic_separator.lv.name=Обычный электростатический сепаратор
-susy.machine.electrostatic_separator.mv.name=Улучшеный электростатический сепаратор
-susy.machine.electrostatic_separator.hv.name=Улучшеный электростатический сепаратор II
-susy.machine.electrostatic_separator.ev.name=Улучшеный электростатический сепаратор III
-susy.machine.electrostatic_separator.iv.name=Превосходный электростатический сепаратор
-susy.machine.electrostatic_separator.luv.name=Превосходный электростатический сепаратор II
-susy.machine.electrostatic_separator.zpm.name=Превосходный электростатический сепаратор III
-susy.machine.electrostatic_separator.uv.name=Безупречный электростатический сепаратор
-susy.machine.electrostatic_separator.uhv.name=Идеальный электростатический сепаратор
-susy.machine.electrostatic_separator.uev.name=Идеальный электростатический сепаратор II
-susy.machine.electrostatic_separator.uiv.name=Идеальный электростатический сепаратор III
-susy.machine.electrostatic_separator.uxv.name=Идеальный электростатический сепаратор IV
-susy.machine.electrostatic_separator.opv.name=Совершенный электростатический сепаратор
+symtech.machine.electrostatic_separator.lv.name=Обычный электростатический сепаратор
+symtech.machine.electrostatic_separator.mv.name=Улучшеный электростатический сепаратор
+symtech.machine.electrostatic_separator.hv.name=Улучшеный электростатический сепаратор II
+symtech.machine.electrostatic_separator.ev.name=Улучшеный электростатический сепаратор III
+symtech.machine.electrostatic_separator.iv.name=Превосходный электростатический сепаратор
+symtech.machine.electrostatic_separator.luv.name=Превосходный электростатический сепаратор II
+symtech.machine.electrostatic_separator.zpm.name=Превосходный электростатический сепаратор III
+symtech.machine.electrostatic_separator.uv.name=Безупречный электростатический сепаратор
+symtech.machine.electrostatic_separator.uhv.name=Идеальный электростатический сепаратор
+symtech.machine.electrostatic_separator.uev.name=Идеальный электростатический сепаратор II
+symtech.machine.electrostatic_separator.uiv.name=Идеальный электростатический сепаратор III
+symtech.machine.electrostatic_separator.uxv.name=Идеальный электростатический сепаратор IV
+symtech.machine.electrostatic_separator.opv.name=Совершенный электростатический сепаратор
 
 # Textile Spinner
-susy.machine.textile_spinner.lv.name=Обычный текстильный прядильщик
-susy.machine.textile_spinner.mv.name=Улучшеный текстильный прядильщик
-susy.machine.textile_spinner.hv.name=Улучшеный текстильный прядильщик II
-susy.machine.textile_spinner.ev.name=Улучшеный текстильный прядильщик III
-susy.machine.textile_spinner.iv.name=Превосходный текстильный прядильщик
-susy.machine.textile_spinner.luv.name=Превосходный текстильный прядильщик II
-susy.machine.textile_spinner.zpm.name=Превосходный текстильный прядильщик III
-susy.machine.textile_spinner.uv.name=Безупречный текстильный прядильщик
-susy.machine.textile_spinner.uhv.name=Идеальный текстильный прядильщик
-susy.machine.textile_spinner.uev.name=Идеальный текстильный прядильщик II
-susy.machine.textile_spinner.uiv.name=Идеальный текстильный прядильщик III
-susy.machine.textile_spinner.uxv.name=Идеальный текстильный прядильщик IV
-susy.machine.textile_spinner.opv.name=Совершенный текстильный прядильщик
+symtech.machine.textile_spinner.lv.name=Обычный текстильный прядильщик
+symtech.machine.textile_spinner.mv.name=Улучшеный текстильный прядильщик
+symtech.machine.textile_spinner.hv.name=Улучшеный текстильный прядильщик II
+symtech.machine.textile_spinner.ev.name=Улучшеный текстильный прядильщик III
+symtech.machine.textile_spinner.iv.name=Превосходный текстильный прядильщик
+symtech.machine.textile_spinner.luv.name=Превосходный текстильный прядильщик II
+symtech.machine.textile_spinner.zpm.name=Превосходный текстильный прядильщик III
+symtech.machine.textile_spinner.uv.name=Безупречный текстильный прядильщик
+symtech.machine.textile_spinner.uhv.name=Идеальный текстильный прядильщик
+symtech.machine.textile_spinner.uev.name=Идеальный текстильный прядильщик II
+symtech.machine.textile_spinner.uiv.name=Идеальный текстильный прядильщик III
+symtech.machine.textile_spinner.uxv.name=Идеальный текстильный прядильщик IV
+symtech.machine.textile_spinner.opv.name=Совершенный текстильный прядильщик
 
 # Polishing Machine
-susy.machine.polishing_machine.lv.name=Обычная полировальная машина
-susy.machine.polishing_machine.mv.name=Улучшеная полировальная машина
-susy.machine.polishing_machine.hv.name=Улучшеная полировальная машина II
-susy.machine.polishing_machine.ev.name=Улучшеная полировальная машина III
-susy.machine.polishing_machine.iv.name=Превосходная полировальная машина
-susy.machine.polishing_machine.luv.name=Превосходная полировальная машина II
-susy.machine.polishing_machine.zpm.name=Превосходная полировальная машина III
-susy.machine.polishing_machine.uv.name=Безупречная полировальная машина
-susy.machine.polishing_machine.uhv.name=Идеальная полировальная машина
-susy.machine.polishing_machine.uev.name=Идеальная полировальная машина II
-susy.machine.polishing_machine.uiv.name=Идеальная полировальная машина III
-susy.machine.polishing_machine.uxv.name=Идеальная полировальная машина IV
-susy.machine.polishing_machine.opv.name=Совершенная полировальная машина
+symtech.machine.polishing_machine.lv.name=Обычная полировальная машина
+symtech.machine.polishing_machine.mv.name=Улучшеная полировальная машина
+symtech.machine.polishing_machine.hv.name=Улучшеная полировальная машина II
+symtech.machine.polishing_machine.ev.name=Улучшеная полировальная машина III
+symtech.machine.polishing_machine.iv.name=Превосходная полировальная машина
+symtech.machine.polishing_machine.luv.name=Превосходная полировальная машина II
+symtech.machine.polishing_machine.zpm.name=Превосходная полировальная машина III
+symtech.machine.polishing_machine.uv.name=Безупречная полировальная машина
+symtech.machine.polishing_machine.uhv.name=Идеальная полировальная машина
+symtech.machine.polishing_machine.uev.name=Идеальная полировальная машина II
+symtech.machine.polishing_machine.uiv.name=Идеальная полировальная машина III
+symtech.machine.polishing_machine.uxv.name=Идеальная полировальная машина IV
+symtech.machine.polishing_machine.opv.name=Совершенная полировальная машина
 
-susy.machine.bath_condenser.name=Конденсатор для ванны
-susy.machine.bath_condenser.tooltip=Работает только внутри криогенной дистилляционной башни.
+symtech.machine.bath_condenser.name=Конденсатор для ванны
+symtech.machine.bath_condenser.tooltip=Работает только внутри криогенной дистилляционной башни.
 
-susy.machine.incinerator.lv.name=Обычный мусоросжигатель
-susy.machine.incinerator.mv.name=Улучшеный мусоросжигатель
-susy.machine.incinerator.hv.name=Улучшеный мусоросжигатель II
-susy.machine.incinerator.ev.name=Улучшеный мусоросжигатель III
-susy.machine.incinerator.tooltip.1=§6Испепеляет§r %s предмет(ов) за %s тик(ов)
-susy.machine.incinerator.tooltip.2=§cДля сброса газов в атмосферу требует наличия 8-ми блоков воздуха над машиной
-susy.machine.incinerator.tooltip.3=§8Не беспокойтесь о том, куда деваются тяжелые металлы.
-susy.multiblock.incinerator.clogged=§4Засор! (Заслонена верхняя часть?)
-susy.multiblock.incinerator.working=§2Засоров не обнаружено
+symtech.machine.incinerator.lv.name=Обычный мусоросжигатель
+symtech.machine.incinerator.mv.name=Улучшеный мусоросжигатель
+symtech.machine.incinerator.hv.name=Улучшеный мусоросжигатель II
+symtech.machine.incinerator.ev.name=Улучшеный мусоросжигатель III
+symtech.machine.incinerator.tooltip.1=§6Испепеляет§r %s предмет(ов) за %s тик(ов)
+symtech.machine.incinerator.tooltip.2=§cДля сброса газов в атмосферу требует наличия 8-ми блоков воздуха над машиной
+symtech.machine.incinerator.tooltip.3=§8Не беспокойтесь о том, куда деваются тяжелые металлы.
+symtech.multiblock.incinerator.clogged=§4Засор! (Заслонена верхняя часть?)
+symtech.multiblock.incinerator.working=§2Засоров не обнаружено
 
 # Recipemaps
 recipemap.coagulation_tank.name=Коагуляция
@@ -743,18 +743,18 @@ recipemap.large_fluid_pump.name=Большой жидкостный насос
 recipemap.sieve_distillation.name=Фракционная перегонка
 recipemap.jet_wingpack_fuels.name=Топливо для реактивных крыльев
 
-susy.multiblock.primitive_mud_pump.description=Primitive Mud Pump — это мультиблок Steam Era, который собирает грязь раз в секунду, но только если он находится в речном биоме и когда контроллер находится между Y = 64 и Y = 80 (включительно). Он может использовать выходной люк Pump, ULV или LV.
-susy.multiblock.ocean_pumper.description=Ocean Pumper — это многофункциональный электрический блок, который собирает базовое количество морской воды в размере 8000 л в секунду (при MV), но только если он находится в биоме океана и когда контроллер находится между Y = 70 и Y = 75 (включительно). Ему нужен выходной люк, люк для обслуживания и люк для входа энергии.
+symtech.multiblock.primitive_mud_pump.description=Primitive Mud Pump — это мультиблок Steam Era, который собирает грязь раз в секунду, но только если он находится в речном биоме и когда контроллер находится между Y = 64 и Y = 80 (включительно). Он может использовать выходной люк Pump, ULV или LV.
+symtech.multiblock.ocean_pumper.description=Ocean Pumper — это многофункциональный электрический блок, который собирает базовое количество морской воды в размере 8000 л в секунду (при MV), но только если он находится в биоме океана и когда контроллер находится между Y = 70 и Y = 75 (включительно). Ему нужен выходной люк, люк для обслуживания и люк для входа энергии.
 
 # Energy Hatches
 
-susy.machine.energy_hatch.output_4a.lv.name=LV 4A Динамо-люк
-susy.machine.energy_hatch.output_16a.lv.name=LV 16A Динамо-люк
-susy.machine.energy_hatch.output_4a.mv.name=MV 4A Динамо-люк
-susy.machine.energy_hatch.output_16a.mv.name=MV 16A Динамо-люк
-susy.machine.energy_hatch.output_4a.hv.name=HV 4A Динамо-люк
-susy.machine.energy_hatch.output_16a.hv.name=HV 16A Динамо-люк
-susy.machine.energy_hatch.output_16a.ev.name=EV 16A Динамо-люк
+symtech.machine.energy_hatch.output_4a.lv.name=LV 4A Динамо-люк
+symtech.machine.energy_hatch.output_16a.lv.name=LV 16A Динамо-люк
+symtech.machine.energy_hatch.output_4a.mv.name=MV 4A Динамо-люк
+symtech.machine.energy_hatch.output_16a.mv.name=MV 16A Динамо-люк
+symtech.machine.energy_hatch.output_4a.hv.name=HV 4A Динамо-люк
+symtech.machine.energy_hatch.output_16a.hv.name=HV 16A Динамо-люк
+symtech.machine.energy_hatch.output_16a.ev.name=EV 16A Динамо-люк
 
 # Quadruple & Nonuple Fluid Hatches
 
@@ -775,34 +775,34 @@ gregtech.machine.fluid_hatch.export_9x.mv.name=Жидкостный 9-х вых�
 gregtech.machine.fluid_hatch.export_9x.hv.name=Жидкостный 9-х выходной люк HV
 
 # Other multiblock parts
-susy.machine.dumping_hatch=Люк для сброса
-susy.machine.dumping_hatch.lv.name=Люк для сброса
+symtech.machine.dumping_hatch=Люк для сброса
+symtech.machine.dumping_hatch.lv.name=Люк для сброса
 
 # Distillation tower explanations
-susy.machine.ordered_dt.tooltip.1=Входные и выходные люки для жидкости находятся на одних и тех же уровнях.
-susy.machine.ordered_dt.tooltip.2=§c Невыполнение вывода жидкости в N-й слой снизу делает N-й вывод недействительным §7
+symtech.machine.ordered_dt.tooltip.1=Входные и выходные люки для жидкости находятся на одних и тех же уровнях.
+symtech.machine.ordered_dt.tooltip.2=§c Невыполнение вывода жидкости в N-й слой снизу делает N-й вывод недействительным §7
 
 # Logistics
-susy.machine.delegator.tooltip.non_recursion=§6 Невозможно присоединить к другим Делегаторам!
-susy.top.delegator.delegating_face=Делегирование: %s
+symtech.machine.delegator.tooltip.non_recursion=§6 Невозможно присоединить к другим Делегаторам!
+symtech.top.delegator.delegating_face=Делегирование: %s
 
-susy.machine.bridge.inv.name=Инвентарный мост
-susy.machine.bridge.inv.tooltip=§b Реле Инвентарь
-susy.machine.bridge.tank.name=Танковый мост
-susy.machine.bridge.tank.tooltip=§b Реле Танки
-susy.machine.bridge.inv_tank.name=Инвентарь и танковый мост
-susy.machine.bridge.inv_tank.tooltip=§b Реле Инвентарь и Резервуары
-susy.machine.bridge.universal.name=Универсальный мост
-susy.machine.bridge.universal.tooltip=§b Реле Все
+symtech.machine.bridge.inv.name=Инвентарный мост
+symtech.machine.bridge.inv.tooltip=§b Реле Инвентарь
+symtech.machine.bridge.tank.name=Танковый мост
+symtech.machine.bridge.tank.tooltip=§b Реле Танки
+symtech.machine.bridge.inv_tank.name=Инвентарь и танковый мост
+symtech.machine.bridge.inv_tank.tooltip=§b Реле Инвентарь и Резервуары
+symtech.machine.bridge.universal.name=Универсальный мост
+symtech.machine.bridge.universal.tooltip=§b Реле Все
 
-susy.machine.extender.inv.name=Расширитель инвентаря
-susy.machine.extender.inv.tooltip=§b Реле Инвентарь
-susy.machine.extender.tank.name=Расширитель бака
-susy.machine.extender.tank.tooltip=§b Реле Танки
-susy.machine.extender.inv_tank.name=Инвентарь и расширитель бака
-susy.machine.extender.inv_tank.tooltip=§b Реле Инвентарь и Резервуары
-susy.machine.extender.universal.name=Универсальный удлинитель
-susy.machine.extender.universal.tooltip=§bРеле всего
+symtech.machine.extender.inv.name=Расширитель инвентаря
+symtech.machine.extender.inv.tooltip=§b Реле Инвентарь
+symtech.machine.extender.tank.name=Расширитель бака
+symtech.machine.extender.tank.tooltip=§b Реле Танки
+symtech.machine.extender.inv_tank.name=Инвентарь и расширитель бака
+symtech.machine.extender.inv_tank.tooltip=§b Реле Инвентарь и Резервуары
+symtech.machine.extender.universal.name=Универсальный удлинитель
+symtech.machine.extender.universal.tooltip=§bРеле всего
 
 # Metaitems
 metaitem.catalyst_bed_support_grid.name=Решетка поддержки слоя катализатора
@@ -820,18 +820,18 @@ metaitem.track_segment.length_info=610 блоков стоимостью 7 фу�
 metaitem.air_vent.tooltip.1=§bСтавка сбора: §f%,d л/с
 
 # Catalysts
-susy.universal.catalysts.tooltip.tier=§eМакс. напряжение: §f%,d EU/T (%s§f)
-susy.universal.catalysts.tooltip.non_tiered=§eНеуровневый катализатор§
-susy.universal.catalysts.tooltip.yield.tiered=§aУвеличение доходности: §fx%d §aper tier.§f
-susy.universal.catalysts.tooltip.energy.tiered=§aИспользование энергии: §fx%d §aper tier.§f
-susy.universal.catalysts.tooltip.speed.tiered=§aУвеличение скорости: §fx%d §aper tier.§f
-susy.universal.catalysts.tooltip.yield=§aУвеличение доходности: §fx%d
-susy.universal.catalysts.tooltip.energy=§aИспользование энергии: §fx%d
-susy.universal.catalysts.tooltip.speed=§aУвеличение скорости: §fx%d
-susy.universal.catalysts.tooltip.title=%s
+symtech.universal.catalysts.tooltip.tier=§eМакс. напряжение: §f%,d EU/T (%s§f)
+symtech.universal.catalysts.tooltip.non_tiered=§eНеуровневый катализатор§
+symtech.universal.catalysts.tooltip.yield.tiered=§aУвеличение доходности: §fx%d §aper tier.§f
+symtech.universal.catalysts.tooltip.energy.tiered=§aИспользование энергии: §fx%d §aper tier.§f
+symtech.universal.catalysts.tooltip.speed.tiered=§aУвеличение скорости: §fx%d §aper tier.§f
+symtech.universal.catalysts.tooltip.yield=§aУвеличение доходности: §fx%d
+symtech.universal.catalysts.tooltip.energy=§aИспользование энергии: §fx%d
+symtech.universal.catalysts.tooltip.speed=§aУвеличение скорости: §fx%d
+symtech.universal.catalysts.tooltip.title=%s
 
 # Oxidation Catalyst Bed
-susy.catalyst_group.oxidation_catalyst_beds.name=Катализатор окисления
+symtech.catalyst_group.oxidation_catalyst_beds.name=Катализатор окисления
 metaitem.ulv_catalyst_bed_oxidation.name=ULV Слой катализатора окисления
 metaitem.lv_catalyst_bed_oxidation.name=LV Слой катализатора окисления
 metaitem.mv_catalyst_bed_oxidation.name=MV Слой катализатора окисления
@@ -848,7 +848,7 @@ metaitem.uxv_catalyst_bed_oxidation.name=UXV Слой катализатора �
 metaitem.opv_catalyst_bed_oxidation.name=OpV Слой катализатора окисления
 
 # Reduction Catalyst Bed
-susy.catalyst_group.reduction_catalyst_beds.name=Катализатор восстановления
+symtech.catalyst_group.reduction_catalyst_beds.name=Катализатор восстановления
 metaitem.ulv_catalyst_bed_reduction.name=ULV Слой катализатора восстановления
 metaitem.lv_catalyst_bed_reduction.name=LV Слой катализатора восстановления
 metaitem.mv_catalyst_bed_reduction.name=MV Слой катализатора восстановления
@@ -865,10 +865,10 @@ metaitem.uxv_catalyst_bed_reduction.name=UXV Слой катализатора �
 metaitem.opv_catalyst_bed_reduction.name=OpV Слой катализатора восстановления
 
 # Standard Catalyst
-susy.catalyst_group.standard_catalysts.name=Стандартный катализатор
+symtech.catalyst_group.standard_catalysts.name=Стандартный катализатор
 
 # Cracking Catalyst
-susy.catalyst_group.cracking_catalyst_beds.name=Катализатор крекинга
+symtech.catalyst_group.cracking_catalyst_beds.name=Катализатор крекинга
 metaitem.standard_catalyst_bed_cracking.name=Слой катализатора крекинга
 
 # Armors
@@ -879,41 +879,41 @@ metaarmor.jet_wingpack.engine_active=Реактивный крылатый ра�
 metaarmor.jet_wingpack.engine_inactive=Реактивный крылатый ранец: Двигатель отключен
 
 # Machine Translations
-susy.ocean_pumper.full=Баки полны!
-susy.ocean_pumper.drainrate=Текущая скорость откачки: %s
-susy.wrongbiome=Машина не может работать в этом биоме!
-susy.weather_resistance=§2Не взрывается от воды, лавы, огня или дождя.
-susy.large_fluid_pump.y_level=Текущий уровень контроллера Y: Y=%s
-susy.large_fluid_pump.biome=Текущий биом нижней обсадной трубы: %s
+symtech.ocean_pumper.full=Баки полны!
+symtech.ocean_pumper.drainrate=Текущая скорость откачки: %s
+symtech.wrongbiome=Машина не может работать в этом биоме!
+symtech.weather_resistance=§2Не взрывается от воды, лавы, огня или дождя.
+symtech.large_fluid_pump.y_level=Текущий уровень контроллера Y: Y=%s
+symtech.large_fluid_pump.biome=Текущий биом нижней обсадной трубы: %s
 
 # Extra recipe info
-susy.recipe.dimensions=Размеры: %s
-susy.recipe.biomes=Биомы: %s
-susy.recipe.biomes_blocked=Заблокированные биомы: %s
-susy.recipe.biomeTypes=Типы биомов: %s
-susy.recipe.biomeTypes_blocked=Заблокированные типы биомов: %s
+symtech.recipe.dimensions=Размеры: %s
+symtech.recipe.biomes=Биомы: %s
+symtech.recipe.biomes_blocked=Заблокированные биомы: %s
+symtech.recipe.biomeTypes=Типы биомов: %s
+symtech.recipe.biomeTypes_blocked=Заблокированные типы биомов: %s
 
 # Commands
 
-susy.command.horde.usage=/mobHorde <start/stop/status>
-susy.command.horde.start.usage=/mobHorde start <name>
-susy.command.horde.start.argument_required=Use /mobHorde start <name>.
-susy.command.horde.start.no_such_horde=No such horde %s exists.
-susy.command.horde.start.unable_to_run=The %s horde can't be executed. This may be due to dimensional restrictions, daylight, etc.
-susy.command.horde.start.error_executing_horde=Horde mobs were not spawned correctly.
-susy.command.horde.start.has_active_invasion=You already have an active %s invasion.
-susy.command.horde.start.started=Successfully started %s invasion.
-susy.command.horde.stop.usage=/mobHorde stop
-susy.command.horde.stop.has_active_no_invasion=No active invasion to stop.
-susy.command.horde.stop.stopped=Successfully stopped %s invasion.
-susy.command.horde.status.usage=/mobHorde status <player>
-susy.command.horde.status.has_active_invasion=Player %s has an active %s invasion for %d ticks. It will time out in %s ticks.
-susy.command.horde.status.no_active_invasion=Player %s has no active invasion.
+symtech.command.horde.usage=/mobHorde <start/stop/status>
+symtech.command.horde.start.usage=/mobHorde start <name>
+symtech.command.horde.start.argument_required=Use /mobHorde start <name>.
+symtech.command.horde.start.no_such_horde=No such horde %s exists.
+symtech.command.horde.start.unable_to_run=The %s horde can't be executed. This may be due to dimensional restrictions, daylight, etc.
+symtech.command.horde.start.error_executing_horde=Horde mobs were not spawned correctly.
+symtech.command.horde.start.has_active_invasion=You already have an active %s invasion.
+symtech.command.horde.start.started=Successfully started %s invasion.
+symtech.command.horde.stop.usage=/mobHorde stop
+symtech.command.horde.stop.has_active_no_invasion=No active invasion to stop.
+symtech.command.horde.stop.stopped=Successfully stopped %s invasion.
+symtech.command.horde.status.usage=/mobHorde status <player>
+symtech.command.horde.status.has_active_invasion=Player %s has an active %s invasion for %d ticks. It will time out in %s ticks.
+symtech.command.horde.status.no_active_invasion=Player %s has no active invasion.
 
 # Fluid Tooltips
-susy.fluid.voiding.liquid=Аннулируется с помощью Dumper
-susy.fluid.voiding.gas=Можно отменить с помощью дымовой трубы
-susy.fluid.voiding.flammable=Аннулируется с помощью Факельной установки
+symtech.fluid.voiding.liquid=Аннулируется с помощью Dumper
+symtech.fluid.voiding.gas=Можно отменить с помощью дымовой трубы
+symtech.fluid.voiding.flammable=Аннулируется с помощью Факельной установки
 
 death.attack.toxic_atmo=Легкие %s были разорваны в клочья
 death.attack.suffocation=%s не мог дышать
@@ -981,89 +981,89 @@ tile.custom_sheets.lightergraymetalsheet.name=Светло-серый метал
 
 
 #пояснения от автора перевода (не удалять)
-susy.machine.continuous_stirred_tank_reactor.lv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.mv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.hv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.ev.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.iv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.luv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.zpm.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.uv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.uhv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.uev.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.uiv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.uxv.tooltip=Реактор непрерывного перемешивания
-susy.machine.continuous_stirred_tank_reactor.opv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.lv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.mv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.hv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.ev.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.iv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.luv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.zpm.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.uv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.uhv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.uev.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.uiv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.uxv.tooltip=Реактор непрерывного перемешивания
+symtech.machine.continuous_stirred_tank_reactor.opv.tooltip=Реактор непрерывного перемешивания
 
-susy.machine.fixed_bed_reactor.lv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.mv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.hv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.ev.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.iv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.luv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.zpm.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.uv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.uhv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.uev.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.uiv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.uxv.tooltip=Реактор с неподвижным слоем
-susy.machine.fixed_bed_reactor.opv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.lv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.mv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.hv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.ev.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.iv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.luv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.zpm.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.uv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.uhv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.uev.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.uiv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.uxv.tooltip=Реактор с неподвижным слоем
+symtech.machine.fixed_bed_reactor.opv.tooltip=Реактор с неподвижным слоем
 
-susy.machine.trickle_bed_reactor.lv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.mv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.hv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.ev.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.iv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.luv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.zpm.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.uv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.uhv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.uev.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.uiv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.uxv.tooltip=Реактор с орошаемым слоем
-susy.machine.trickle_bed_reactor.opv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.lv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.mv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.hv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.ev.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.iv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.luv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.zpm.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.uv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.uhv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.uev.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.uiv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.uxv.tooltip=Реактор с орошаемым слоем
+symtech.machine.trickle_bed_reactor.opv.tooltip=Реактор с орошаемым слоем
 
-susy.machine.bubble_column_reactor.lv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.mv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.hv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.ev.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.iv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.luv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.zpm.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.uv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.uhv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.uev.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.uiv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.uxv.tooltip=Реактор с барботажной колонной
-susy.machine.bubble_column_reactor.opv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.lv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.mv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.hv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.ev.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.iv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.luv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.zpm.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.uv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.uhv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.uev.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.uiv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.uxv.tooltip=Реактор с барботажной колонной
+symtech.machine.bubble_column_reactor.opv.tooltip=Реактор с барботажной колонной
 
-susy.machine.batch_reactor.lv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.mv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.hv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.ev.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.iv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.luv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.zpm.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.uv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.uhv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.uev.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.uiv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.uxv.tooltip=Реактор периодического действия
-susy.machine.batch_reactor.opv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.lv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.mv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.hv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.ev.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.iv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.luv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.zpm.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.uv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.uhv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.uev.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.uiv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.uxv.tooltip=Реактор периодического действия
+symtech.machine.batch_reactor.opv.tooltip=Реактор периодического действия
 
-susy.machine.cvd.lv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.mv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.hv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.ev.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.iv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.luv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.zpm.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.uv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.uhv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.uev.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.uiv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.uxv.tooltip=Установка химического осаждения из газовой фазы
-susy.machine.cvd.opv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.lv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.mv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.hv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.ev.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.iv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.luv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.zpm.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.uv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.uhv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.uev.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.uiv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.uxv.tooltip=Установка химического осаждения из газовой фазы
+symtech.machine.cvd.opv.tooltip=Установка химического осаждения из газовой фазы
 
 
-susy.machine.quencher.tooltip=Охладитель горячих слитков
+symtech.machine.quencher.tooltip=Охладитель горячих слитков

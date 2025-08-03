@@ -21,11 +21,11 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockMetallurgy;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import java.util.function.Supplier;
 
@@ -33,7 +33,7 @@ import static symtech.api.blocks.VariantDirectionalRotatableBlock.FACING;
 
 public class MetaTileEntityHotIsostaticPress extends RecipeMapMultiblockController {
     public MetaTileEntityHotIsostaticPress(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.HOT_ISOSTATIC_PRESS);
+        super(metaTileEntityId, SymtechRecipeMaps.HOT_ISOSTATIC_PRESS);
     }
 
     @Override
@@ -48,8 +48,8 @@ public class MetaTileEntityHotIsostaticPress extends RecipeMapMultiblockControll
                 .aisle("  SPS  ", "  SOS  ", "  SPS  ", "  SPS  ", "  SPS  ", "  SPS  ", "  SPS  ")
                 .where(' ', any())
                 .where('O', selfPredicate())
-                .where('S', states(SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.SILICON_CARBIDE_CASING)).setMinGlobalLimited(27).or(autoAbilities()))
-                .where('I', states(SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.SILICON_CARBIDE_CASING)))
+                .where('S', states(SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.SILICON_CARBIDE_CASING)).setMinGlobalLimited(27).or(autoAbilities()))
+                .where('I', states(SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.SILICON_CARBIDE_CASING)))
                 .where('P', states(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.STEEL_PIPE)))
                 .where('C', states(MetaBlocks.WIRE_COIL.getState(BlockWireCoil.CoilType.NICHROME)))
                 .where('X', air())
@@ -80,7 +80,7 @@ public class MetaTileEntityHotIsostaticPress extends RecipeMapMultiblockControll
     }
 
     private IBlockState hydraulicState() {
-        return SuSyBlocks.METALLURGY.getState(BlockMetallurgy.BlockMetallurgyType.HYDRAULIC_CYLINDER);
+        return SymtechBlocks.METALLURGY.getState(BlockMetallurgy.BlockMetallurgyType.HYDRAULIC_CYLINDER);
     }
 
     protected Material getFrameMaterial() {
@@ -91,7 +91,7 @@ public class MetaTileEntityHotIsostaticPress extends RecipeMapMultiblockControll
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return SusyTextures.SILICON_CARBIDE_CASING;
+        return SymtechTextures.SILICON_CARBIDE_CASING;
     }
 
     @Override

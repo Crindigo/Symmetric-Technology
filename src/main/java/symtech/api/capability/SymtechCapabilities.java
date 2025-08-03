@@ -1,0 +1,22 @@
+package symtech.api.capability;
+
+import gregtech.api.capability.SimpleCapabilityManager;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.CapabilityInject;
+import net.minecraftforge.fml.common.Mod;
+import symtech.Symtech;
+
+@Mod.EventBusSubscriber(modid = Symtech.MODID)
+public class SymtechCapabilities {
+
+    @CapabilityInject(IElytraFlyingProvider.class)
+    public static Capability<IElytraFlyingProvider> ELYTRA_FLYING_PROVIDER;
+
+    @CapabilityInject(IStrandProvider.class)
+    public static Capability<IStrandProvider> STRAND_PROVIDER;
+
+    public static void init() {
+        SimpleCapabilityManager.registerCapabilityWithNoDefault(IElytraFlyingProvider.class);
+        SimpleCapabilityManager.registerCapabilityWithNoDefault(IStrandProvider.class);
+    }
+}

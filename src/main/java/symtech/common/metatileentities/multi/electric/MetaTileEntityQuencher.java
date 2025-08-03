@@ -16,15 +16,15 @@ import gregtech.common.blocks.BlockTurbineCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityQuencher extends RecipeMapMultiblockController {
 
     public MetaTileEntityQuencher(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.QUENCHER_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.QUENCHER_RECIPES);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class MetaTileEntityQuencher extends RecipeMapMultiblockController {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.QUENCHER_OVERLAY;
+        return SymtechTextures.QUENCHER_OVERLAY;
     }
 
     protected static IBlockState getCasingState() {

@@ -24,10 +24,10 @@ import net.minecraft.world.chunk.storage.AnvilChunkLoader;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import symtech.api.SymtechLog;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.DimensionProperty;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 import symtech.common.entities.EntityDrone;
 
 import javax.annotation.Nonnull;
@@ -39,7 +39,7 @@ public class MetaTileEntityDronePad extends RecipeMapMultiblockController {
     public boolean droneReachedSky;
 
     public MetaTileEntityDronePad(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.DRONE_PAD);
+        super(metaTileEntityId, SymtechRecipeMaps.DRONE_PAD);
         this.recipeMapWorkable = new DronePadWorkable(this);
     }
 
@@ -48,7 +48,7 @@ public class MetaTileEntityDronePad extends RecipeMapMultiblockController {
     }
 
     protected static IBlockState getPadState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.DRONE_PAD);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.DRONE_PAD);
     }
 
     @NotNull
@@ -109,7 +109,7 @@ public class MetaTileEntityDronePad extends RecipeMapMultiblockController {
     public void spawnDroneEntity(boolean descending) {
 
         NBTTagCompound nbttagcompound = new NBTTagCompound();
-        nbttagcompound.setString("id", "susy:drone");
+        nbttagcompound.setString("id", "symtech:drone");
         Vec3d pos = this.getDroneSpawnPosition(descending);
 
         EntityDrone drone = ((EntityDrone) AnvilChunkLoader.readWorldEntityPos(nbttagcompound, this.getWorld(), pos.x, pos.y, pos.z, true));

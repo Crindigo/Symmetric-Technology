@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 // I am sorry for this - htmlcsjs
-@Name("SusyLoadingPlugin")
+@Name("SymtechLoadingPlugin")
 @MCVersion(ForgeVersion.mcVersion)
 @TransformerExclusions({"gregtech.asm.", "symtech.asm."})
 @SortingIndex(2001) // random number idk

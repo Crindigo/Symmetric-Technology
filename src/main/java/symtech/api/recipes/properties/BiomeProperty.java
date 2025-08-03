@@ -44,7 +44,7 @@ public class BiomeProperty extends RecipeProperty<BiomeProperty.BiomePropertyLis
             if (i != list.size() - 1)
                 builder.append(", ");
         }
-        String str = I18n.format(isWhiteList ? "susy.recipe.biomes" : "susy.recipe.biomes_blocked", builder.toString());
+        String str = I18n.format(isWhiteList ? "symtech.recipe.biomes" : "symtech.recipe.biomes_blocked", builder.toString());
 
         if (limited && str.length() >= 35) {
             str = str.substring(0, 32) + "..";

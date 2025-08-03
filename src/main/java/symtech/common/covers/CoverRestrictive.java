@@ -19,7 +19,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.NotNull;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -62,7 +62,7 @@ public class CoverRestrictive extends CoverBase {
     @Override
     public void renderCover(@NotNull CCRenderState renderState, @NotNull Matrix4 translation, @NotNull IVertexOperation[] pipeline,
                             @NotNull Cuboid6 plateBox, @NotNull BlockRenderLayer renderLayer) {
-        SusyTextures.RESTRICTIVE_FILTER_FILTER_OVERLAY.renderSided(getAttachedSide(), plateBox, renderState, pipeline, translation);
+        SymtechTextures.RESTRICTIVE_FILTER_FILTER_OVERLAY.renderSided(getAttachedSide(), plateBox, renderState, pipeline, translation);
     }
 
     protected static class ItemHandlerRestrictive extends ItemHandlerDelegate {

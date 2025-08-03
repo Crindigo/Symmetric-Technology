@@ -29,19 +29,19 @@ public abstract class MetaTileEntityHolderMixin {
     @Inject(method = "readFromNBT",
             remap = true,
             at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;error(Ljava/lang/String;)V", remap = false))
-    private void checkSuSy(
+    private void checkSymtech(
             NBTTagCompound compound,
             CallbackInfo ci,
             @Local(name = "metaTileEntityIdRaw") String metaTileEntityIdRaw,
             @Local(name = "metaTileEntityData") NBTTagCompound metaTileEntityData) {
         if (metaTileEntityIdRaw.startsWith("gregtech:")) {
-            String susyName = metaTileEntityIdRaw.replace("gregtech:", "susy:");
-            MetaTileEntity mte = GregTechAPI.MTE_REGISTRY.getObject(new ResourceLocation(susyName));
+            String stName = metaTileEntityIdRaw.replace("gregtech:", "symtech:");
+            MetaTileEntity mte = GregTechAPI.MTE_REGISTRY.getObject(new ResourceLocation(stName));
             if (mte != null) {
-                compound.setString("MetaId", susyName);
+                compound.setString("MetaId", stName);
                 setRawMetaTileEntity(mte.createMetaTileEntity((IGregTechTileEntity) this));
                 this.metaTileEntity.readFromNBT(metaTileEntityData);
-                SymtechLog.logger.debug("Successfully migrated SuSy MetaTileEntity with ID {}", susyName);
+                SymtechLog.logger.debug("Successfully migrated Symtech MetaTileEntity with ID {}", stName);
             }
         }
     }

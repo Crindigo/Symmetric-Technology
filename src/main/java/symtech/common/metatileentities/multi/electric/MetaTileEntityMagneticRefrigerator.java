@@ -29,12 +29,12 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.metatileentity.multiblock.SuSyPredicates;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.metatileentity.multiblock.SymtechPredicates;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.CoilingCoilTemperatureProperty;
 import symtech.common.blocks.BlockCoolingCoil;
-import symtech.common.blocks.SuSyBlocks;
-import symtech.common.metatileentities.SuSyMetaTileEntities;
+import symtech.common.blocks.SymtechBlocks;
+import symtech.common.metatileentities.SymtechMetaTileEntities;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,7 +46,7 @@ public class MetaTileEntityMagneticRefrigerator extends RecipeMapMultiblockContr
     private int temperature;
 
     public MetaTileEntityMagneticRefrigerator(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.COOLING_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.COOLING_RECIPES);
     }
 
     @Override
@@ -109,7 +109,7 @@ public class MetaTileEntityMagneticRefrigerator extends RecipeMapMultiblockContr
                 .where('S', selfPredicate())
                 .where('X', states(getCasingState()).setMinGlobalLimited(10)
                         .or(autoAbilities(true, true, true, true, true, true, false)))
-                .where('C', SuSyPredicates.coolingCoils())
+                .where('C', SymtechPredicates.coolingCoils())
                 .where('#', air())
                 .build();
     }
@@ -136,7 +136,7 @@ public class MetaTileEntityMagneticRefrigerator extends RecipeMapMultiblockContr
                 .aisle("XXD", "C#C", "C#C", "XXX")
                 .aisle("ISO", "CCC", "CCC", "XXX")
                 .where('X', MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF))
-                .where('S', SuSyMetaTileEntities.MAGNETIC_REFRIGERATOR, EnumFacing.SOUTH)
+                .where('S', SymtechMetaTileEntities.MAGNETIC_REFRIGERATOR, EnumFacing.SOUTH)
                 .where('#', Blocks.AIR.getDefaultState())
                 .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[GTValues.MV], EnumFacing.NORTH)
                 .where('I', MetaTileEntities.ITEM_IMPORT_BUS[GTValues.LV], EnumFacing.SOUTH)
@@ -145,7 +145,7 @@ public class MetaTileEntityMagneticRefrigerator extends RecipeMapMultiblockContr
                 .where('M', () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF), EnumFacing.NORTH);
         Arrays.stream(BlockCoolingCoil.CoolingCoilType.values())
                 .sorted(Comparator.comparingInt(entry -> -entry.coilTemperature))
-                .forEach(entry -> shapeInfo.add(builder.where('C', SuSyBlocks.COOLING_COIL.getState(entry)).build()));
+                .forEach(entry -> shapeInfo.add(builder.where('C', SymtechBlocks.COOLING_COIL.getState(entry)).build()));
         return shapeInfo;
     }
 
@@ -153,7 +153,7 @@ public class MetaTileEntityMagneticRefrigerator extends RecipeMapMultiblockContr
     @Override
     public List<ITextComponent> getDataInfo() {
         List<ITextComponent> list = super.getDataInfo();
-        list.add(new TextComponentTranslation("susy.multiblock.magnetic_refrigerator.min_temperature",
+        list.add(new TextComponentTranslation("symtech.multiblock.magnetic_refrigerator.min_temperature",
                 new TextComponentTranslation(TextFormattingUtil.formatNumbers(temperature) + "K")
                         .setStyle(new Style().setColor(TextFormatting.BLUE))));
         return list;

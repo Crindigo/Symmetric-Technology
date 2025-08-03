@@ -12,17 +12,17 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 import gregtech.common.blocks.BlockMetalCasing.MetalCasingType;
 import gregtech.common.blocks.BlockBoilerCasing.BoilerCasingType;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 
 public class MetaTileEntityOreSorter extends RecipeMapMultiblockController {
 
     public MetaTileEntityOreSorter(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.ORE_SORTER_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.ORE_SORTER_RECIPES);
     }
 
     @Override
@@ -59,6 +59,6 @@ public class MetaTileEntityOreSorter extends RecipeMapMultiblockController {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.ORE_SORTER_OVERLAY;
+        return SymtechTextures.ORE_SORTER_OVERLAY;
     }
 }

@@ -9,7 +9,7 @@ import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.init.Blocks;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.SymtechLog;
-import symtech.common.metatileentities.SuSyMetaTileEntities;
+import symtech.common.metatileentities.SymtechMetaTileEntities;
 
 import java.util.Objects;
 
@@ -38,7 +38,7 @@ public interface ICryogenicProvider {
             return MultiblockControllerBase.air().test(blockWorldState);
         }, () -> {
             MetaTileEntityHolder holder = new MetaTileEntityHolder();
-            holder.setMetaTileEntity(SuSyMetaTileEntities.BATH_CONDENSER[0]);
+            holder.setMetaTileEntity(SymtechMetaTileEntities.BATH_CONDENSER[0]);
             holder.getMetaTileEntity().onPlacement();
             BlockInfo[] info = new BlockInfo[2];
             info[0] = new BlockInfo(MetaBlocks.MACHINE.getDefaultState(), holder);

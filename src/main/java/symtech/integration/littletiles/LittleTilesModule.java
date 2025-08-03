@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import symtech.Symtech;
 import symtech.api.capability.impl.InaccessibleHandlerDelegate;
-import symtech.api.util.SuSyUtility;
+import symtech.api.util.SymtechUtility;
 import symtech.modules.SymtechModules;
 
 import java.util.ArrayList;
@@ -30,14 +30,14 @@ import java.util.List;
         moduleID = SymtechModules.MODULE_LITTLETILES,
         containerID = Symtech.MODID,
         modDependencies = "littletiles",
-        name = "SuSy LittleTiles Integration",
-        description = "SuSy LittleTiles Integration Module")
+        name = "Symtech LittleTiles Integration",
+        description = "Symtech LittleTiles Integration Module")
 public class LittleTilesModule extends IntegrationSubmodule {
 
     @SubscribeEvent
     public static void registerCapabilityItems(AttachCapabilitiesEvent<TileEntity> event) {
         if (event.getObject() instanceof TileEntityLittleTiles ltte) {
-            event.addCapability(SuSyUtility.susyId("lt_inventory_wrapper"), new LTInvWrapper(ltte));
+            event.addCapability(SymtechUtility.symId("lt_inventory_wrapper"), new LTInvWrapper(ltte));
         }
     }
 

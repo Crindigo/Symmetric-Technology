@@ -31,10 +31,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.metatileentity.multiblock.CachedPatternRecipeMapMultiblock;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.particles.SusyParticleDust;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.particles.SymtechParticleDust;
 import symtech.common.blocks.BlockSeparatorRotor;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import java.util.*;
@@ -55,7 +55,7 @@ public class MetaTileEntityGravitySeparator extends CachedPatternRecipeMapMultib
     private int[] particleColors;
 
     public MetaTileEntityGravitySeparator(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.GRAVITY_SEPARATOR_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.GRAVITY_SEPARATOR_RECIPES);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this) {
             @Override
             protected void setupRecipe(Recipe recipe) {
@@ -122,10 +122,10 @@ public class MetaTileEntityGravitySeparator extends CachedPatternRecipeMapMultib
     /* can be reimplemented with states for R if rotation is not supposed to be specified
     public IBlockState[] getRotorStates() {
         return new IBlockState[] {
-                SuSyBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL).withProperty(FACING, EnumFacing.SOUTH),
-                SuSyBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL).withProperty(FACING, EnumFacing.NORTH),
-                SuSyBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL).withProperty(FACING, EnumFacing.EAST),
-                SuSyBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL).withProperty(FACING, EnumFacing.WEST)
+                SymtechBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL).withProperty(FACING, EnumFacing.SOUTH),
+                SymtechBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL).withProperty(FACING, EnumFacing.NORTH),
+                SymtechBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL).withProperty(FACING, EnumFacing.EAST),
+                SymtechBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL).withProperty(FACING, EnumFacing.WEST)
         };
     }
      */
@@ -157,7 +157,7 @@ public class MetaTileEntityGravitySeparator extends CachedPatternRecipeMapMultib
     }
 
     protected IBlockState steelRotorState() {
-        return SuSyBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL);
+        return SymtechBlocks.SEPARATOR_ROTOR.getState(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL);
     }
 
     protected static IBlockState getCasingState() {
@@ -187,7 +187,7 @@ public class MetaTileEntityGravitySeparator extends CachedPatternRecipeMapMultib
             BlockPos pos = this.getPos().add(offset);
 
             //Lots of particles, not sure how performant this is
-            Minecraft.getMinecraft().effectRenderer.addEffect(new SusyParticleDust(getWorld(),
+            Minecraft.getMinecraft().effectRenderer.addEffect(new SymtechParticleDust(getWorld(),
                     pos.getX() + rand.nextDouble(),
                     pos.getY() + .5F / 16,
                     pos.getZ() + rand.nextDouble(),

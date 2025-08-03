@@ -20,9 +20,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import symtech.api.metatileentity.PseudoMultiSteamMachineMetaTileEntity;
-import symtech.api.metatileentity.steam.SuSySteamProgressIndicators;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.metatileentity.steam.SymtechSteamProgressIndicators;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -33,7 +33,7 @@ public class MetaTileEntitySteamLatexCollector extends PseudoMultiSteamMachineMe
     private final long latexCollectionAmount;
 
     public MetaTileEntitySteamLatexCollector(ResourceLocation metaTileEntityId, boolean isHighPressure) {
-        super(metaTileEntityId, SuSyRecipeMaps.LATEX_COLLECTOR_RECIPES, SuSySteamProgressIndicators.EXTRACTION_STEAM, SusyTextures.LATEX_COLLECTOR_OVERLAY, false, isHighPressure);
+        super(metaTileEntityId, SymtechRecipeMaps.LATEX_COLLECTOR_RECIPES, SymtechSteamProgressIndicators.EXTRACTION_STEAM, SymtechTextures.LATEX_COLLECTOR_OVERLAY, false, isHighPressure);
         latexCollectionAmount = isHighPressure ? 6L : 3L;
     }
 
@@ -61,7 +61,7 @@ public class MetaTileEntitySteamLatexCollector extends PseudoMultiSteamMachineMe
     @Override
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
         super.renderMetaTileEntity(renderState, translation, pipeline);
-        SusyTextures.LATEX_COLLECTOR_OVERLAY.renderOrientedState(renderState, translation, pipeline, this.getFrontFacing(), this.isActive(), true);
+        SymtechTextures.LATEX_COLLECTOR_OVERLAY.renderOrientedState(renderState, translation, pipeline, this.getFrontFacing(), this.isActive(), true);
     }
 
     @Override
@@ -104,6 +104,6 @@ public class MetaTileEntitySteamLatexCollector extends PseudoMultiSteamMachineMe
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("susy.machine.latex_collector.tooltip", this.latexCollectionAmount));
+        tooltip.add(I18n.format("symtech.machine.latex_collector.tooltip", this.latexCollectionAmount));
     }
 }

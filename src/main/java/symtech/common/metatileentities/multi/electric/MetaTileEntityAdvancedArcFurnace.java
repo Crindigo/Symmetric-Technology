@@ -18,10 +18,10 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockElectrodeAssembly;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -29,7 +29,7 @@ import java.util.List;
 
 public class MetaTileEntityAdvancedArcFurnace extends RecipeMapMultiblockController {
     public MetaTileEntityAdvancedArcFurnace(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.ADVANCED_ARC_FURNACE);
+        super(metaTileEntityId, SymtechRecipeMaps.ADVANCED_ARC_FURNACE);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 
@@ -47,7 +47,7 @@ public class MetaTileEntityAdvancedArcFurnace extends RecipeMapMultiblockControl
                 .where('S', selfPredicate())
                 .where('A', states(MetaBlocks.METAL_CASING.getState(MetalCasingType.STEEL_SOLID)).setMinGlobalLimited(28)
                         .or(autoAbilities()))
-                .where('C', states(SuSyBlocks.ELECTRODE_ASSEMBLY.getState(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON)))
+                .where('C', states(SymtechBlocks.ELECTRODE_ASSEMBLY.getState(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON)))
                 .where('D', states(MetaBlocks.BOILER_CASING.getState((BoilerCasingType.STEEL_PIPE))))
                 .where('E', states(MetaBlocks.BOILER_FIREBOX_CASING.getState(BlockFireboxCasing.FireboxCasingType.STEEL_FIREBOX)))
                 .where(' ', any())
@@ -66,6 +66,6 @@ public class MetaTileEntityAdvancedArcFurnace extends RecipeMapMultiblockControl
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.ARC_FURNACE_OVERLAY;
+        return SymtechTextures.ARC_FURNACE_OVERLAY;
     }
 }

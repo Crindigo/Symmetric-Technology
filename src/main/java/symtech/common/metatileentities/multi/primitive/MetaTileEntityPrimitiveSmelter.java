@@ -35,9 +35,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 public class MetaTileEntityPrimitiveSmelter extends RecipeMapPrimitiveMultiblockController {
 
@@ -45,13 +45,13 @@ public class MetaTileEntityPrimitiveSmelter extends RecipeMapPrimitiveMultiblock
             bws -> GTUtility.isBlockSnow(bws.getBlockState()));
 
     public MetaTileEntityPrimitiveSmelter(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.PRIMITIVE_SMELTER);
+        super(metaTileEntityId, SymtechRecipeMaps.PRIMITIVE_SMELTER);
     }
 
     @Override
     protected void initializeAbilities() {
-        this.importItems = new ItemHandlerList(getAbilities(SuSyMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS));
-        this.exportItems = new ItemHandlerList(getAbilities(SuSyMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS));
+        this.importItems = new ItemHandlerList(getAbilities(SymtechMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS));
+        this.exportItems = new ItemHandlerList(getAbilities(SymtechMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS));
     }
 
     @Override
@@ -71,8 +71,8 @@ public class MetaTileEntityPrimitiveSmelter extends RecipeMapPrimitiveMultiblock
                 .aisle("BBB", "B#B", "B B")
                 .aisle("BBB", "BCB", "SBS")
                 .where('B', states(getCasingState()).setMinGlobalLimited(14)
-                        .or(abilities(SuSyMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS).setPreviewCount(1))
-                        .or(abilities(SuSyMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS).setPreviewCount(1)))
+                        .or(abilities(SymtechMultiblockAbilities.PRIMITIVE_IMPORT_ITEMS).setPreviewCount(1))
+                        .or(abilities(SymtechMultiblockAbilities.PRIMITIVE_EXPORT_ITEMS).setPreviewCount(1)))
                 .where('C', selfPredicate())
                 .where('S', states(ModuleCore.Blocks.MASONRY_BRICK_SLAB.getDefaultState()))
                 .where('#', air().or(SNOW_PREDICATE))
@@ -82,7 +82,7 @@ public class MetaTileEntityPrimitiveSmelter extends RecipeMapPrimitiveMultiblock
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return SusyTextures.MASONRY_BRICK;
+        return SymtechTextures.MASONRY_BRICK;
     }
 
     @Override
@@ -92,7 +92,7 @@ public class MetaTileEntityPrimitiveSmelter extends RecipeMapPrimitiveMultiblock
 
     @SideOnly(Side.CLIENT)
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.PRIMITIVE_SMELTER_OVERLAY;
+        return SymtechTextures.PRIMITIVE_SMELTER_OVERLAY;
     }
 
     @Override
@@ -105,7 +105,7 @@ public class MetaTileEntityPrimitiveSmelter extends RecipeMapPrimitiveMultiblock
             Matrix4 offset = translation.copy().translate(back.getXOffset(), 0.2, back.getZOffset());
             CubeRendererState op = Textures.RENDER_STATE.get();
             Textures.RENDER_STATE.set(new CubeRendererState(op.layer, CubeRendererState.PASS_MASK, op.world));
-            SusyTextures.SLAG_HOT.renderSided(EnumFacing.UP, renderState, offset,
+            SymtechTextures.SLAG_HOT.renderSided(EnumFacing.UP, renderState, offset,
                     ArrayUtils.addAll(pipeline, new LightMapOperation(240, 240), new ColourOperation(0xFFFFFFFF)));
             Textures.RENDER_STATE.set(op);
         }

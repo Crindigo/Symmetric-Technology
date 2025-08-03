@@ -16,7 +16,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.mixins.gregtech.MetaTileEntityDrumAccessor;
 
 public class MetaTileEntityPlasticCan extends MetaTileEntityDrum {
@@ -43,8 +43,8 @@ public class MetaTileEntityPlasticCan extends MetaTileEntityDrum {
         ColourMultiplier multiplier = new ColourMultiplier(
                 ColourRGBA.multiply(GTUtility.convertRGBtoOpaqueRGBA_CL(self.getColor()),
                         GTUtility.convertRGBtoOpaqueRGBA_CL(getPaintingColorForRendering())));
-        SusyTextures.PLASTIC_CAN.render(renderState, translation, ArrayUtils.add(pipeline, multiplier), getFrontFacing());
-        SusyTextures.PLASTIC_CAN_OVERLAY.render(renderState, translation, pipeline);
+        SymtechTextures.PLASTIC_CAN.render(renderState, translation, ArrayUtils.add(pipeline, multiplier), getFrontFacing());
+        SymtechTextures.PLASTIC_CAN_OVERLAY.render(renderState, translation, pipeline);
         if (self.isAutoOutput()) {
             Textures.STEAM_VENT_OVERLAY.renderSided(EnumFacing.DOWN, renderState, translation, pipeline);
         }

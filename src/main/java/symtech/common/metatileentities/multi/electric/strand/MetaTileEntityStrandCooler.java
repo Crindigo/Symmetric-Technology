@@ -19,10 +19,10 @@ import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.capability.Strand;
 import symtech.api.capability.StrandConversion;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.client.renderer.textures.SusyTextures;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.client.renderer.textures.SymtechTextures;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 public class MetaTileEntityStrandCooler extends MetaTileEntityStrandShaper {
     private ItemStack current;
@@ -100,7 +100,7 @@ public class MetaTileEntityStrandCooler extends MetaTileEntityStrandShaper {
                 .aisle("CCCCC", "CCICC", "CAAAC", "CCSCC")
                 .where('S', selfPredicate())
                 .where('P', states(getPipeCasingState()))
-                .where('I', abilities(SuSyMultiblockAbilities.STRAND_IMPORT))
+                .where('I', abilities(SymtechMultiblockAbilities.STRAND_IMPORT))
                 .where('O', abilities(MultiblockAbility.EXPORT_ITEMS))
                 .where('C', states(getCasingState())
                         .or(autoAbilities(true, false))
@@ -113,15 +113,15 @@ public class MetaTileEntityStrandCooler extends MetaTileEntityStrandShaper {
 
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return SusyTextures.MONEL_500_CASING;
+        return SymtechTextures.MONEL_500_CASING;
     }
 
     private IBlockState getPipeCasingState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.MONEL_500_PIPE);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.MONEL_500_PIPE);
     }
 
     private IBlockState getCasingState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.MONEL_500_CASING);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.MONEL_500_CASING);
     }
 
     @Override
@@ -131,7 +131,7 @@ public class MetaTileEntityStrandCooler extends MetaTileEntityStrandShaper {
 
     @Override
     protected @NotNull ICubeRenderer getFrontOverlay() {
-        return SusyTextures.STRAND_COOLER_OVERLAY;
+        return SymtechTextures.STRAND_COOLER_OVERLAY;
     }
 
     @Override

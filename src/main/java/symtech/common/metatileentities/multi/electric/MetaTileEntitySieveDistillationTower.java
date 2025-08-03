@@ -25,13 +25,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.metatileentity.multiblock.MetaTileEntityOrderedDT;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import java.util.List;
 
 import static gregtech.api.util.RelativeDirection.*;
-import static symtech.api.recipes.SuSyRecipeMaps.SIEVE_DISTILLATION_RECIPES;
+import static symtech.api.recipes.SymtechRecipeMaps.SIEVE_DISTILLATION_RECIPES;
 
 public class MetaTileEntitySieveDistillationTower extends MetaTileEntityOrderedDT {
 
@@ -90,7 +90,7 @@ public class MetaTileEntitySieveDistillationTower extends MetaTileEntityOrderedD
     }
 
     protected static IBlockState getSieveState() {
-        return SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.SIEVE_TRAY);
+        return SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.SIEVE_TRAY);
     }
 
     protected static IBlockState getCasingState() {

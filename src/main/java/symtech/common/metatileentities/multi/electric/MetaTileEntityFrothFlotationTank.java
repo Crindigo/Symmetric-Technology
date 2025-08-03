@@ -22,11 +22,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import symtech.api.metatileentity.multiblock.FluidRenderRecipeMapMultiBlock;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.particles.SusyParticleFrothBubble;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.particles.SymtechParticleFrothBubble;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockMultiblockTank;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -39,7 +39,7 @@ public class MetaTileEntityFrothFlotationTank extends FluidRenderRecipeMapMultiB
     private final static Vec3i PATTERN_OFFSET = new Vec3i(-1, 2, 2);
 
     public MetaTileEntityFrothFlotationTank(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.FROTH_FLOTATION, true);
+        super(metaTileEntityId, SymtechRecipeMaps.FROTH_FLOTATION, true);
     }
 
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
@@ -59,7 +59,7 @@ public class MetaTileEntityFrothFlotationTank extends FluidRenderRecipeMapMultiB
                 .where('A', states(MetaBlocks.METAL_CASING.getState(MetalCasingType.STAINLESS_CLEAN)).setMinGlobalLimited(51)
                         .or(autoAbilities(true, true, true, true, true, true, true)))
                 .where('B', states(MetaBlocks.BOILER_CASING.getState((BoilerCasingType.STEEL_PIPE))))
-                .where('D', states(SuSyBlocks.MULTIBLOCK_TANK.getState(BlockMultiblockTank.MultiblockTankType.FLOTATION)))
+                .where('D', states(SymtechBlocks.MULTIBLOCK_TANK.getState(BlockMultiblockTank.MultiblockTankType.FLOTATION)))
                 .where('E', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX)))
                 .where(' ', any())
                 .build();
@@ -87,14 +87,14 @@ public class MetaTileEntityFrothFlotationTank extends FluidRenderRecipeMapMultiB
         Random rand = getWorld().rand;
         for (Vec3i offset : cachedPattern) {
             BlockPos pos = this.getPos().add(offset);
-            Minecraft.getMinecraft().effectRenderer.addEffect(new SusyParticleFrothBubble(getWorld(), pos.getX() + rand.nextDouble(), pos.getY() + 2.5F / 16, pos.getZ() + rand.nextDouble(), 0, .005, 0, fluidColor));
+            Minecraft.getMinecraft().effectRenderer.addEffect(new SymtechParticleFrothBubble(getWorld(), pos.getX() + rand.nextDouble(), pos.getY() + 2.5F / 16, pos.getZ() + rand.nextDouble(), 0, .005, 0, fluidColor));
         }
     }
 
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.FROTH_FLOTATION_OVERLAY;
+        return SymtechTextures.FROTH_FLOTATION_OVERLAY;
     }
 
     @Override

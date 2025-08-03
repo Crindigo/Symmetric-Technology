@@ -32,11 +32,11 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.capability.impl.NoEnergyMultiblockRecipeLogic;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockSerpentine;
-import symtech.common.blocks.SuSyBlocks;
-import symtech.common.metatileentities.SuSyMetaTileEntities;
+import symtech.common.blocks.SymtechBlocks;
+import symtech.common.metatileentities.SymtechMetaTileEntities;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -54,7 +54,7 @@ public class MetaTileEntityHeatRadiator extends RecipeMapMultiblockController {
     private int area;
 
     public MetaTileEntityHeatRadiator(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.HEAT_RADIATOR_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.HEAT_RADIATOR_RECIPES);
         this.recipeMapWorkable = new ParallelableNoEnergyMultiblockRecipeLogic(this);
     }
 
@@ -215,7 +215,7 @@ public class MetaTileEntityHeatRadiator extends RecipeMapMultiblockController {
             builders.add(builder);
         }
         builders.forEach(builder -> shapeInfo.add(builder
-                        .where('S', SuSyMetaTileEntities.HEAT_RADIATOR, EnumFacing.SOUTH)
+                        .where('S', SymtechMetaTileEntities.HEAT_RADIATOR, EnumFacing.SOUTH)
                         .where('I', MetaTileEntities.FLUID_IMPORT_HATCH[GTValues.LV], EnumFacing.SOUTH)
                         .where('O', MetaTileEntities.FLUID_EXPORT_HATCH[GTValues.LV], EnumFacing.SOUTH)
                         .where('M',
@@ -288,10 +288,10 @@ public class MetaTileEntityHeatRadiator extends RecipeMapMultiblockController {
             ITextComponent componentParallelAmount = TextComponentUtil.stringWithColor(TextFormatting.DARK_PURPLE,
                     String.valueOf(this.area));
             ITextComponent componentParallelAmountBase = TextComponentUtil.translationWithColor(TextFormatting.GRAY,
-                    "susy.machine.heat_radiator.parallel",
+                    "symtech.machine.heat_radiator.parallel",
                     componentParallelAmount);
             ITextComponent componentParallelAmountHover = TextComponentUtil.translationWithColor(TextFormatting.GRAY,
-                    "susy.machine.heat_radiator.parallel_hover");
+                    "symtech.machine.heat_radiator.parallel_hover");
 
             textList.add(TextComponentUtil.setHover(componentParallelAmountBase, componentParallelAmountHover));
         }
@@ -300,8 +300,8 @@ public class MetaTileEntityHeatRadiator extends RecipeMapMultiblockController {
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("susy.multiblock.heat_radiator.tooltip.1"));
-        tooltip.add(I18n.format("susy.multiblock.heat_radiator.tooltip.2"));
+        tooltip.add(I18n.format("symtech.multiblock.heat_radiator.tooltip.1"));
+        tooltip.add(I18n.format("symtech.multiblock.heat_radiator.tooltip.2"));
     }
 
     public boolean isBlockEdge(@Nonnull World world, @Nonnull BlockPos.MutableBlockPos pos, @Nonnull EnumFacing direction) {
@@ -309,7 +309,7 @@ public class MetaTileEntityHeatRadiator extends RecipeMapMultiblockController {
     }
 
     public IBlockState getRadiatorElementState() {
-        return SuSyBlocks.SERPENTINE.getState(BlockSerpentine.SerpentineType.BASIC);
+        return SymtechBlocks.SERPENTINE.getState(BlockSerpentine.SerpentineType.BASIC);
     }
 
     public IBlockState getCasingState() {
@@ -324,7 +324,7 @@ public class MetaTileEntityHeatRadiator extends RecipeMapMultiblockController {
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.RADIATOR_OVERLAY;
+        return SymtechTextures.RADIATOR_OVERLAY;
     }
 
     private class ParallelableNoEnergyMultiblockRecipeLogic extends NoEnergyMultiblockRecipeLogic {

@@ -30,10 +30,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import symtech.api.metatileentity.multiblock.CachedPatternRecipeMapMultiblock;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class MetaTileEntityNaturalDraftCoolingTower extends CachedPatternRecipeM
     private List<BlockPos> waterPositions;
 
     public MetaTileEntityNaturalDraftCoolingTower(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.NATURAL_DRAFT_COOLING_TOWER);
+        super(metaTileEntityId, SymtechRecipeMaps.NATURAL_DRAFT_COOLING_TOWER);
     }
 
     @Override
@@ -128,7 +128,7 @@ public class MetaTileEntityNaturalDraftCoolingTower extends CachedPatternRecipeM
                 .where('C', states(MetaBlocks.STONE_BLOCKS.get(StoneVariantBlock.StoneVariant.SMOOTH).getState(StoneVariantBlock.StoneType.CONCRETE_LIGHT)))
                 .where('W', fluid(FluidRegistry.WATER))
                 .where('F', frames(Materials.Steel))
-                .where('A', states(SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.STRUCTURAL_PACKING)))
+                .where('A', states(SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.STRUCTURAL_PACKING)))
                 .where('P', states(MetaBlocks.BOILER_CASING.getState(BoilerCasingType.STEEL_PIPE)))
                 .where(' ', any())
                 .where('#', air())
@@ -140,9 +140,9 @@ public class MetaTileEntityNaturalDraftCoolingTower extends CachedPatternRecipeM
         super.addErrorText(textList);
         if (isStructureFormed() && !waterFilled) {
             textList.add(TextComponentUtil.translationWithColor(TextFormatting.RED,
-                    "susy.multiblock.natural_draft_cooling_tower.obstructed"));
+                    "symtech.multiblock.natural_draft_cooling_tower.obstructed"));
             textList.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY,
-                    "susy.multiblock.natural_draft_cooling_tower.obstructed.desc"));
+                    "symtech.multiblock.natural_draft_cooling_tower.obstructed.desc"));
         }
     }
 
@@ -162,7 +162,7 @@ public class MetaTileEntityNaturalDraftCoolingTower extends CachedPatternRecipeM
     @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.NATURAL_DRAFT_COOLING_TOWER_OVERLAY;
+        return SymtechTextures.NATURAL_DRAFT_COOLING_TOWER_OVERLAY;
     }
 
 

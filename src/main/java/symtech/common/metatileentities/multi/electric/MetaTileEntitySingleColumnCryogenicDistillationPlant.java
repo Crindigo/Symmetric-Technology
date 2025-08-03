@@ -19,9 +19,9 @@ import symtech.api.capability.impl.ExtendedDTLogicHandler;
 import symtech.api.metatileentity.multiblock.ICryogenicProvider;
 import symtech.api.metatileentity.multiblock.ICryogenicReceiver;
 import symtech.api.metatileentity.multiblock.MetaTileEntityOrderedDT;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.common.blocks.BlockSuSyMultiblockCasing;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.common.blocks.BlockSymtechMultiblockCasing;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nullable;
 
@@ -32,7 +32,7 @@ public class MetaTileEntitySingleColumnCryogenicDistillationPlant extends MetaTi
     private @Nullable ICryogenicReceiver receiver;
 
     public MetaTileEntitySingleColumnCryogenicDistillationPlant(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.SINGLE_COLUMN_CRYOGENIC_DISTILLATION);
+        super(metaTileEntityId, SymtechRecipeMaps.SINGLE_COLUMN_CRYOGENIC_DISTILLATION);
     }
 
     @Override
@@ -55,7 +55,7 @@ public class MetaTileEntitySingleColumnCryogenicDistillationPlant extends MetaTi
                         .or(abilities(MultiblockAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(2))
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
                         .or(autoAbilities(false, true, false, false, false, false, false).setExactLimit(1)))
-                .where('F', states(SuSyBlocks.MULTIBLOCK_CASING.getState(BlockSuSyMultiblockCasing.CasingType.STRUCTURAL_PACKING)))
+                .where('F', states(SymtechBlocks.MULTIBLOCK_CASING.getState(BlockSymtechMultiblockCasing.CasingType.STRUCTURAL_PACKING)))
                 .where('X', states(getCasingState())
                         .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.EXPORT_FLUIDS).stream()
                                 .filter(mte -> !(mte instanceof MetaTileEntityMultiFluidHatch))

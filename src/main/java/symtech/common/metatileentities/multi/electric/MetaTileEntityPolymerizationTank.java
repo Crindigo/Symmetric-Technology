@@ -20,8 +20,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -29,7 +29,7 @@ import java.util.List;
 
 public class MetaTileEntityPolymerizationTank extends RecipeMapMultiblockController {
     public MetaTileEntityPolymerizationTank(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.POLYMERIZATION_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.POLYMERIZATION_RECIPES);
         this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 
@@ -69,6 +69,6 @@ public class MetaTileEntityPolymerizationTank extends RecipeMapMultiblockControl
 
     @Nonnull
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.POLYMERIZATION_TANK_OVERLAY;
+        return SymtechTextures.POLYMERIZATION_TANK_OVERLAY;
     }
 }

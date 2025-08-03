@@ -20,9 +20,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.Capability;
 import symtech.api.capability.IStrandProvider;
 import symtech.api.capability.Strand;
-import symtech.api.capability.SuSyCapabilities;
-import symtech.api.metatileentity.multiblock.SuSyMultiblockAbilities;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.capability.SymtechCapabilities;
+import symtech.api.metatileentity.multiblock.SymtechMultiblockAbilities;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import java.io.IOException;
 import java.util.List;
@@ -54,8 +54,8 @@ public class MetaTileEntityStrandBus extends MetaTileEntityMultiblockPart implem
 
     @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing side) {
-        if (capability == SuSyCapabilities.STRAND_PROVIDER) {
-            return SuSyCapabilities.STRAND_PROVIDER.cast(this);
+        if (capability == SymtechCapabilities.STRAND_PROVIDER) {
+            return SymtechCapabilities.STRAND_PROVIDER.cast(this);
         }
         return super.getCapability(capability, side);
     }
@@ -94,11 +94,11 @@ public class MetaTileEntityStrandBus extends MetaTileEntityMultiblockPart implem
     }
 
     public void pushItemsIntoNearbyHandlers(EnumFacing... allowedFaces) {
-        this.transferToNearby(SuSyCapabilities.STRAND_PROVIDER, this::transferStrand, allowedFaces);
+        this.transferToNearby(SymtechCapabilities.STRAND_PROVIDER, this::transferStrand, allowedFaces);
     }
 
     public void pullItemsFromNearbyHandlers(EnumFacing... allowedFaces) {
-        this.transferToNearby(SuSyCapabilities.STRAND_PROVIDER, (thisCap, otherCap) -> this.transferStrand(otherCap, thisCap), allowedFaces);
+        this.transferToNearby(SymtechCapabilities.STRAND_PROVIDER, (thisCap, otherCap) -> this.transferStrand(otherCap, thisCap), allowedFaces);
     }
 
     public void transferStrand(IStrandProvider sender, IStrandProvider receiver) {
@@ -124,7 +124,7 @@ public class MetaTileEntityStrandBus extends MetaTileEntityMultiblockPart implem
 
     @Override
     public MultiblockAbility<IStrandProvider> getAbility() {
-        return isExport ? SuSyMultiblockAbilities.STRAND_EXPORT : SuSyMultiblockAbilities.STRAND_IMPORT;
+        return isExport ? SymtechMultiblockAbilities.STRAND_EXPORT : SymtechMultiblockAbilities.STRAND_IMPORT;
     }
 
     @Override
@@ -135,7 +135,7 @@ public class MetaTileEntityStrandBus extends MetaTileEntityMultiblockPart implem
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
         super.renderMetaTileEntity(renderState, translation, pipeline);
         if (this.shouldRenderOverlay()) {
-            SusyTextures.STRAND_BUS_OVERLAY.renderSided(this.getFrontFacing(), renderState, translation, pipeline);
+            SymtechTextures.STRAND_BUS_OVERLAY.renderSided(this.getFrontFacing(), renderState, translation, pipeline);
             SimpleOverlayRenderer overlay = this.isExport ? Textures.ITEM_HATCH_OUTPUT_OVERLAY :
                     Textures.ITEM_HATCH_INPUT_OVERLAY;
             overlay.renderSided(this.getFrontFacing(), renderState, translation, pipeline);

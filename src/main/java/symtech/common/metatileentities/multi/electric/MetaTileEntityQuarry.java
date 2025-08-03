@@ -28,8 +28,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.capability.impl.QuarryLogic;
-import symtech.api.gui.SusyGuiTextures;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.gui.SymtechGuiTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.DimensionProperty;
 
 import javax.annotation.Nonnull;
@@ -56,7 +56,7 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
     private final QuarryLogic quarryLogic;
 
     public MetaTileEntityQuarry(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.QUARRY_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.QUARRY_RECIPES);
         this.quarryLogic = new QuarryLogic(this);
     }
     @Override
@@ -135,9 +135,9 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
 
     @Override
     protected @NotNull Widget getFlexButton(int x, int y, int width, int height) {
-        return new ImageCycleButtonWidget(x, y, width, height, SusyGuiTextures.BUTTON_QUARRY_MODES, 2, () -> this.excavationMode ? 1 : 0,
+        return new ImageCycleButtonWidget(x, y, width, height, SymtechGuiTextures.BUTTON_QUARRY_MODES, 2, () -> this.excavationMode ? 1 : 0,
                 this::setExcavationMode)
-                .setTooltipHoverString(mode -> mode == 1 ? "susy.multiblock.quarry.excavation_mode" : "susy.multiblock.quarry.recipe_mode");
+                .setTooltipHoverString(mode -> mode == 1 ? "symtech.multiblock.quarry.excavation_mode" : "symtech.multiblock.quarry.recipe_mode");
     }
 
     private void setExcavationMode(int mode) {

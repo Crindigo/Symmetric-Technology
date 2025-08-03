@@ -40,11 +40,11 @@ import net.minecraftforge.fluids.IFluidTank;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.gui.SusyGuiTextures;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.gui.SymtechGuiTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 import symtech.common.blocks.BlockCoagulationTankWall;
-import symtech.common.blocks.SuSyBlocks;
+import symtech.common.blocks.SymtechBlocks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -59,8 +59,8 @@ public class MetaTileEntityCoagulationTank extends RecipeMapPrimitiveMultiblockC
     public int size;
 
     public MetaTileEntityCoagulationTank(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.COAGULATION_RECIPES);
-        this.recipeMapWorkable = new ParallelablePrimitiveMultiblockRecipeLogic(this, SuSyRecipeMaps.COAGULATION_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.COAGULATION_RECIPES);
+        this.recipeMapWorkable = new ParallelablePrimitiveMultiblockRecipeLogic(this, SymtechRecipeMaps.COAGULATION_RECIPES);
         circuitInventory = new GhostCircuitItemStackHandler(this);
         circuitInventory.addNotifiableMetaTileEntity(this);
     }
@@ -95,25 +95,25 @@ public class MetaTileEntityCoagulationTank extends RecipeMapPrimitiveMultiblockC
     }
 
     protected static IBlockState getCasingState() {
-        return SuSyBlocks.COAGULATION_TANK_WALL
+        return SymtechBlocks.COAGULATION_TANK_WALL
                 .getState(BlockCoagulationTankWall.CoagulationTankWallType.WOODEN_COAGULATION_TANK_WALL);
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, @NotNull List<String> tooltip, boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-        tooltip.add(I18n.format("susy.machine.coagulation_tank.tooltip.1"));
+        tooltip.add(I18n.format("symtech.machine.coagulation_tank.tooltip.1"));
     }
 
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        return SusyTextures.WOODEN_COAGULATION_TANK_WALL;
+        return SymtechTextures.WOODEN_COAGULATION_TANK_WALL;
     }
 
     protected ModularUI.Builder createUITemplate(EntityPlayer entityPlayer) {
         ModularUI.Builder builder = ModularUI.builder(GuiTextures.PRIMITIVE_BACKGROUND, 176,166);
         builder.label(6, 6, this.getMetaFullName());
         builder.widget(new RecipeProgressWidget(this.recipeMapWorkable::getProgressPercent, 76, 41, 20, 15,
-                GuiTextures.PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR, ProgressWidget.MoveType.HORIZONTAL, SuSyRecipeMaps.COAGULATION_RECIPES));
+                GuiTextures.PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR, ProgressWidget.MoveType.HORIZONTAL, SymtechRecipeMaps.COAGULATION_RECIPES));
 
         builder.widget((new SlotWidget(this.importItems, 0, 30, 30, true, true)
                 .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT)));
@@ -121,19 +121,19 @@ public class MetaTileEntityCoagulationTank extends RecipeMapPrimitiveMultiblockC
                 .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT)));
         builder.widget((new TankWidget(this.importFluids.getTankAt(1), 30, 48, 18, 18))
                 .setAlwaysShowFull(true)
-                .setBackgroundTexture(SusyGuiTextures.FLUID_SLOT_PRIMITIVE)
+                .setBackgroundTexture(SymtechGuiTextures.FLUID_SLOT_PRIMITIVE)
                 .setContainerClicking(true, true));
         builder.widget((new TankWidget(this.importFluids.getTankAt(0), 48, 48, 18, 18))
-                .setAlwaysShowFull(true).setBackgroundTexture(SusyGuiTextures.FLUID_SLOT_PRIMITIVE)
+                .setAlwaysShowFull(true).setBackgroundTexture(SymtechGuiTextures.FLUID_SLOT_PRIMITIVE)
                 .setContainerClicking(true, true));
         builder.widget((new SlotWidget(this.exportItems, 0, 106, 39, true, false)
                 .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT)));
 
         SlotWidget circuitSlot = new GhostCircuitSlotWidget(circuitInventory, 0, 124, 62)
-                .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT, SusyGuiTextures.INT_CIRCUIT_OVERLAY_STEAM.get(true));
+                .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT, SymtechGuiTextures.INT_CIRCUIT_OVERLAY_STEAM.get(true));
         builder.widget(getCircuitSlotTooltip(circuitSlot))
-                .widget(new ClickButtonWidget(115, 62, 9, 9, "", click -> circuitInventory.addCircuitValue(click.isShiftClick ? 5 : 1)).setShouldClientCallback(true).setButtonTexture(SusyGuiTextures.BUTTON_INT_CIRCUIT_PLUS_PRIMITIVE).setDisplayFunction(() -> circuitInventory.hasCircuitValue() && circuitInventory.getCircuitValue() < IntCircuitIngredient.CIRCUIT_MAX))
-                .widget(new ClickButtonWidget(115, 71, 9, 9, "", click -> circuitInventory.addCircuitValue(click.isShiftClick ? -5 : -1)).setShouldClientCallback(true).setButtonTexture(SusyGuiTextures.BUTTON_INT_CIRCUIT_MINUS_PRIMITIVE).setDisplayFunction(() -> circuitInventory.hasCircuitValue() && circuitInventory.getCircuitValue() > IntCircuitIngredient.CIRCUIT_MIN));
+                .widget(new ClickButtonWidget(115, 62, 9, 9, "", click -> circuitInventory.addCircuitValue(click.isShiftClick ? 5 : 1)).setShouldClientCallback(true).setButtonTexture(SymtechGuiTextures.BUTTON_INT_CIRCUIT_PLUS_PRIMITIVE).setDisplayFunction(() -> circuitInventory.hasCircuitValue() && circuitInventory.getCircuitValue() < IntCircuitIngredient.CIRCUIT_MAX))
+                .widget(new ClickButtonWidget(115, 71, 9, 9, "", click -> circuitInventory.addCircuitValue(click.isShiftClick ? -5 : -1)).setShouldClientCallback(true).setButtonTexture(SymtechGuiTextures.BUTTON_INT_CIRCUIT_MINUS_PRIMITIVE).setDisplayFunction(() -> circuitInventory.hasCircuitValue() && circuitInventory.getCircuitValue() > IntCircuitIngredient.CIRCUIT_MIN));
 
         return builder.bindPlayerInventory(entityPlayer.inventory, GuiTextures.PRIMITIVE_SLOT, 0);
     }

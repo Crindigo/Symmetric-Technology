@@ -16,8 +16,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import symtech.api.recipes.SuSyRecipeMaps;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -27,7 +27,7 @@ import static gregtech.api.recipes.logic.OverclockingLogic.standardOverclockingL
 public class MetaTileEntityPhaseSeparator extends SimpleMachineMetaTileEntity {
 
     public MetaTileEntityPhaseSeparator(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.PHASE_SEPARATOR, SusyTextures.PHASE_SEPARATOR_OVERLAY, 1, true, GTUtility.largeTankSizeFunction);
+        super(metaTileEntityId, SymtechRecipeMaps.PHASE_SEPARATOR, SymtechTextures.PHASE_SEPARATOR_OVERLAY, 1, true, GTUtility.largeTankSizeFunction);
     }
 
     @Override

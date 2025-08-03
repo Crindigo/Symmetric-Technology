@@ -31,9 +31,9 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.BiomeProperty;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -45,7 +45,7 @@ import static gregtech.api.util.RelativeDirection.RIGHT;
 public class MetaTileEntityLargeFluidPump extends RecipeMapMultiblockController {
 
     public MetaTileEntityLargeFluidPump(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.PUMPING_RECIPES);
+        super(metaTileEntityId, SymtechRecipeMaps.PUMPING_RECIPES);
         this.recipeMapWorkable = new LargePumpRecipeLogic(this);
     }
 
@@ -111,8 +111,8 @@ public class MetaTileEntityLargeFluidPump extends RecipeMapMultiblockController 
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, @NotNull List<String> tooltip, boolean advanced) {
-        tooltip.add(I18n.format("susy.machine.large_fluid_pump.tooltip.1"));
-        tooltip.add(I18n.format("susy.machine.large_fluid_pump.tooltip.2"));
+        tooltip.add(I18n.format("symtech.machine.large_fluid_pump.tooltip.1"));
+        tooltip.add(I18n.format("symtech.machine.large_fluid_pump.tooltip.2"));
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc", new Object[0]));
     }
@@ -134,14 +134,14 @@ public class MetaTileEntityLargeFluidPump extends RecipeMapMultiblockController 
         BlockPos tempPos = getPos().offset(leftSide, 4).offset(backSide);
         int yLevel = getPos().getY();
         String biome = getWorld().getBiome(tempPos).biomeName;
-        textList.add(new TextComponentTranslation("susy.large_fluid_pump.y_level", yLevel).setStyle(new Style().setColor(TextFormatting.YELLOW)));
-        textList.add(new TextComponentTranslation("susy.large_fluid_pump.biome", biome).setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        textList.add(new TextComponentTranslation("symtech.large_fluid_pump.y_level", yLevel).setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        textList.add(new TextComponentTranslation("symtech.large_fluid_pump.biome", biome).setStyle(new Style().setColor(TextFormatting.YELLOW)));
     }
 
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return SusyTextures.LARGE_FLUID_PUMP_OVERLAY;
+        return SymtechTextures.LARGE_FLUID_PUMP_OVERLAY;
     }
 
     /**

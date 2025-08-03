@@ -16,13 +16,13 @@ import symtech.modules.SymtechModules;
         moduleID = SymtechModules.MODULE_TOP,
         containerID = Symtech.MODID,
         modDependencies = Mods.Names.THE_ONE_PROBE,
-        name = "SuSy TheOneProbe Integration",
-        description = "SuSy TheOneProbe Integration Module")
+        name = "Symtech TheOneProbe Integration",
+        description = "Symtech TheOneProbe Integration Module")
 public class TheOneProbeModule extends IntegrationSubmodule {
 
     @Override
     public void init(FMLInitializationEvent event) {
-        getLogger().info("TheOneProbe found. Enabling SuSy top integration...");
+        getLogger().info("TheOneProbe found. Enabling Symtech top integration...");
         ITheOneProbe oneProbe = TheOneProbe.theOneProbeImp;
         oneProbe.registerProvider(new EvaporationPoolInfoProvider());
         oneProbe.registerProvider(new DelegatorInfoProvider());

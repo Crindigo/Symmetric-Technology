@@ -18,9 +18,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import symtech.api.metatileentity.multiblock.ICryogenicProvider;
 import symtech.api.metatileentity.multiblock.ICryogenicReceiver;
-import symtech.api.recipes.SuSyRecipeMaps;
+import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.CryogenicEnvironmentProperty;
-import symtech.client.renderer.textures.SusyTextures;
+import symtech.client.renderer.textures.SymtechTextures;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -32,7 +32,7 @@ public class MetaTileEntityBathCondenser extends SimpleMachineMetaTileEntity imp
     private @Nullable ICryogenicProvider provider;
 
     public MetaTileEntityBathCondenser(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, SuSyRecipeMaps.BATH_CONDENSER, SusyTextures.BATH_CONDENSER_OVERLAY, 1, true);
+        super(metaTileEntityId, SymtechRecipeMaps.BATH_CONDENSER, SymtechTextures.BATH_CONDENSER_OVERLAY, 1, true);
     }
 
     @Override

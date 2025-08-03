@@ -8,7 +8,7 @@ import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.recipeproperties.IRecipePropertyStorage;
 import gregtech.api.util.GTUtility;
 import org.jetbrains.annotations.NotNull;
-import symtech.api.recipes.builders.logic.SuSyOverclockingLogic;
+import symtech.api.recipes.builders.logic.SymtechOverclockingLogic;
 import symtech.api.recipes.catalysts.CatalystInfo;
 
 import java.util.function.Supplier;
@@ -50,7 +50,7 @@ public class ContinuousRecipeLogic extends CatalystRecipeLogic {
 
     protected double[] runContinuousOverclockingLogic(int recipeEUt, long maxVoltage, int duration, int amountOC) {
         if (requiredCatalystTier != CatalystInfo.NO_TIER && catalystInfo != null) {
-            return SuSyOverclockingLogic.continuousCatalystOverclockingLogic(
+            return SymtechOverclockingLogic.continuousCatalystOverclockingLogic(
                     recipeEUt,
                     maxVoltage,
                     duration,
@@ -61,7 +61,7 @@ public class ContinuousRecipeLogic extends CatalystRecipeLogic {
                     getOverclockingVoltageMultiplier()
             );
         } else {
-            return SuSyOverclockingLogic.continuousOverclockingLogic(
+            return SymtechOverclockingLogic.continuousOverclockingLogic(
                     recipeEUt,
                     maxVoltage,
                     duration,

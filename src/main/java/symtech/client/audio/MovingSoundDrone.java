@@ -3,7 +3,7 @@ package symtech.client.audio;
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.MathHelper;
-import symtech.api.sound.SusySounds;
+import symtech.api.sound.SymtechSounds;
 import symtech.common.entities.EntityDrone;
 
 public class MovingSoundDrone extends MovingSound {
@@ -12,7 +12,7 @@ public class MovingSoundDrone extends MovingSound {
     private float distance = 0.0F;
 
     public MovingSoundDrone(EntityDrone drone) {
-        super(SusySounds.DRONE_TAKEOFF, SoundCategory.NEUTRAL);
+        super(SymtechSounds.DRONE_TAKEOFF, SoundCategory.NEUTRAL);
         this.drone = drone;
         this.repeat = false;
         this.volume = 0.5F;
