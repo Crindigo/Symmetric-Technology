@@ -1,6 +1,7 @@
 package symtech.loaders.recipes;
 
 import gregtech.api.GTValues;
+import gregtech.api.items.OreDictNames;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Materials;
@@ -12,6 +13,7 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
+import symtech.common.STConfigHolder;
 import symtech.common.materials.SymtechMaterials;
 import symtech.common.metatileentities.SymtechMetaTileEntities;
 
@@ -23,6 +25,8 @@ import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS;
+import static gregtech.common.metatileentities.MetaTileEntities.*;
+import static symtech.common.item.SymtechMetaItems.PISTON_STEAM;
 import static symtech.common.item.SymtechMetaItems.PUMP_STEAM;
 import static symtech.common.metatileentities.SymtechMetaTileEntities.*;
 
@@ -45,6 +49,57 @@ public class MachineRecipes {
     }
 
     private static void initSteamMachines() {
+        if (STConfigHolder.recipe.alternateCEUSteamMachines) {
+            ModHandler.removeRecipeByName("gregtech:steam_macerator_bronze");
+            ModHandler.removeRecipeByName("gregtech:steam_extractor_bronze");
+            ModHandler.removeRecipeByName("gregtech:steam_compressor_bronze");
+            ModHandler.removeRecipeByName("gregtech:steam_hammer_bronze");
+            ModHandler.removeRecipeByName("gregtech:steam_rock_breaker_bronze");
+
+            // The only problem here is making a PBF for steel before a macerator in base CEu is a pain
+            // due to the mortar giving 4x less clay dust. So, using wrought iron instead.
+            ModHandler.addShapedRecipe("gregtech:steam_macerator_bronze",
+                    STEAM_MACERATOR_BRONZE.getStackForm(),
+                    "ZPZ", "PCP", "TPT",
+                    'Z', new UnificationEntry(toolHeadBuzzSaw, WroughtIron),
+                    'P', new UnificationEntry(pipeSmallFluid, Bronze),
+                    'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
+                    'T', PISTON_STEAM);
+
+            ModHandler.addShapedRecipe("gregtech:steam_extractor_bronze",
+                    STEAM_EXTRACTOR_BRONZE.getStackForm(),
+                    "PPP", "TCG", "PPP",
+                    'P', new UnificationEntry(pipeSmallFluid, Bronze),
+                    'T', PISTON_STEAM,
+                    'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
+                    'G', new UnificationEntry(block, Glass));
+
+            ModHandler.addShapedRecipe("gregtech:steam_compressor_bronze",
+                    STEAM_COMPRESSOR_BRONZE.getStackForm(),
+                    "PPP", "TCT", "PPP",
+                    'P', new UnificationEntry(pipeSmallFluid, Bronze),
+                    'T', PISTON_STEAM,
+                    'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL));
+
+            ModHandler.addShapedRecipe("gregtech:steam_hammer_bronze",
+                    STEAM_HAMMER_BRONZE.getStackForm(),
+                    "PTP", "PCP", "PAP",
+                    'P', new UnificationEntry(pipeSmallFluid, Bronze),
+                    'T', PISTON_STEAM,
+                    'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
+                    'A', OreDictNames.craftingAnvil);
+
+            // Susy used 2 diamonds and 1 pipe on the bottom here. This seems inconsistent, so I
+            // swapped it for 2 pipes and one steel drill head, so diamonds aren't required for steam.
+            ModHandler.addShapedRecipe("gregtech:steam_rock_breaker_bronze",
+                    STEAM_ROCK_BREAKER_BRONZE.getStackForm(),
+                    "TPT", "PCP", "PDP",
+                    'T', PISTON_STEAM,
+                    'P', new UnificationEntry(pipeSmallFluid, Bronze),
+                    'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
+                    'D', new UnificationEntry(toolHeadDrill, Steel));
+        }
+
         // Latex Collector
 
         ModHandler.addShapedRecipe("symtech:latex_extractor.bronze",

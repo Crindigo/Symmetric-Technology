@@ -14,6 +14,7 @@ import gregtech.common.blocks.BlockMachineCasing.MachineCasingType;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.util.ResourceLocation;
 import symtech.api.recipes.SymtechRecipeMaps;
+import symtech.common.STConfigHolder;
 
 import javax.annotation.Nonnull;
 
@@ -21,6 +22,9 @@ public class MetaTileEntityFermentationVat extends RecipeMapMultiblockController
 
     public MetaTileEntityFermentationVat(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, SymtechRecipeMaps.FERMENTATION_VAT_RECIPES);
+        if ( STConfigHolder.machine.fermentationTankMaxParallel > 1 ) {
+            this.recipeMapWorkable.setParallelLimit(STConfigHolder.machine.fermentationTankMaxParallel);
+        }
     }
 
     @Override
