@@ -11,9 +11,7 @@ public class SymtechModules implements IModuleContainer {
     public static final String MODULE_BDSAndM = "symtech_bdsandm_integration";
     public static final String MODULE_BAUBLES = "symtech_baubles_integration";
     public static final String MODULE_TOP = "symtech_top_integration";
-    public static final String MODULE_JEI = "symtech_jei_integration";
     public static final String MODULE_PYROTECH = "symtech_pyrotech_integration";
-    public static final String MODULE_VINTAGEFIX = "symtech_vintagefix_integration";
     public static final String MODULE_LITTLETILES = "symtech_littletiles_integration";
 
     @Override

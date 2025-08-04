@@ -14,9 +14,7 @@ public class SymtechLateMixinLoader implements ILateMixinLoader {
             "bdsandm",
             "gregtech",
             "xnet",
-            "reccomplex",
-            "fluidlogged_api",
-            "vintagefix"
+            "reccomplex"
     );
 
     @Override
