@@ -14,7 +14,6 @@ public class SymtechLateMixinLoader implements ILateMixinLoader {
             "bdsandm",
             "gregtech",
             "xnet",
-            "travelersbackpack",
             "reccomplex",
             "fluidlogged_api",
             "vintagefix"

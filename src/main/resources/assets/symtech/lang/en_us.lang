@@ -270,7 +270,6 @@ symtech.machine.heat_radiator.parallel=Maximum Parallel: %s
 symtech.machine.heat_radiator.parallel_hover=Parallel amount is determined by the amount of the tube block.
 symtech.machine.large_weapons_factory.name=Large Weapons Factory
 symtech.machine.magnetohydrodynamic_generator.name=Magnetohydrodynamic (MHD) Generator
-symtech.machine.mining_drill.name=Mining Drill
 symtech.machine.quencher.name=Quencher
 symtech.machine.railroad_engineering_station.name=Railroad Engineering Station
 symtech.machine.railroad_engineering_station.tooltip=Place Immersive Railroading Tracks in the middle to form the multiblock
@@ -809,7 +808,6 @@ recipemap.quarry.name=Excavation
 recipemap.weapons_factory.name=Weapons Factory
 recipemap.large_weapons_factory.name=Large Weapons Factory
 recipemap.railroad_engineering_station.name=Railroad Engineering Station
-recipemap.mining_drill.name=Mining Drill
 recipemap.magnetohydrodynamic_generator.name=Magnetohydrodynamic Generator
 recipemap.reaction_furnace.name=Reaction Furnace
 recipemap.pressure_swing_adsorption.name=Pressure Swing Adsorption
@@ -846,6 +844,7 @@ recipemap.low_pressure_advanced_steam_turbine.name=Low Pressure Advanced Steam T
 recipemap.high_pressure_advanced_steam_turbine.name=High Pressure Advanced Steam Turbine
 recipemap.mixer_settler.name=Mixer-Settler
 recipemap.injection_molder=Injection Molding
+recipemap.vat_fermentation.name=Fermentation Vat
 
 symtech.multiblock.primitive_mud_pump.description=The Primitive Mud Pump is a Steam Era multiblock that collects mud once per second, but only if it is in a river biome, and when the controller is between Y = 64 and Y = 80 (Inclusive). It can use a Pump, ULV, or LV Output Hatch.
 
@@ -913,6 +912,8 @@ metaitem.conveyor.steam.name=Steam Conveyor
 cover.conveyor.steam.title=Steam Conveyor Module
 metaitem.pump.steam.name=Steam Pump
 cover.pump.steam.title=Steam Pump
+metaitem.steam.motor.name=Steam Motor
+metaitem.steam.piston.name=Steam Piston
 metaitem.air_vent.name=Air Vent
 metaitem.restrictive_filter.name=Restrictive Item Filter
 metaitem.restrictive_filter.tooltip=Allows only §6one stack§7 of any type of item inside. Can replace robot arms. /n§oHere you may come, but no further.§r §7Job 38:11

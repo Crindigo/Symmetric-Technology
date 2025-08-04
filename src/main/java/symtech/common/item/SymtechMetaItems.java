@@ -25,6 +25,8 @@ public class SymtechMetaItems {
     public static MetaValueItem PUMP_STEAM;
     public static MetaValueItem AIR_VENT;
     public static MetaValueItem RESTRICTIVE_FILTER;
+    public static MetaValueItem MOTOR_STEAM;
+    public static MetaValueItem PISTON_STEAM;
 
     public static void initMetaItems() {
         metaItem = new StandardMetaItem();
@@ -58,6 +60,9 @@ public class SymtechMetaItems {
         }));
 
         RESTRICTIVE_FILTER = metaItem.addItem(6, "restrictive_filter");
+
+        MOTOR_STEAM = metaItem.addItem(7, "steam.motor");
+        PISTON_STEAM = metaItem.addItem(8, "steam.piston");
     }
 
     private static void addExtraBehaviours() {

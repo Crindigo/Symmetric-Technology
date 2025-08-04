@@ -62,8 +62,6 @@ public class MetaTileEntityLockedCrate extends MetaTileEntityCrate {
                     GTUtility.convertRGBtoOpaqueRGBA_CL(getPaintingColorForRendering()));
             Textures.METAL_CRATE.render(renderState, translation, baseColor, pipeline);
         }
-        // Always render the overlay texture on the TOP face only
-        SymtechTextures.CODE_BREACHER_OVERLAY.renderOrientedState(renderState, translation, pipeline, Cuboid6.full, EnumFacing.UP, false, false);
     }
 
     @Override

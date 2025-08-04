@@ -131,7 +131,6 @@ public class SymtechMetaTileEntities {
     public static MetaTileEntityHeatRadiator HEAT_RADIATOR;
     public static MetaTileEntityLargeWeaponsFactory LARGE_WEAPONS_FACTORY;
     public static MetaTileEntityMagnetohydrodynamicGenerator MAGNETOHYDRODYNAMIC_GENERATOR;
-    public static MetaTileEntityMiningDrill MINING_DRILL;
     public static MetaTileEntityQuarry QUARRY;
     public static MetaTileEntityGravitySeparator GRAVITY_SEPARATOR;
     public static MetaTileEntityQuencher QUENCHER;
@@ -315,7 +314,6 @@ public class SymtechMetaTileEntities {
         HEAT_RADIATOR = registerMetaTileEntity(15045, new MetaTileEntityHeatRadiator(symId("heat_radiator")));
         LARGE_WEAPONS_FACTORY = registerMetaTileEntity(15046, new MetaTileEntityLargeWeaponsFactory(symId("large_weapons_factory")));
         MAGNETOHYDRODYNAMIC_GENERATOR = registerMetaTileEntity(15047, new MetaTileEntityMagnetohydrodynamicGenerator(symId("magnetohydrodynamic_generator")));
-        MINING_DRILL = registerMetaTileEntity(15048, new MetaTileEntityMiningDrill(symId("mining_drill")));
         QUENCHER = registerMetaTileEntity(15049, new MetaTileEntityQuencher(symId("quencher")));
 
         PRIMITIVE_MUD_PUMP = registerMetaTileEntity(15051, new MetaTileEntityPrimitiveMudPump(symId("primitive_mud_pump")));

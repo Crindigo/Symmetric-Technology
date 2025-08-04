@@ -7,14 +7,21 @@ import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.PrimitiveRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
+import gregtech.api.recipes.chance.output.impl.ChancedFluidOutput;
+import gregtech.api.recipes.chance.output.impl.ChancedItemOutput;
 import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.core.sound.GTSoundEvents;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 import symtech.api.gui.SymtechGuiTextures;
 import symtech.api.recipes.builders.*;
 import symtech.common.materials.SymtechMaterials;
 
+import java.util.List;
+
 import static gregtech.api.GTValues.LV;
 import static gregtech.api.GTValues.VA;
+import static gregtech.api.recipes.RecipeMaps.FERMENTING_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 
 public class SymtechRecipeMaps {
@@ -208,15 +215,6 @@ public class SymtechRecipeMaps {
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ASSEMBLER);
 
-    public static final RecipeMap<SimpleRecipeBuilder> RAILROAD_ENGINEERING_STATION_RECIPES = new RecipeMap<>("railroad_engineering_station", 16, 1, 4, 0, new SimpleRecipeBuilder(), false)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
-            .setSound(GTSoundEvents.ASSEMBLER);
-
-    public static final RecipeMap<SimpleRecipeBuilder> MINING_DRILL_RECIPES = new RecipeMap<>("mining_drill", 1, 1, 1, 1, new SimpleRecipeBuilder(), false)
-            .setSlotOverlay(false, false, true, GuiTextures.CRUSHED_ORE_OVERLAY)
-            .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
-            .setSound(GTSoundEvents.MACERATOR);
-
     public static final RecipeMap<SimpleRecipeBuilder> GRAVITY_SEPARATOR_RECIPES = new RecipeMap<>("gravity_separator", 1, 6, 1, 3, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.VERTICAL)
             .setSlotOverlay(false, false, true, SymtechGuiTextures.ORE_CHUNK_OVERLAY)
@@ -341,12 +339,6 @@ public class SymtechRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> SCRAP_RECYCLER = new RecipeMap<>("scrap_recycler", 1, 9, 0, 0, new SimpleRecipeBuilder(), false)
             .setSound(GTSoundEvents.ASSEMBLER);
 
-    public static final RecipeMap<NoEnergyRecipeBuilder> JET_WINGPACK_FUELS = new RecipeMap<>("jet_wingpack_fuels", 0, 0, 1, 0, new NoEnergyRecipeBuilder(), false)
-            .setSlotOverlay(false, false, GuiTextures.DARK_CANISTER_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, ProgressWidget.MoveType.HORIZONTAL)
-            .setSound(GTSoundEvents.TURBINE)
-            .allowEmptyOutput();
-
     public static final RecipeMap<SimpleRecipeBuilder> HOT_ISOSTATIC_PRESS = new RecipeMap<>("hot_isostatic_press", 3, 1, 1, 0, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COMPRESSOR);
@@ -410,5 +402,21 @@ public class SymtechRecipeMaps {
                 .duration(recipeBuilder.getDuration())
                 .EUt(recipeBuilder.getEUt())
                 .buildAndRegister());
+
+        // Copy single-block fermenting recipes to the vat with a 4x speed boost.
+        // Parallel would probably be better, but could a modpack author easily turn that off?
+        // Maybe a TODO to make it a config
+        FERMENTING_RECIPES.onRecipeBuild(recipeBuilder ->
+                SymtechRecipeMaps.FERMENTATION_VAT_RECIPES.recipeBuilder()
+                        .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
+                        .fluidInputs(recipeBuilder.getFluidInputs())
+                        .outputs(recipeBuilder.getOutputs())
+                        .chancedOutputs(recipeBuilder.getChancedOutputs())
+                        .fluidOutputs(recipeBuilder.getFluidOutputs())
+                        .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
+                        .cleanroom(recipeBuilder.getCleanroom())
+                        .duration(Math.max(5, recipeBuilder.getDuration() / 4))
+                        .EUt(recipeBuilder.getEUt())
+                        .buildAndRegister());
     }
 }
