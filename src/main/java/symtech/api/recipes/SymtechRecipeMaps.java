@@ -415,7 +415,8 @@ public class SymtechRecipeMaps {
                         .fluidOutputs(recipeBuilder.getFluidOutputs())
                         .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
                         .cleanroom(recipeBuilder.getCleanroom())
-                        .duration(Math.max(5, recipeBuilder.getDuration() / 4))
+                        //.duration(Math.max(5, recipeBuilder.getDuration() / 4))
+                        .duration(recipeBuilder.getDuration())
                         .EUt(recipeBuilder.getEUt())
                         .buildAndRegister());
     }

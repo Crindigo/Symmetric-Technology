@@ -26,8 +26,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
-import static symtech.common.item.SymtechMetaItems.PISTON_STEAM;
-import static symtech.common.item.SymtechMetaItems.PUMP_STEAM;
+import static symtech.common.item.SymtechMetaItems.*;
 import static symtech.common.metatileentities.SymtechMetaTileEntities.*;
 
 public class MachineRecipes {
@@ -55,6 +54,7 @@ public class MachineRecipes {
             ModHandler.removeRecipeByName("gregtech:steam_compressor_bronze");
             ModHandler.removeRecipeByName("gregtech:steam_hammer_bronze");
             ModHandler.removeRecipeByName("gregtech:steam_rock_breaker_bronze");
+            ModHandler.removeRecipeByName("gregtech:steam_miner");
 
             // The only problem here is making a PBF for steel before a macerator in base CEu is a pain
             // due to the mortar giving 4x less clay dust. So, using wrought iron instead.
@@ -98,11 +98,22 @@ public class MachineRecipes {
                     'P', new UnificationEntry(pipeSmallFluid, Bronze),
                     'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
                     'D', new UnificationEntry(toolHeadDrill, Steel));
+
+            // Susy did not change this one either, but adding motors makes it consistent with LV+
+            // miners and a drill is better than diamonds.
+            ModHandler.addShapedRecipe("gregtech:steam_miner",
+                    STEAM_MINER.getStackForm(),
+                    "MPM", "PCP", "GDG",
+                    'M', MOTOR_STEAM,
+                    'D', new UnificationEntry(toolHeadDrill, Steel),
+                    'P', new UnificationEntry(pipeSmallFluid, Bronze),
+                    'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
+                    'G', new UnificationEntry(gearSmall, Bronze));
         }
 
         // Latex Collector
 
-        ModHandler.addShapedRecipe("symtech:latex_extractor.bronze",
+        ModHandler.addShapedRecipe("gregtech:latex_extractor.bronze",
                 STEAM_LATEX_COLLECTOR[0].getStackForm(),
                 " D ", "GRG", "PCP",
                 'D', new UnificationEntry(toolHeadDrill, Steel),
@@ -111,7 +122,7 @@ public class MachineRecipes {
                 'P', new UnificationEntry(pipeSmallFluid, Bronze),
                 'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL));
 
-        ModHandler.addShapedRecipe("symtech:latex_extractor.steel",
+        ModHandler.addShapedRecipe("gregtech:latex_extractor.steel",
                 STEAM_LATEX_COLLECTOR[1].getStackForm(),
                 "FPF", "SCS", "WWW",
                 'F', new UnificationEntry(pipeSmallFluid, Steel),
@@ -122,7 +133,7 @@ public class MachineRecipes {
 
         // Mixer
 
-        ModHandler.addShapedRecipe("symtech:mixer.bronze",
+        ModHandler.addShapedRecipe("gregtech:mixer.bronze",
                 STEAM_MIXER[0].getStackForm(),
                 "GRG", "GSG", "PCP",
                 'G', new UnificationEntry(block, Glass),
@@ -131,7 +142,7 @@ public class MachineRecipes {
                 'P', new UnificationEntry(pipeSmallFluid, Bronze),
                 'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL));
 
-        ModHandler.addShapedRecipe("symtech:mixer.steel",
+        ModHandler.addShapedRecipe("gregtech:mixer.steel",
                 STEAM_MIXER[1].getStackForm(),
                 "PSP", "WCW", "PPP",
                 'P', new UnificationEntry(pipeSmallFluid, TinAlloy),
@@ -142,7 +153,7 @@ public class MachineRecipes {
 
         // Roaster
 
-        ModHandler.addShapedRecipe("symtech:roaster.bronze",
+        ModHandler.addShapedRecipe("gregtech:roaster.bronze",
                 STEAM_ROASTER[0].getStackForm(),
                 "PRP", "PBP", "PCP",
                 'P', new UnificationEntry(pipeSmallFluid, Bronze),
@@ -150,7 +161,7 @@ public class MachineRecipes {
                 'B', new UnificationEntry(plate, Bronze),
                 'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL));
 
-        ModHandler.addShapedRecipe("symtech:roaster.steel",
+        ModHandler.addShapedRecipe("gregtech:roaster.steel",
                 STEAM_ROASTER[1].getStackForm(),
                 "WWW", "SCS", "PPP",
                 'W', new UnificationEntry(plate, WroughtIron),
@@ -160,7 +171,7 @@ public class MachineRecipes {
 
         // Vacuum Chamber
 
-        ModHandler.addShapedRecipe("symtech:vacuum_chamber.bronze",
+        ModHandler.addShapedRecipe("gregtech:vacuum_chamber.bronze",
                 STEAM_VACUUM_CHAMBER[0].getStackForm(),
                 "PPP", "UCG", "PPP",
                 'P', new UnificationEntry(pipeSmallFluid, Bronze),
@@ -168,7 +179,7 @@ public class MachineRecipes {
                 'G', new UnificationEntry(block, Glass),
                 'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL));
 
-        ModHandler.addShapedRecipe("symtech:vacuum_chamber.steel",
+        ModHandler.addShapedRecipe("gregtech:vacuum_chamber.steel",
                 STEAM_VACUUM_CHAMBER[1].getStackForm(),
                 "SPS", "PCP", "WPW",
                 'S', new UnificationEntry(plate, Steel),
@@ -178,7 +189,7 @@ public class MachineRecipes {
 
         // Vulcanizing Press
 
-        ModHandler.addShapedRecipe("symtech:vulcanizing_press.bronze",
+        ModHandler.addShapedRecipe("gregtech:vulcanizing_press.bronze",
                 STEAM_VULCANIZING_PRESS[0].getStackForm(),
                 "STS", "PLP", "PCP",
                 'S', new UnificationEntry(springSmall, Steel),
@@ -187,7 +198,7 @@ public class MachineRecipes {
                 'L', new UnificationEntry(plate, Steel),
                 'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL));
 
-        ModHandler.addShapedRecipe("symtech:vulcanizing_press.steel",
+        ModHandler.addShapedRecipe("gregtech:vulcanizing_press.steel",
                 STEAM_VULCANIZING_PRESS[1].getStackForm(),
                 "SSS", "PCP", "WWW",
                 'S', new UnificationEntry(plate, Steel),

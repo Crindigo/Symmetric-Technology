@@ -2,23 +2,22 @@ package symtech.common;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.Config.Comment;
-import net.minecraftforge.common.config.Config.Name;
 import symtech.Symtech;
 
 @Config(modid = Symtech.MODID)
 public class STConfigHolder {
 
     @Comment("Options for machines")
-    @Name("Machine Options")
     public static MachineOptions machine = new MachineOptions();
 
+    @Comment("Options for recipes")
     public static RecipeOptions recipe = new RecipeOptions();
 
     public static class MachineOptions {
 
-        @Comment({"Max parallel for the Fermentation Tank multi.", "Default: 8"})
+        @Comment({"Max parallel for the Fermentation Vat multi.", "Default: 8"})
         @Config.RangeInt(min = 1, max = 64)
-        public int fermentationTankMaxParallel = 8;
+        public int fermentationVatMaxParallel = 8;
     }
 
     public static class RecipeOptions {

@@ -22,8 +22,8 @@ public class MetaTileEntityFermentationVat extends RecipeMapMultiblockController
 
     public MetaTileEntityFermentationVat(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, SymtechRecipeMaps.FERMENTATION_VAT_RECIPES);
-        if ( STConfigHolder.machine.fermentationTankMaxParallel > 1 ) {
-            this.recipeMapWorkable.setParallelLimit(STConfigHolder.machine.fermentationTankMaxParallel);
+        if ( STConfigHolder.machine.fermentationVatMaxParallel > 1 ) {
+            this.recipeMapWorkable.setParallelLimit(STConfigHolder.machine.fermentationVatMaxParallel);
         }
     }
 
