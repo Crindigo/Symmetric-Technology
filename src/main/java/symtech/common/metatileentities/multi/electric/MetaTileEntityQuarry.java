@@ -1,6 +1,7 @@
 package symtech.common.metatileentities.multi.electric;
 
 import gregtech.api.GTValues;
+import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.gui.Widget;
 import gregtech.api.gui.widgets.ImageCycleButtonWidget;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -24,25 +25,35 @@ import it.unimi.dsi.fastutil.ints.IntLists;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import symtech.api.capability.impl.QuarryLogic;
 import symtech.api.gui.SymtechGuiTextures;
 import symtech.api.recipes.SymtechRecipeMaps;
 import symtech.api.recipes.properties.DimensionProperty;
+import symtech.api.util.Grid3D;
 
 import javax.annotation.Nonnull;
 import java.util.List;
 
 import static gregtech.api.capability.GregtechDataCodes.assignId;
 
-/** The quarry multiblock is a regular {@link RecipeMapMultiblockController}, with an additional mode similar to {@link gregtech.common.metatileentities.multi.electric.MetaTileEntityLargeMiner} that allows from breaking block in game.
+/**
+ * The quarry multiblock is a regular {@link RecipeMapMultiblockController}, with an additional mode
+ * similar to {@link gregtech.common.metatileentities.multi.electric.MetaTileEntityLargeMiner} that allows
+ * from breaking block in game.
  * For this it uses {@link QuarryLogic}
- * @author h3tR / RMI
+ * @author h3tR / RMI / Crindigo
  */
 
 public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
+
+    private static final int MAX_DIAMETER = 31;
+    private static final int MIN_DIAMETER = 15;
 
     private static final int BASE_TICKS_PER_EXCAVATION = 10;
 
@@ -54,21 +65,192 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
     private boolean excavationActive = false;
     private int excavationProgress = 0;
     private final QuarryLogic quarryLogic;
+    private int width;
+    private int depth;
 
     public MetaTileEntityQuarry(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, SymtechRecipeMaps.QUARRY_RECIPES);
         this.quarryLogic = new QuarryLogic(this);
     }
-    @Override
 
+    @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity iGregTechTileEntity) {
         return new MetaTileEntityQuarry(this.metaTileEntityId);
     }
 
     @Override
-    protected @NotNull BlockPattern createStructurePattern() {
+    public void checkStructurePattern() {
+        if (!this.isStructureFormed()) {
+            reinitializeStructurePattern();
+        }
+        super.checkStructurePattern();
+    }
 
-        return FactoryBlockPattern.start()
+    public int getWidth() {
+        return width;
+    }
+
+    public int getDepth() {
+        return depth;
+    }
+
+    public boolean updateStructureDimensions() {
+
+        World world = getWorld();
+        EnumFacing front = getFrontFacing();
+        EnumFacing back = front.getOpposite();
+        EnumFacing right = front.rotateYCCW(); /// right as if you were looking at it, not controller's left
+        EnumFacing left = right.getOpposite();
+
+        // Start looking at the min diameter
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(getPos().offset(back, MIN_DIAMETER - 1));
+
+        // Go behind the controller until it sees a frame to find the depth. Only support odd dimensions.
+        int depth = 0;
+        for (int i = MIN_DIAMETER; i <= MAX_DIAMETER; i += 2) {
+            if ( world.getBlockState(pos) == getSteelFrameState() ) {
+                depth = i;
+                break;
+            }
+            pos.move(back, 2);
+        }
+
+        if ( depth < MIN_DIAMETER ) {
+            invalidateStructure();
+            return false;
+        }
+
+        // Then take the depth divided by 2 and look to the left to find a gearbox. It is inset
+        // by one block, so the radius is that plus 1.
+        final int minRadius = MIN_DIAMETER / 2;
+        final int maxRadius = MAX_DIAMETER / 2;
+
+        pos.move(front, depth / 2); // midpoint of the quarry
+        pos.move(left, minRadius - 1); // earliest possible position
+
+        int width = 0;
+        for (int i = minRadius - 1; i <= maxRadius - 1; i++ ) {
+            if ( world.getBlockState(pos) == getGearboxState() ) {
+                width = 3 + (i * 2);
+            }
+            pos.move(left);
+        }
+
+        if ( width < MIN_DIAMETER ) {
+            invalidateStructure();
+            return false;
+        }
+
+        this.width = width;
+        this.depth = depth;
+
+        writeCustomData(GregtechDataCodes.UPDATE_STRUCTURE_SIZE, buf -> {
+            buf.writeInt(this.width);
+            buf.writeInt(this.depth);
+        });
+
+        return true;
+    }
+
+    protected static IBlockState getSteelFrameState() {
+        // Technically won't work with embedded pipes, but there's no huge reason to have them
+        // on that part of the quarry.
+        return MetaBlocks.FRAMES.get(Materials.Steel).getBlock(Materials.Steel);
+    }
+
+    protected static IBlockState getGearboxState() {
+        return MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX);
+    }
+
+    @Override
+    protected @NotNull BlockPattern createStructurePattern() {
+        if (getWorld() != null) updateStructureDimensions();
+
+        // for auto build
+        if (width < MIN_DIAMETER) {
+            width = MIN_DIAMETER;
+        }
+        if (depth < MIN_DIAMETER) {
+            depth = MIN_DIAMETER;
+        }
+
+        final var grid = new Grid3D(width, 5, depth)
+                .where('M', selfPredicate())
+                .where('A', states(getCasingState())
+                        .or(autoAbilities(true, true, true, true, false, false, false)))
+                .where('S', states(getCasingState()))
+                // this was a dupe in the original too, so gearbox overrode it
+                //.where('G', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID)))
+                .where('C', states(MetaBlocks.STONE_BLOCKS.get(StoneVariantBlock.StoneVariant.SMOOTH).getState(StoneVariantBlock.StoneType.CONCRETE_LIGHT)))
+                .where('F', frames(Materials.Steel))
+                .where('G', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX)));
+
+        // Layer 0
+        // draw a concrete rectangle on the bottom first, we'll overwrite the middle parts after
+        grid.rectXZ(0, 0, 0, width - 1, depth - 1, 'C');
+        // back has frames inset by 5
+        // draw frames for all sides like this, and we'll change mid to AFA (left), AGA (right), AAA (front)
+        grid.lineX(5, 0, -1, -6, 'F');
+
+        grid.lineX(5, 0, 0, -6, 'F');
+        grid.lineX(width / 2 - 1, 0, 0, "AAA");
+
+        grid.lineZ(0, 0, 5, -6, 'F');
+        grid.lineZ(0, 0, depth / 2 - 1, "AFA");
+        grid.lineZ(1, 0, depth / 2 - 1, "GGG");
+
+        grid.lineZ(-1, 0, 5, -6, 'F');
+        grid.lineZ(-1, 0, depth / 2 - 1, "AGA");
+        grid.lineZ(-2, 0, depth / 2 - 1, "GGG");
+
+        // Layer 1
+        // Concrete near corners
+        grid.lineX(0, 1, -1, " CC");
+        grid.lineX(-3, 1, -1, "CC ");
+        grid.lineX(0, 1, 0, " CC");
+        grid.lineX(-3, 1, 0, "CC ");
+        grid.lineZ(0, 1, -3, "CC ");
+        grid.lineZ(-1, 1, -3, "CC ");
+        grid.lineZ(0, 1, 0, " CC");
+        grid.lineZ(-1, 1, 0, " CC");
+
+        // sides and front
+        grid.lineZ(0, 1, depth / 2 - 1, "S S");
+        grid.lineZ(1, 1, depth / 2 - 1, "SGS");
+        grid.lineZ(-2, 1, depth / 2 - 1, "SGS");
+        grid.lineZ(-1, 1, depth / 2 - 1, "S S");
+        grid.lineX(width / 2 - 1, 1, 0, "AMA");
+
+        // Layer 2 and 3 just have a couple side frames. The rest are handled elsewhere.
+        grid.set(1, 2, depth / 2, 'F');
+        grid.set(-2, 2, depth / 2, 'F');
+        grid.set(1, 3, depth / 2, 'F');
+        grid.set(-2, 3, depth / 2, 'F');
+
+        // Layer 4
+        // draw the top as a rect of frames inset by 1, then replace the blocks next to the corners after
+        grid.rectXZ(4, 1, 1, width - 2, depth - 2, 'F');
+
+        // 4 "F" columns inset 1 from the corners that go from y = 0 to 4
+        grid.lineY(1, 0, -2, "FFFFF");
+        grid.lineY(-2, 0, -2, "FFFFF");
+        grid.lineY(1, 0, 1, "FFFFF");
+        grid.lineY(-2, 0, 1, "FFFFF");
+        grid.lineY(width / 2, 0, -1, "FFFFF"); // also one in the back middle
+
+        // 8 "S" columns near the corners that go from y = 0 to 4
+        grid.lineY(2, 0, -2, "SSSSS");
+        grid.lineY(-3, 0, -2, "SSSSS");
+        grid.lineY(1, 0, -3, "SSSSS");
+        grid.lineY(-2, 0, -3, "SSSSS");
+        grid.lineY(1, 0, 2, "SSSSS");
+        grid.lineY(-2, 0, 2, "SSSSS");
+        grid.lineY(2, 0, 1, "SSSSS");
+        grid.lineY(-3, 0, 1, "SSSSS");
+
+        return grid.build();
+
+        /*return FactoryBlockPattern.start()
                 .aisle("CCCCCFFFFFCCCCC", " CC    F    CC ", "       F       ", "       F       ", "       F       ")
                 .aisle("CFS         SFC", "CFS         SFC", " FS         SF ", " FS         SF ", " FSFFFFFFFFFSF ")
                 .aisle("CS           SC", "CS           SC", " S           S ", " S           S ", " S           S ")
@@ -92,7 +274,7 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
                 .where('C', states(MetaBlocks.STONE_BLOCKS.get(StoneVariantBlock.StoneVariant.SMOOTH).getState(StoneVariantBlock.StoneType.CONCRETE_LIGHT)))
                 .where('F', frames(Materials.Steel))
                 .where('G', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX)))
-                .build();
+                .build();*/
     }
 
 
@@ -214,6 +396,8 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
         this.excavationMode = data.getBoolean("excavationMode");
         this.excavationProgress = data.getInteger("excavationProgress");
         this.excavationActive = data.getBoolean("excavationActive");
+        this.width = data.hasKey("width") ? data.getInteger("width") : this.width;
+        this.depth = data.hasKey("depth") ? data.getInteger("depth") : this.depth;
         this.isInitialized = true;
     }
 
@@ -223,13 +407,20 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
         data.setBoolean("excavationMode", this.excavationMode);
         data.setInteger("excavationProgress", this.excavationProgress);
         data.setBoolean("excavationActive", this.excavationActive);
+        data.setInteger("width", this.width);
+        data.setInteger("depth", this.depth);
         return super.writeToNBT(data);
     }
 
     @Override
     public void receiveCustomData(int dataId, PacketBuffer buf) {
-        if (dataId == QUARRY_EXCAVATION_ACTIVE)
+        if (dataId == QUARRY_EXCAVATION_ACTIVE) {
             excavationActive = buf.readBoolean();
+        }
+        if (dataId == GregtechDataCodes.UPDATE_STRUCTURE_SIZE) {
+            this.width = buf.readInt();
+            this.depth = buf.readInt();
+        }
         super.receiveCustomData(dataId, buf);
     }
 
@@ -237,6 +428,8 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
     public void writeInitialSyncData(PacketBuffer buf) {
         buf.writeBoolean(excavationActive);
         buf.writeBoolean(excavationMode);
+        buf.writeInt(width);
+        buf.writeInt(depth);
         super.writeInitialSyncData(buf);
     }
 
@@ -244,6 +437,8 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
     public void receiveInitialSyncData(PacketBuffer buf) {
         excavationActive = buf.readBoolean();
         excavationMode = buf.readBoolean();
+        width = buf.readInt();
+        depth = buf.readInt();
         super.receiveInitialSyncData(buf);
     }
 
