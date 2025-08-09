@@ -224,7 +224,7 @@ public class Grid3D
         // characters in string are front-to-back (z direction)
         // strings in aisle() are bottom-to-top (y direction)
         // each aisle() call goes from left-to-right (x direction)
-        var pattern = FactoryBlockPattern.start(RelativeDirection.FRONT, RelativeDirection.UP, RelativeDirection.LEFT);
+        var pattern = FactoryBlockPattern.start(RelativeDirection.FRONT, RelativeDirection.UP, RelativeDirection.RIGHT);
         for ( int x = 0; x < grid.length; x++ ) {
             String[] yzPlane = new String[grid[x].length];
             for ( int y = 0; y < grid[x].length; y++ ) {

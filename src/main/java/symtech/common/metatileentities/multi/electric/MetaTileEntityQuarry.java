@@ -190,18 +190,26 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
         grid.rectXZ(0, 0, 0, width - 1, depth - 1, 'C');
         // back has frames inset by 5
         // draw frames for all sides like this, and we'll change mid to AFA (left), AGA (right), AAA (front)
-        grid.lineX(5, 0, -1, -6, 'F');
 
-        grid.lineX(5, 0, 0, -6, 'F');
-        grid.lineX(width / 2 - 1, 0, 0, "AAA");
+        // This code extends the quarry with concrete by painting over the middle 5 blocks on each side.
+        grid.lineX(width / 2 - 2, 0, -1, "FFFFF"); // back
+        grid.lineX(width / 2 - 2, 0, 0, "FAAAF"); // front
+        grid.lineZ(0, 0, depth / 2 - 2, "FAFAF"); // left
+        grid.lineZ(-1, 0, depth / 2 - 2, "FAGAF"); // right
 
-        grid.lineZ(0, 0, 5, -6, 'F');
-        grid.lineZ(0, 0, depth / 2 - 1, "AFA");
-        grid.lineZ(1, 0, depth / 2 - 1, "GGG");
+        // This code extends the quarry with steel frames by painting between 5 and -6 on each side.
+//        grid.lineX(5, 0, -1, -6, 'F'); // back
+//        grid.lineX(5, 0, 0, -6, 'F'); // front
+//        grid.lineZ(0, 0, 5, -6, 'F'); // left
+//        grid.lineZ(-1, 0, 5, -6, 'F'); // right
+//
+//        grid.lineX(width / 2 - 1, 0, 0, "AAA"); // front
+//        grid.lineZ(0, 0, depth / 2 - 1, "AFA"); // left
+//        grid.lineZ(-1, 0, depth / 2 - 1, "AGA"); // right
 
-        grid.lineZ(-1, 0, 5, -6, 'F');
-        grid.lineZ(-1, 0, depth / 2 - 1, "AGA");
-        grid.lineZ(-2, 0, depth / 2 - 1, "GGG");
+        // inset gearboxes
+        grid.lineZ(1, 0, depth / 2 - 1, "GGG"); // left + 1
+        grid.lineZ(-2, 0, depth / 2 - 1, "GGG"); // right - 1
 
         // Layer 1
         // Concrete near corners
