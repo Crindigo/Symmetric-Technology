@@ -40,10 +40,10 @@ jobs:
           generate_release_notes: true
           fail_on_unmatched_files: true
 
-      - name: Publish to Curseforge
-        env:
-          CURSEFORGE_API_KEY: "${{ secrets.CURSEFORGE_API_KEY }}"
-          CURSEFORGE_PROJECT_ID: "846224"
-          CHANGELOG_LOCATION: "${{ env.CHANGELOG_LOCATION }}"
-          RELEASE_TYPE: "${{ env.RELEASE_TYPE }}"
-        run: ./gradlew curseforge --warning-mode all --build-cache
+#      - name: Publish to Curseforge
+#        env:
+#          CURSEFORGE_API_KEY: "${{ secrets.CURSEFORGE_API_KEY }}"
+#          CURSEFORGE_PROJECT_ID: ""
+#          CHANGELOG_LOCATION: "${{ env.CHANGELOG_LOCATION }}"
+#          RELEASE_TYPE: "${{ env.RELEASE_TYPE }}"
+#        run: ./gradlew curseforge --warning-mode all --build-cache
