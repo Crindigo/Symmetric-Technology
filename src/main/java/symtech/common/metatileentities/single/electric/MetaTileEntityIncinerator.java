@@ -14,7 +14,6 @@ import gregtech.api.gui.widgets.SlotWidget;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.TieredMetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
-import gregtechfoodoption.utils.GTFOUtils;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,6 +32,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -97,7 +97,7 @@ public class MetaTileEntityIncinerator extends TieredMetaTileEntity implements I
         }
         if (!isClogged && isWorkingEnabled && !this.getWorld().isRemote && (hasItems || this.notifiedItemInputList != null)) {
             this.hasItems = true;
-            int startSlot = GTFOUtils.getFirstUnemptyItemSlot(this.importItems, 0);
+            int startSlot = getFirstUnemptyItemSlot(this.importItems, 0);
             if (startSlot == -1) {
                 this.hasItems = false;
                 progress = 0;
@@ -111,7 +111,7 @@ public class MetaTileEntityIncinerator extends TieredMetaTileEntity implements I
                     int remainingVoids = itemsPerRun;
                     while (remainingVoids > 0) {
                         remainingVoids -= this.importItems.extractItem(startSlot, remainingVoids, false).getCount();
-                        startSlot = GTFOUtils.getFirstUnemptyItemSlot(this.importItems, 0);
+                        startSlot = getFirstUnemptyItemSlot(this.importItems, 0);
                         if (startSlot == -1)
                             break;
                     }
@@ -122,6 +122,29 @@ public class MetaTileEntityIncinerator extends TieredMetaTileEntity implements I
                     setCanProgress(false);
             }
         }
+    }
+
+    /**
+     * Copied from GregTech Food Option since the entire mod was required for this one function.
+     *
+     * @param handler
+     * @param startSlot
+     * @return
+     */
+    public static int getFirstUnemptyItemSlot(IItemHandler handler, int startSlot) {
+        for (int i = startSlot; i < handler.getSlots(); ++i) {
+            if (!handler.getStackInSlot(i).isEmpty()) {
+                return i;
+            }
+        }
+
+        for (int i = 0; i < startSlot; ++i) {
+            if (!handler.getStackInSlot(i).isEmpty()) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
     public void checkClogged() {
