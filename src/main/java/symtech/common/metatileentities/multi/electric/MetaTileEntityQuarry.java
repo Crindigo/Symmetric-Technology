@@ -10,19 +10,21 @@ import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockDisplayText;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
-import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockTurbineCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.StoneVariantBlock;
 import it.unimi.dsi.fastutil.ints.IntLists;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.EnumFacing;
@@ -312,13 +314,17 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
         if(!this.isInitialized)
             quarryLogic.init();
         this.isInitialized = true;
+
+        final int area = (width + 1) * (depth + 1); // 256 - 1024
+        final int parallels = area / 32; // 8 - 32
+        this.recipeMapWorkable.setParallelLimit(parallels);
     }
 
 
     @Override
     public boolean checkRecipe(@NotNull Recipe recipe, boolean consumeIfSuccess) {
         for (int dimension : recipe.getProperty(DimensionProperty.getInstance(), IntLists.EMPTY_LIST))
-            if (dimension == this.getWorld().provider.getDimension())
+            if (dimension == DimensionProperty.ANY_DIMENSION || dimension == this.getWorld().provider.getDimension())
                 return super.checkRecipe(recipe, consumeIfSuccess);
         return false;
     }
@@ -396,6 +402,14 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
         return false;
     }
 
+    @Override
+    public void addInformation(ItemStack stack, World player, @NotNull List<String> tooltip, boolean advanced) {
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(I18n.format("symtech.machine.quarry.tooltip.info", MAX_DIAMETER, MIN_DIAMETER));
+        if (TooltipHelper.isShiftDown()) {
+            tooltip.add(I18n.format("symtech.machine.quarry.tooltip.structure_info", MAX_DIAMETER, MIN_DIAMETER));
+        }
+    }
 
     @Override
     public void readFromNBT(NBTTagCompound data) {

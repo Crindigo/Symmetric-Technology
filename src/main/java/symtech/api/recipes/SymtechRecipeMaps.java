@@ -15,14 +15,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import symtech.api.gui.SymtechGuiTextures;
 import symtech.api.recipes.builders.*;
+import symtech.api.recipes.properties.DimensionProperty;
 import symtech.common.materials.SymtechMaterials;
 
 import java.util.List;
 
 import static gregtech.api.GTValues.LV;
 import static gregtech.api.GTValues.VA;
-import static gregtech.api.recipes.RecipeMaps.FERMENTING_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 
 public class SymtechRecipeMaps {
 
@@ -300,7 +300,7 @@ public class SymtechRecipeMaps {
             .setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.MINER);
 
-    public static final RecipeMap<DimensionRecipeBuilder> DRONE_PAD = new RecipeMap<>("drone_pad", 4, 9, 0, 0, new DimensionRecipeBuilder(), false);
+    public static final RecipeMap<DimensionRecipeBuilder> DRONE_PAD = new RecipeMap<>("drone_pad", 4, 9, 0, 0, new DimensionRecipeBuilder().minimumDuration(800), false);
 
     public static final RecipeMap<SimpleRecipeBuilder> BLENDER_RECIPES = new RecipeMap<>("blender", 9, 1, 6, 2, new SimpleRecipeBuilder().EUt(VA[LV]), false)
             .setSlotOverlay(false, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
@@ -403,9 +403,7 @@ public class SymtechRecipeMaps {
                 .EUt(recipeBuilder.getEUt())
                 .buildAndRegister());
 
-        // Copy single-block fermenting recipes to the vat with a 4x speed boost.
-        // Parallel would probably be better, but could a modpack author easily turn that off?
-        // Maybe a TODO to make it a config
+        // Copy single-block fermenting recipes to the vat
         FERMENTING_RECIPES.onRecipeBuild(recipeBuilder ->
                 SymtechRecipeMaps.FERMENTATION_VAT_RECIPES.recipeBuilder()
                         .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
@@ -415,9 +413,23 @@ public class SymtechRecipeMaps {
                         .fluidOutputs(recipeBuilder.getFluidOutputs())
                         .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
                         .cleanroom(recipeBuilder.getCleanroom())
-                        //.duration(Math.max(5, recipeBuilder.getDuration() / 4))
                         .duration(recipeBuilder.getDuration())
                         .EUt(recipeBuilder.getEUt())
+                        .buildAndRegister());
+
+        // Copy rock breaker recipes to the quarry
+        ROCK_BREAKER_RECIPES.onRecipeBuild(recipeBuilder ->
+                SymtechRecipeMaps.QUARRY_RECIPES.recipeBuilder()
+                        .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
+                        .fluidInputs(recipeBuilder.getFluidInputs())
+                        .outputs(recipeBuilder.getOutputs())
+                        .chancedOutputs(recipeBuilder.getChancedOutputs())
+                        .fluidOutputs(recipeBuilder.getFluidOutputs())
+                        .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
+                        .cleanroom(recipeBuilder.getCleanroom())
+                        .duration(recipeBuilder.getDuration())
+                        .EUt(recipeBuilder.getEUt())
+                        .dimension(DimensionProperty.ANY_DIMENSION)
                         .buildAndRegister());
     }
 }

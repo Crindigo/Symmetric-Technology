@@ -990,69 +990,13 @@ symtech.weather_resistance=§2Will not explode from water, lava, fire or rain.
 symtech.large_fluid_pump.y_level=Current Controller Y level: Y=%s
 symtech.large_fluid_pump.biome=Current bottom Pipe Casing biome: %s
 
-# Stock Interfaces
-symtech.machine.stock_controller.name=Locomotive Controller
-symtech.stock_interfaces.locomotive_controller.description=Controls nearby locomotives thrust and break depending on redstone input
-
-symtech.machine.stock_detector.name=Stock Detector
-symtech.stock_interfaces.stock_detector.description=Detects nearby stock and outputs redstone signal
-
-symtech.machine.stock_fluid_exchanger.name=Fluid Exchanger
-symtech.stock_interfaces.fluid_exchanger.description=Transfers fluid in and out of nearby stock
-
-symtech.machine.stock_item_exchanger.name=Item Exchanger
-symtech.stock_interfaces.item_exchanger.description=Transfers items in and out of nearby stock
-
-symtech.machine.stock_content_reader.name=Stock Reader
-symtech.stock_interfaces.stock_reader.description=Outputs redstone signal based on the inventory/tank of the stock in front of it
-
-symtech.gui.stock_interactor.button.stock_filter.tooltip=Click to open stock filter GUI
-symtech.gui.stock_interactor.button.controller_setting.tooltip=Click to open controller settings GUI
-symtech.gui.stock_interactor.button.render_bounding_box.tooltip=Click to toggle rendering of interaction area
-symtech.gui.stock_interactor.button.highlight_selected_stock.tooltip=Click to toggle highlighting of selected stock
-
-symtech.gui.stock_interactor.title.highlight_selected_stock=Highlight selected stock
-symtech.gui.stock_interactor.title.render_bounding_box=Render Interaction Area
-symtech.gui.stock_interactor.title.stock_filter=Stock Filter
-symtech.gui.stock_interactor.title.controller_setting=Settings
-
-symtech.gui.stock_interactor.stock_filter.enabled.tooltip=Toggle filter
-symtech.gui.stock_interactor.stock_filter.enabled.title=Toggle
-symtech.gui.stock_interactor.stock_filter.regex.tooltip.info=§bAccepts regex expressions, case sensitive\n§6^§r for start of string\n§6$§r for end of string\n§6*§r for wildcard (i.e. 0 or more characters)\n§6a*§r for zero or more consecutive `a` characters\n§6?§r for any 1 character\n§6()§r for matching empty entry\n§bYou can learn more about regex at regex101.com§r
-symtech.gui.stock_interactor.stock_filter.regex.tooltip.error=§4Error compiling regex pattern!§r\nName filter will not get applied!
-symtech.gui.stock_interactor.stock_filter.regex.tooltip.waiting=No regex pattern set\nName filter will not get applied!
-symtech.gui.stock_interactor.stock_filter.regex.tooltip.success=§aRegex compiled successfully!§r\nName filter will get applied!
-
-symtech.gui.stock_interactor.controller_setting.button.control_active.tooltip=Click to toggle whether to control locomotives when the controller is powered by redstone
-symtech.gui.stock_interactor.controller_setting.button.control_inactive.tooltip=Click to toggle whether to control locomotives when the controller is not powered by redstone
-
-symtech.gui.stock_interactor.controller_setting.active_brake.tooltip=Brake (Powered)
-symtech.gui.stock_interactor.controller_setting.active_throttle.tooltip=Throttle (Powered)
-symtech.gui.stock_interactor.controller_setting.inactive_brake.tooltip=Brake (Unpowered)
-symtech.gui.stock_interactor.controller_setting.inactive_throttle.tooltip=Throttle (Unpowered)
-
 # Extra recipe info
 symtech.recipe.dimensions=Dimensions: %s
+symtech.recipe.dimensions.all=All
 symtech.recipe.biomes=Biomes: %s
 symtech.recipe.biomes_blocked=Blocked Biomes: %s
 symtech.recipe.biomeTypes=BiomeTypes: %s
 symtech.recipe.biomeTypes_blocked=Blocked BiomeTypes: %s
-
-# Commands
-symtech.command.horde.usage=/mobHorde <start/stop/status>
-symtech.command.horde.start.usage=/mobHorde start <name>
-symtech.command.horde.start.argument_required=Use /mobHorde start <name>.
-symtech.command.horde.start.no_such_horde=No such horde %s exists.
-symtech.command.horde.start.unable_to_run=The %s horde can't be executed. This may be due to dimensional restrictions, daylight, etc.
-symtech.command.horde.start.error_executing_horde=Horde mobs were not spawned correctly.
-symtech.command.horde.start.has_active_invasion=You already have an active %s invasion.
-symtech.command.horde.start.started=Successfully started %s invasion.
-symtech.command.horde.stop.usage=/mobHorde stop
-symtech.command.horde.stop.has_active_no_invasion=No active invasion to stop.
-symtech.command.horde.stop.stopped=Successfully stopped %s invasion.
-symtech.command.horde.status.usage=/mobHorde status <player>
-symtech.command.horde.status.has_active_invasion=Player %s has an active %s invasion for %d ticks. It will time out in %s ticks.
-symtech.command.horde.status.no_active_invasion=Player %s has no active invasion.
 
 # Fluid Tooltips
 symtech.fluid.voiding.liquid=Voidable with Dumper
@@ -1062,6 +1006,8 @@ symtech.fluid.voiding.flammable=Voidable with Flare Stack
 # Quarry Modes
 symtech.multiblock.quarry.excavation_mode=Excavation Mode
 symtech.multiblock.quarry.recipe_mode=Recipe Mode
+symtech.machine.quarry.tooltip.info=Max square of %1$sx%1$s, minimum %2$sx%2$s. Hold shift for more details.
+symtech.machine.quarry.tooltip.structure_info=Quarries can be formed with any odd dimensions ranging from %2$sx%2$s to %1$sx%1$s, even if it is non-square. Extend the bottom layer of concrete blocks on the corners, so a 23-wide quarry will have 9 concrete per side, and 5 inside blocks. Recipe mode parallels from 8-32 depending on size.
 
 death.attack.toxic_atmo=%s's lungs were shredded
 death.attack.suffocation=%s couldn't breathe

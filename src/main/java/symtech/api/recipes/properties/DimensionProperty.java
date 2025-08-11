@@ -13,6 +13,8 @@ public class DimensionProperty extends RecipeProperty<IntList> {
 
     public static final String KEY = "dimension";
 
+    public static final int ANY_DIMENSION = Integer.MIN_VALUE;
+
     private static DimensionProperty INSTANCE;
 
     private DimensionProperty() {
@@ -32,6 +34,9 @@ public class DimensionProperty extends RecipeProperty<IntList> {
     }
 
     private static String getDimensionsForRecipe(IntList value) {
+        if ( value.contains(ANY_DIMENSION) ) {
+            return I18n.format("symtech.recipe.dimensions.all");
+        }
         Map<Integer, String> dimNames = WorldGenRegistry.getNamedDimensions();
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < value.size(); i++) {
