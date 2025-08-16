@@ -14,7 +14,7 @@ import symtech.common.network.SPacketRemoveFluidState;
         moduleID = SymtechModules.MODULE_CORE,
         containerID = Symtech.MODID,
         name = "Symtech Core",
-        description = "Core module of Symtech Core, so this should be called Symtech Core Core ngl.",
+        description = "Core module of Symtech",
         coreModule = true)
 public class SymtechCoreModule implements IGregTechModule {
 

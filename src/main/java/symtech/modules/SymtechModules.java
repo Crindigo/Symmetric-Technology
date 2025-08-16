@@ -13,6 +13,7 @@ public class SymtechModules implements IModuleContainer {
     public static final String MODULE_TOP = "symtech_top_integration";
     public static final String MODULE_PYROTECH = "symtech_pyrotech_integration";
     public static final String MODULE_LITTLETILES = "symtech_littletiles_integration";
+    public static final String MODULE_SUPERCRITICAL = "symtech_supercritical_integration";
 
     @Override
     public String getID() {

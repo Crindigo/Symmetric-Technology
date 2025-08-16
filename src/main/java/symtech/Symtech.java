@@ -23,7 +23,9 @@ import symtech.common.item.SymtechMetaItems;
 import symtech.common.metatileentities.SymtechMetaTileEntities;
 
 @Mod(name = Symtech.NAME, modid = Symtech.MODID, version = Tags.VERSION,
-        dependencies = GTInternalTags.DEP_VERSION_STRING + ";required-after:gcym")
+        dependencies = GTInternalTags.DEP_VERSION_STRING + ";" +
+                "required-after:gcym;" +
+                "required-after:modularui@[2.5.0-rc5,)")
 public class Symtech {
 
     public static final String NAME = "Symmetric Technology";

@@ -309,7 +309,10 @@ public class SymtechMetaTileEntities {
         //mbd stuff
         ORE_SORTER = registerMetaTileEntity(15040, new MetaTileEntityOreSorter(symId("ore_sorter")));
         CONDENSER = registerMetaTileEntity(15041, new MetaTileEntityCondenser(symId("condenser")));
-        NATURAL_DRAFT_COOLING_TOWER = registerMetaTileEntity(15042, new MetaTileEntityNaturalDraftCoolingTower(symId("natural_draft_cooling_tower")));
+
+        // This has been moved to SupercriticalModule.
+        //NATURAL_DRAFT_COOLING_TOWER = registerMetaTileEntity(15042, new MetaTileEntityNaturalDraftCoolingTower(symId("natural_draft_cooling_tower")));
+
         HEAT_EXCHANGER = registerMetaTileEntity(15044, new MetaTileEntityHeatExchanger(symId("heat_exchanger")));
         HEAT_RADIATOR = registerMetaTileEntity(15045, new MetaTileEntityHeatRadiator(symId("heat_radiator")));
         LARGE_WEAPONS_FACTORY = registerMetaTileEntity(15046, new MetaTileEntityLargeWeaponsFactory(symId("large_weapons_factory")));
