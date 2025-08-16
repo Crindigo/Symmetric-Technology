@@ -9,13 +9,14 @@ import symtech.api.util.SymtechUtility;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static symtech.api.util.SymtechUtility.symId;
 import static symtech.common.materials.SymtechMaterials.*;
 
 public class SymtechFirstDegreeMaterials {
 
     public static void init() {
 
-        ManganeseIronArsenicPhosphide = new Material.Builder(27100, SymtechUtility.symId("manganese_iron_arsenic_phosphide"))
+        ManganeseIronArsenicPhosphide = new Material.Builder(27100, symId("manganese_iron_arsenic_phosphide"))
                 .ingot()
                 .color(0x03FCF0).iconSet(MaterialIconSet.METALLIC)
                 .cableProperties(GTValues.V[4], 2, 4)
@@ -23,7 +24,7 @@ public class SymtechFirstDegreeMaterials {
                 .blastTemp(2100, BlastProperty.GasTier.LOW)
                 .build();
 
-        PraseodymiumNickel = new Material.Builder(27101, SymtechUtility.symId("praseodymium_nickel"))
+        PraseodymiumNickel = new Material.Builder(27101, symId("praseodymium_nickel"))
                 .ingot()
                 .color(0x03BAFC).iconSet(MaterialIconSet.METALLIC)
                 .cableProperties(GTValues.V[4], 2, 4)
@@ -31,7 +32,7 @@ public class SymtechFirstDegreeMaterials {
                 .blastTemp(2100, BlastProperty.GasTier.MID)
                 .build();
 
-        GadoliniumSiliconGermanium = new Material.Builder(27102, SymtechUtility.symId("gadolinium_silicon_germanium"))
+        GadoliniumSiliconGermanium = new Material.Builder(27102, symId("gadolinium_silicon_germanium"))
                 .ingot()
                 .color(0x0388FC).iconSet(MaterialIconSet.SHINY)
                 .cableProperties(GTValues.V[4], 2, 4)
@@ -41,7 +42,7 @@ public class SymtechFirstDegreeMaterials {
 
         //Minerals
 
-        Anorthite = new Material.Builder(27103, SymtechUtility.symId("anorthite"))
+        Anorthite = new Material.Builder(27103, symId("anorthite"))
                 .dust()
                 .gem()
                 .color(0x595853).iconSet(CERTUS)
@@ -51,7 +52,7 @@ public class SymtechFirstDegreeMaterials {
                 .setFormula("Ca(Al2Si2O8)", true);
 
 
-        Albite = new Material.Builder(27104, SymtechUtility.symId("albite"))
+        Albite = new Material.Builder(27104, symId("albite"))
                 .dust()
                 .gem()
                 .color(0xc4a997).iconSet(CERTUS)
@@ -60,7 +61,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("Na(AlSi3O8)", true);
 
-        Oligoclase = new Material.Builder(27105, SymtechUtility.symId("oligoclase"))
+        Oligoclase = new Material.Builder(27105, symId("oligoclase"))
                 .dust()
                 .gem()
                 .color(0xd5c4b8).iconSet(CERTUS)
@@ -69,7 +70,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("(Na,Ca)(Si,Al)4O8", true);
 
-        Andesine = new Material.Builder(27106, SymtechUtility.symId("andesine"))
+        Andesine = new Material.Builder(27106, symId("andesine"))
                 .dust()
                 .gem()
                 .color(0xe18e6f).iconSet(EMERALD)
@@ -78,7 +79,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("(Na,Ca)(Si,Al)4O8", true);
 
-        Labradorite = new Material.Builder(27107, SymtechUtility.symId("labradorite"))
+        Labradorite = new Material.Builder(27107, symId("labradorite"))
                 .dust()
                 .gem()
                 .color(0x5c7181).iconSet(RUBY)
@@ -87,7 +88,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("(Na,Ca)(Si,Al)4O8", true);
 
-        Bytownite = new Material.Builder(27108, SymtechUtility.symId("bytownite"))
+        Bytownite = new Material.Builder(27108, symId("bytownite"))
                 .dust()
                 .gem()
                 .color(0xc99c67).iconSet(LAPIS)
@@ -96,7 +97,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("(Na,Ca)(Si,Al)4O8", true);
 
-        Clinochlore = new Material.Builder(27109, SymtechUtility.symId("chlinochlore"))
+        Clinochlore = new Material.Builder(27109, symId("chlinochlore"))
                 .dust()
                 .gem()
                 .color(0x303e38).iconSet(EMERALD)
@@ -105,7 +106,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("(Mg5Al)(AlSi3)O10(OH)8", true);
 
-        Augite = new Material.Builder(27110, SymtechUtility.symId("augite"))
+        Augite = new Material.Builder(27110, symId("augite"))
                 .dust()
                 .color(0x1b1717).iconSet(ROUGH)
                 .flags(NO_SMASHING, DECOMPOSITION_BY_ELECTROLYZING)
@@ -114,7 +115,7 @@ public class SymtechFirstDegreeMaterials {
                 .setFormula("(Ca2MgFe)(MgFe)2(Si2O6)4", true);
 
 
-        Dolomite = new Material.Builder(27111, SymtechUtility.symId("dolomite"))
+        Dolomite = new Material.Builder(27111, symId("dolomite"))
                 .dust()
                 .color(0xbbb8b2)
                 .flags(NO_SMASHING, DECOMPOSITION_BY_ELECTROLYZING)
@@ -122,7 +123,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("CaMg(CO3)2", true);
 
-        Muscovite = new Material.Builder(27112, SymtechUtility.symId("muscovite"))
+        Muscovite = new Material.Builder(27112, symId("muscovite"))
                 .dust()
                 .color(0x8b876a)
                 .flags(NO_SMASHING, DECOMPOSITION_BY_ELECTROLYZING)
@@ -130,7 +131,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("KAl2(AlSi3O10)(OH)2)", true);
 
-        Fluorite = new Material.Builder(27113, SymtechUtility.symId("fluorite"))
+        Fluorite = new Material.Builder(27113, symId("fluorite"))
                 .dust()
                 .gem()
                 .ore()
@@ -139,7 +140,7 @@ public class SymtechFirstDegreeMaterials {
                 .components(Calcium, 1, Fluorine, 2)
                 .build();
 
-        Forsterite = new Material.Builder(27114, SymtechUtility.symId("forsterite"))
+        Forsterite = new Material.Builder(27114, symId("forsterite"))
                 .dust()
                 .gem()
                 .color(0x1d640f).iconSet(LAPIS)
@@ -148,12 +149,33 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("Mg2(SiO4)",true);
 
-        Lizardite = new Material.Builder(27115, SymtechUtility.symId("lizardite"))
+        Lizardite = new Material.Builder(27115, symId("lizardite"))
                 .dust()
                 .color(0xa79e42)
                 .flags(NO_SMASHING, DECOMPOSITION_BY_ELECTROLYZING)
                 .components(Magnesium, 3, Silicon, 2, Oxygen, 9, Hydrogen, 4)
                 .build()
                 .setFormula("Mg3Si2O5(OH)4",true);
+
+        SodiumIodate = new Material.Builder(27116, symId("sodium_iodate"))
+                .dust()
+                .colorAverage()
+                .flags(DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Sodium, 1, Iodine, 1, Oxygen, 3)
+                .build();
+
+        GermaniumDioxide = new Material.Builder(27117, symId("germanium_dioxide"))
+                .dust()
+                .colorAverage()
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Germanium, 1, Oxygen, 2)
+                .build();
+
+        SodiumHydroxideSolution = new Material.Builder(27118, symId("sodium_hydroxide_solution"))
+                .fluid()
+                .colorAverage()
+                .flags(DISABLE_DECOMPOSITION)
+                .components(SodiumHydroxide, 1, Water, 1)
+                .build();
     }
 }

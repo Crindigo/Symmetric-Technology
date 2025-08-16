@@ -36,6 +36,8 @@ public class SymtechRecipeLoader {
         ComponentRecipes.init();
         MachineRecipes.init();
         QuarryRecipes.init();
+        ElementRecipes.init();
+        PSARecipes.init();
         registerStoneRecipes();
         registerDrumRecipes();
 

@@ -67,6 +67,5 @@ public class SymtechSecondDegreeMaterials {
                 .flags(NO_SMASHING, DISABLE_DECOMPOSITION)
                 .components(Anorthite, 4, Albite, 2)
                 .build();
-
     }
 }

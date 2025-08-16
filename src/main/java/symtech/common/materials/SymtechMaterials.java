@@ -20,6 +20,8 @@ public class SymtechMaterials {
     public static Material ManganeseIronArsenicPhosphide;
     public static Material PraseodymiumNickel;
     public static Material GadoliniumSiliconGermanium;
+
+
     public static Material Gabbro;
     public static Material Gneiss;
     public static Material Limestone;
@@ -28,11 +30,15 @@ public class SymtechMaterials {
     public static Material Slate;
     public static Material Kimberlite;
     public static Material Anorthosite;
+
     public static Material Latex;
     public static Material Mud;
     public static Material Seawater;
+    public static Material ChlorinatedSeawater;
 
     public static Material RefractoryGunningMixture;
+    public static Material RareEarthHydroxides;
+    public static Material RareEarthChlorides;
 
     //Minerals
     public static Material Anorthite;
@@ -48,6 +54,9 @@ public class SymtechMaterials {
     public static Material Forsterite;
     public static Material Lizardite;
     public static Material Fluorite;
+    public static Material SodiumIodate;
+    public static Material GermaniumDioxide;
+    public static Material SodiumHydroxideSolution;
 
     public static void init() {
         SymtechElementMaterials.init();
@@ -59,18 +68,12 @@ public class SymtechMaterials {
         changeProperties();
     }
 
-    public static void removeFlags() {
-        for (Material material : GregTechAPI.materialManager.getRegisteredMaterials()) {
-            if (material.hasFlag(MaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)) removeFlag(MaterialFlags.DECOMPOSITION_BY_ELECTROLYZING, material);
-        }
-    }
-
     private static void changeProperties() {
         //removeProperty(PropertyKey.ORE, Materials.Graphite);
 
-        removeProperty(PropertyKey.ORE, Materials.Soapstone);
-        removeProperty(PropertyKey.ORE, Materials.Quartzite);
-        removeProperty(PropertyKey.ORE, Materials.Mica);
+        //removeProperty(PropertyKey.ORE, Materials.Soapstone);
+        //removeProperty(PropertyKey.ORE, Materials.Quartzite);
+        //removeProperty(PropertyKey.ORE, Materials.Mica);
         removeProperty(PropertyKey.FLUID_PIPE, Materials.Lead);
         Materials.Lead.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(1200, 8, true, true, false, false));
 
@@ -135,9 +138,9 @@ public class SymtechMaterials {
         Materials.Phosphorus.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(317)));
         Materials.Phosphorus.setMaterialRGB(0xfffed6);
 
-        Materials.HydrochloricAcid.setFormula("(H2O)(HCl)", true);
-
-        Materials.HydrofluoricAcid.setFormula("(H2O)(HF)", true);
+        // keep these the same as CEu
+        //Materials.HydrochloricAcid.setFormula("(H2O)(HCl)", true);
+        //Materials.HydrofluoricAcid.setFormula("(H2O)(HF)", true);
 
         removeProperty(PropertyKey.FLUID, Materials.Dimethyldichlorosilane);
         Materials.Dimethyldichlorosilane.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()));
@@ -168,7 +171,7 @@ public class SymtechMaterials {
 
         Materials.Copper.addFlags(SymtechMaterialFlags.GENERATE_CATALYST_BED);
 
-        Materials.Electrum.setProperty(PropertyKey.ORE, new OreProperty());
+        //Materials.Electrum.setProperty(PropertyKey.ORE, new OreProperty());
 
         Materials.Hydrogen.addFlags(MaterialFlags.FLAMMABLE);
     }
@@ -185,24 +188,6 @@ public class SymtechMaterials {
         }
         if (map != null) {
             map.remove(key);
-        }
-    }
-
-    private static void removeFlag(MaterialFlag flag, Material material) {
-        HashSet<MaterialFlag> set = null;
-        try {
-            Field field = MaterialFlags.class.getDeclaredField("flags");
-            field.setAccessible(true);
-
-            Field field2 = Material.class.getDeclaredField("flags");
-            field2.setAccessible(true);
-            //noinspection unchecked
-            set = (HashSet<MaterialFlag>) field.get(field2.get(material));
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            SymtechLog.logger.error("Failed to reflect material flag hashset", e);
-        }
-        if (set != null) {
-            set.remove(flag);
         }
     }
 }

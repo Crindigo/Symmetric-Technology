@@ -169,6 +169,12 @@ symtech.material.latex=Latex
 symtech.material.mud=Mud
 symtech.material.sea_water=Sea Water
 symtech.material.refractory_gunning_mixture=Refractory Gunning Mixture
+symtech.material.sodium_iodate=Sodium Iodate
+symtech.material.sodium_hydroxide_solution=Sodium Hydroxide Solution
+symtech.material.rare_earth_hydroxides=Rare Earth Hydroxides
+symtech.material.rare_earth_chlorides=Rare Earth Chlorides
+symtech.material.chlorinated_seawater=Chlorinated Seawater
+symtech.material.germanium_dioxide=Germanium Dioxide
 
 # Rock/Mineral Materials
 symtech.material.fluorite=Fluorite
@@ -924,6 +930,7 @@ metaitem.track_segment.length_info=§610 blocks §7worth of monorail track.
 metaitem.air_vent.tooltip.1=§bCollecting Rate: §f%,d L/s
 metaitem.orbital.scrap.earth.name=Earth Orbital Scrap
 metaitem.code_breacher.name=Code Breacher
+metaitem.carbon_molecular_sieve_dust.name=Carbon Molecular Sieve
 
 # Catalysts
 symtech.universal.catalysts.tooltip.tier=§eMax Voltage: §f%,d EU/T (%s§f)

@@ -27,14 +27,15 @@ public class SymtechMetaItems {
     public static MetaValueItem RESTRICTIVE_FILTER;
     public static MetaValueItem MOTOR_STEAM;
     public static MetaValueItem PISTON_STEAM;
+    public static OreDictValueItem CARBON_MOLECULAR_SIEVE;
 
     public static void initMetaItems() {
         metaItem = new StandardMetaItem();
-        metaItem.setRegistryName("meta_item");
+        metaItem.setRegistryName("symtech:meta_item");
         oreDictItem = new MetaOreDictItem((short) 0);
-        oreDictItem.setRegistryName("symtech_oredict_item");
+        oreDictItem.setRegistryName("symtech:ore_dict_item");
         CatalystItems.init();
-
+        initOreDictItems();
     }
 
     public static void initSubItems() {
@@ -63,6 +64,11 @@ public class SymtechMetaItems {
 
         MOTOR_STEAM = metaItem.addItem(7, "steam.motor");
         PISTON_STEAM = metaItem.addItem(8, "steam.piston");
+    }
+
+    private static void initOreDictItems() {
+        CARBON_MOLECULAR_SIEVE = oreDictItem.addOreDictItem(100, "carbon_molecular_sieve",
+                0x101010, MaterialIconSet.SHINY, OrePrefix.dust);
     }
 
     private static void addExtraBehaviours() {
