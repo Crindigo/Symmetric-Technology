@@ -97,7 +97,7 @@ public class SymtechFirstDegreeMaterials {
                 .build()
                 .setFormula("(Na,Ca)(Si,Al)4O8", true);
 
-        Clinochlore = new Material.Builder(27109, symId("chlinochlore"))
+        Clinochlore = new Material.Builder(27109, symId("clinochlore"))
                 .dust()
                 .gem()
                 .color(0x303e38).iconSet(EMERALD)

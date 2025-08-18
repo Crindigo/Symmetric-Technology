@@ -101,8 +101,7 @@ public class MetaTileEntityQuarry extends RecipeMapMultiblockController {
         World world = getWorld();
         EnumFacing front = getFrontFacing();
         EnumFacing back = front.getOpposite();
-        EnumFacing right = front.rotateYCCW(); /// right as if you were looking at it, not controller's left
-        EnumFacing left = right.getOpposite();
+        EnumFacing left = front.rotateY(); // the player's left if they are looking at the quarry from the front
 
         // Start looking at the min diameter
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(getPos().offset(back, MIN_DIAMETER - 1));
