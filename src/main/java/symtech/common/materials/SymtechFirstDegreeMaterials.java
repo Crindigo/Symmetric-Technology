@@ -1,6 +1,7 @@
 package symtech.common.materials;
 
 import gregtech.api.GTValues;
+import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty;
@@ -9,6 +10,7 @@ import symtech.api.util.SymtechUtility;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static symtech.api.unification.material.info.SymtechMaterialFlags.SUPERALLOY;
 import static symtech.api.util.SymtechUtility.symId;
 import static symtech.common.materials.SymtechMaterials.*;
 
@@ -176,6 +178,32 @@ public class SymtechFirstDegreeMaterials {
                 .colorAverage()
                 .flags(DISABLE_DECOMPOSITION)
                 .components(SodiumHydroxide, 1, Water, 1)
+                .build();
+
+        Nimonic105 = new Material.Builder(8637, SymtechUtility.symId("nimonic_105"))
+                .ingot().liquid(new FluidBuilder().temperature(1770))
+                .iconSet(SHINY)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_PLATE, GENERATE_RING, GENERATE_ROTOR, SUPERALLOY)
+                .components(Nickel, 19, Chrome, 6, Manganese, 1, Iron, 1, Aluminium, 2, Titanium, 1, Cobalt, 8)
+                .colorAverage()
+                .blastTemp(3000, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.EV])
+                .build();
+
+        Incoloy825 = new Material.Builder(8628, SymtechUtility.symId("incoloy_825"))
+                .ingot().liquid(new FluidBuilder().temperature(1675))
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROTOR, SUPERALLOY)
+                .components(Iron, 9, Nickel, 16, Chrome, 7, Manganese, 1, Copper, 2, Aluminium, 1, Titanium, 1,
+                        Molybdenum, 2)
+                .colorAverage()
+                .blastTemp(3000, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.EV])
+                .build();
+
+        SiliconCarbide = new Material.Builder(8145, SymtechUtility.symId("silicon_carbide"))
+                .dust()
+                .flags(GENERATE_PLATE)
+                .components(Silicon, Carbon)
+                .color(0x404040)
                 .build();
     }
 }

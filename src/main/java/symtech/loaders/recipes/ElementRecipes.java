@@ -114,5 +114,17 @@ public class ElementRecipes
                 .duration(100)
                 .EUt(7)
                 .buildAndRegister();
+
+        // won't fit in singleblock unless I modify the recipemap
+        ADVANCED_ARC_FURNACE.recipeBuilder()
+                .notConsumable(Air.getFluid(1000))
+                .input(OrePrefix.dust, SiliconDioxide, 3)
+                .input(OrePrefix.dust, Carbon, 3)
+                .circuitMeta(2)
+                .output(OrePrefix.dust, SiliconCarbide, 2)
+                .fluidOutputs(CarbonMonoxide.getFluid(2000))
+                .EUt(60)
+                .duration(300)
+                .buildAndRegister();
     }
 }

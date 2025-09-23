@@ -175,6 +175,9 @@ symtech.material.rare_earth_hydroxides=Rare Earth Hydroxides
 symtech.material.rare_earth_chlorides=Rare Earth Chlorides
 symtech.material.chlorinated_seawater=Chlorinated Seawater
 symtech.material.germanium_dioxide=Germanium Dioxide
+symtech.material.silicon_carbide=Silicon Carbide
+symtech.material.nimonic_105=Nimonic 105
+symtech.material.incoloy_825=Incoloy 825
 
 # Rock/Mineral Materials
 symtech.material.fluorite=Fluorite

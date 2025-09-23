@@ -20,7 +20,10 @@ public class SymtechMaterials {
     public static Material ManganeseIronArsenicPhosphide;
     public static Material PraseodymiumNickel;
     public static Material GadoliniumSiliconGermanium;
+    public static Material SiliconCarbide;
 
+    public static Material Nimonic105;
+    public static Material Incoloy825;
 
     public static Material Gabbro;
     public static Material Gneiss;
