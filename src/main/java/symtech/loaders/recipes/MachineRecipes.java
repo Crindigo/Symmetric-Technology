@@ -8,17 +8,19 @@ import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.BlockMetalCasing;
-import gregtech.common.blocks.BlockSteamCasing;
-import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.blocks.*;
+import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import symtech.common.STConfigHolder;
 import symtech.common.blocks.*;
 import symtech.common.blocks.BlockCoagulationTankWall.CoagulationTankWallType;
 import symtech.common.materials.SymtechMaterials;
 import symtech.common.metatileentities.SymtechMetaTileEntities;
+import symtech.common.metatileentities.multi.electric.MetaTileEntityOreSorter;
 
 import java.util.HashMap;
 import java.util.stream.Collectors;
@@ -30,6 +32,8 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS;
 import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.STAINLESS_CLEAN;
 import static gregtech.common.blocks.MetaBlocks.METAL_CASING;
+import static gregtech.common.blocks.MetaBlocks.STONE_BLOCKS;
+import static gregtech.common.blocks.StoneVariantBlock.StoneType.CONCRETE_LIGHT;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static symtech.common.blocks.BlockSymtechMultiblockCasing.CasingType.SILICON_CARBIDE_CASING;
 import static symtech.common.blocks.SymtechBlocks.*;
@@ -682,14 +686,14 @@ public class MachineRecipes {
                 'L', new UnificationEntry(stickLong, Steel),
                 'R', new UnificationEntry(rotor, Steel));
 
-        ModHandler.addShapedRecipe("symtech:steel_turbine_controller", LARGE_STEAM_TURBINE.getStackForm(),
+        ModHandler.addShapedRecipe("symtech:steel_turbine_controller", BASIC_STEAM_TURBINE.getStackForm(),
                 "TCT", "IHI", "CIC",
                 'T', new UnificationEntry(plate, Steel),
                 'C', new UnificationEntry(cableGtSingle, Tin),
                 'I', CraftingComponent.CIRCUIT.getIngredient(GTValues.LV),
                 'H', CraftingComponent.HULL.getIngredient(GTValues.LV));
 
-        ModHandler.addShapedRecipe("symtech:gas_turbine_controller", LARGE_GAS_TURBINE.getStackForm(),
+        ModHandler.addShapedRecipe("symtech:gas_turbine_controller", BASIC_GAS_TURBINE.getStackForm(),
                 "TCT", "IHI", "CIC",
                 'T', new UnificationEntry(plate, Steel),
                 'C', new UnificationEntry(cableGtSingle, Copper),
@@ -745,31 +749,156 @@ public class MachineRecipes {
                 .duration(50)
                 .buildAndRegister();
 
+        // Ore Sorter
+        ModHandler.addShapedRecipe("symtech:ore_sorter", ORE_SORTER.getStackForm(),
+                "AIA", "PHP", "AIA",
+                'A', CraftingComponent.ROBOT_ARM.getIngredient(GTValues.LV),
+                'I', CraftingComponent.CIRCUIT.getIngredient(GTValues.MV),
+                'P', CraftingComponent.PUMP.getIngredient(GTValues.LV),
+                'H', CraftingComponent.HULL.getIngredient(GTValues.LV));
+
         // Primitive Mud Pump
+        ModHandler.addShapedRecipe("symtech:primitive_mud_pump", PRIMITIVE_MUD_PUMP.getStackForm(),
+                "NPS", "RCd", "LFL",
+                'N', new UnificationEntry(ring, Bronze),
+                'P', new UnificationEntry(pipeNormalFluid, TreatedWood),
+                'S', new UnificationEntry(screw, Bronze),
+                'R', new UnificationEntry(rotor, Bronze),
+                'C', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL),
+                'L', new ItemStack(Blocks.STONE_SLAB, 1, 4),
+                'F', new UnificationEntry(pipeLargeFluid, Wood));
 
         // Condenser
+        ModHandler.addShapedRecipe("symtech:condenser", CONDENSER.getStackForm(),
+                " P ", "FCF", " P ",
+                'P', CraftingComponent.PUMP.getIngredient(GTValues.LV),
+                'F', new UnificationEntry(frameGt, Steel),
+                'C', MetaBlocks.BOILER_CASING.getItemVariant(BlockBoilerCasing.BoilerCasingType.STEEL_PIPE));
 
         // Heat Exchanger
+        ModHandler.addShapedRecipe("symtech:heat_exchanger", HEAT_EXCHANGER.getStackForm(),
+                " F ", "PCP", " F ",
+                'P', CraftingComponent.PUMP.getIngredient(GTValues.LV),
+                'F', new UnificationEntry(frameGt, Steel),
+                'C', MetaBlocks.BOILER_CASING.getItemVariant(BlockBoilerCasing.BoilerCasingType.STEEL_PIPE));
 
         // Steel Drill Head
+        ModHandler.addShapedRecipe("symtech:steel_drill_head",
+                DRILL_HEAD.getItemVariant(BlockDrillHead.DrillHeadType.STEEL),
+                "PVP", "GCG", " G ",
+                'P', CraftingComponent.PUMP.getIngredient(GTValues.LV),
+                'V', CraftingComponent.CONVEYOR.getIngredient(GTValues.LV),
+                'G', MetaItems.COMPONENT_GRINDER_DIAMOND,
+                'C', METAL_CASING.getItemVariant(BlockMetalCasing.MetalCasingType.STEEL_SOLID));
 
         // Heat Radiator
+        ModHandler.addShapedRecipe("symtech:heat_radiator", HEAT_RADIATOR.getStackForm(),
+                "FLF", "PHP", "FLF",
+                'F', new UnificationEntry(frameGt, Steel),
+                'L', new UnificationEntry(pipeLargeFluid, Steel),
+                'P', CraftingComponent.PUMP.getIngredient(GTValues.LV),
+                'H', CraftingComponent.HULL.getIngredient(GTValues.LV));
+
+        ModHandler.addShapedRecipe("symtech:basic_serpentine",
+                SERPENTINE.getItemVariant(BlockSerpentine.SerpentineType.BASIC, 6),
+                " Tw", "PPP", "hT ",
+                'T', new UnificationEntry(plate, Steel),
+                'P', new UnificationEntry(pipeTinyFluid, Copper));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Steel, 2)
+                .input(pipeTinyFluid, Copper, 2)
+                .circuitMeta(2)
+                .outputs(SERPENTINE.getItemVariant(BlockSerpentine.SerpentineType.BASIC, 6))
+                .duration(240)
+                .EUt(GTValues.VA[1])
+                .buildAndRegister();
 
         // Large Weapons Factory
+        ModHandler.addShapedRecipe("symtech:large_weapons_factory", LARGE_WEAPONS_FACTORY.getStackForm(),
+                "SAE", "VHV", "IAI",
+                'S', CraftingComponent.SENSOR.getIngredient(GTValues.LV),
+                'A', CraftingComponent.ROBOT_ARM.getIngredient(GTValues.LV),
+                'E', CraftingComponent.EMITTER.getIngredient(GTValues.LV),
+                'V', CraftingComponent.CONVEYOR.getIngredient(GTValues.LV),
+                'H', CraftingComponent.HULL.getIngredient(GTValues.LV),
+                'I', CraftingComponent.CIRCUIT.getIngredient(GTValues.LV));
 
         // Gravity Separator
+        ModHandler.addShapedRecipe("symtech:gravity_separator", GRAVITY_SEPARATOR.getStackForm(),
+                "GIG", "VHV", "ICI",
+                'G', MetaItems.COMPONENT_GRINDER_DIAMOND,
+                'I', CraftingComponent.CIRCUIT.getIngredient(GTValues.MV),
+                'V', CraftingComponent.CONVEYOR.getIngredient(GTValues.MV),
+                'H', CraftingComponent.HULL.getIngredient(GTValues.MV),
+                'C', CraftingComponent.CABLE.getIngredient(GTValues.MV));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(10)
+                .input(MetaItems.ELECTRIC_MOTOR_HV, 2)
+                .input(gear, StainlessSteel, 4)
+                .input(rotor, StainlessSteel, 16)
+                .input(plate, StainlessSteel, 16)
+                .outputs(SEPARATOR_ROTOR.getItemVariant(BlockSeparatorRotor.BlockSeparatorRotorType.STEEL, 5))
+                .duration(240)
+                .EUt(GTValues.VA[1])
+                .buildAndRegister();
 
         // Reaction Furnace
+        ModHandler.addShapedRecipe("symtech:reaction_furnace", REACTION_FURNACE.getStackForm(),
+                "CSC", "IHI", "PPP",
+                'C', CraftingComponent.CABLE_QUAD.getIngredient(GTValues.MV),
+                'S', CraftingComponent.SPRING.getIngredient(GTValues.MV),
+                'I', CraftingComponent.CIRCUIT.getIngredient(GTValues.MV),
+                'H', CraftingComponent.HULL.getIngredient(GTValues.MV),
+                'P', CraftingComponent.PLATE.getIngredient(GTValues.MV));
 
         // Advanced Arc Furnace
+        ModHandler.addShapedRecipe("symtech:advanced_arc_furnace", ADVANCED_ARC_FURNACE.getStackForm(),
+                "CEC", "IHI", "PTA",
+                'C', new UnificationEntry(cableGtHex, Tin),
+                'E', ELECTRODE_ASSEMBLY.getItemVariant(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON),
+                'I', CraftingComponent.CIRCUIT.getIngredient(GTValues.LV),
+                'H', CraftingComponent.HULL.getIngredient(GTValues.LV),
+                'P', CraftingComponent.PUMP.getIngredient(GTValues.LV),
+                'T', CraftingComponent.PLATE.getIngredient(GTValues.LV),
+                'A', CraftingComponent.ROBOT_ARM.getIngredient(GTValues.LV));
 
         // Arc Furnace Complex
+        ModHandler.addShapedRecipe("symtech:arc_furnace_complex", ARC_FURNACE_COMPLEX.getStackForm(),
+                "CEC", "IHI", "PTA",
+                'C', new UnificationEntry(cableGtHex, Platinum),
+                'E', ELECTRODE_ASSEMBLY.getItemVariant(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON),
+                'I', CraftingComponent.CIRCUIT.getIngredient(GTValues.EV),
+                'H', CraftingComponent.HULL.getIngredient(GTValues.EV),
+                'P', CraftingComponent.PUMP.getIngredient(GTValues.EV),
+                'T', CraftingComponent.PLATE.getIngredient(GTValues.EV),
+                'A', CraftingComponent.ROBOT_ARM.getIngredient(GTValues.EV));
 
         // Electrode Assembly
+        ModHandler.addShapedRecipe("symtech:electrode_assembly",
+                ELECTRODE_ASSEMBLY.getItemVariant(BlockElectrodeAssembly.ElectrodeAssemblyType.CARBON),
+                "TCT", "GFG", "TCT",
+                'T', new UnificationEntry(plate, Steel),
+                'C', new UnificationEntry(cableGtSingle, Copper),
+                'G', new UnificationEntry(dust, Graphite),
+                'F', new UnificationEntry(frameGt, Steel));
 
         // Evaporation Pool
+        ModHandler.addShapedRecipe("symtech:evaporation_pool", EVAPORATION_POOL.getStackForm(),
+                "SFS", "PHP", "SFS",
+                'S', STONE_BLOCKS.get(StoneVariantBlock.StoneVariant.SMOOTH).getItemVariant(CONCRETE_LIGHT),
+                'F', new UnificationEntry(pipeHugeFluid, Aluminium),
+                'P', CraftingComponent.PUMP.getIngredient(GTValues.MV),
+                'H', CraftingComponent.HULL.getIngredient(GTValues.MV));
 
         // Evaporation Bed
+        ModHandler.addShapedRecipe("symtech:evaporation_bed",
+                EVAPORATION_BED.getItemVariant(BlockEvaporationBed.EvaporationBedType.DIRT, 8),
+                "SDS", "DGD", "SDS",
+                'S', Blocks.SAND,
+                'D', new ItemStack(Blocks.DIRT, 1, 0),
+                'G', Blocks.GRAVEL);
 
         // Clarifier
 

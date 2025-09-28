@@ -202,7 +202,7 @@ public class SymtechFirstDegreeMaterials {
         SiliconCarbide = new Material.Builder(8145, SymtechUtility.symId("silicon_carbide"))
                 .dust()
                 .flags(GENERATE_PLATE)
-                .components(Silicon, Carbon)
+                .components(Silicon, 1, Carbon, 1)
                 .color(0x404040)
                 .build();
     }
