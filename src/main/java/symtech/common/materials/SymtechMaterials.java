@@ -21,6 +21,7 @@ public class SymtechMaterials {
     public static Material PraseodymiumNickel;
     public static Material GadoliniumSiliconGermanium;
     public static Material SiliconCarbide;
+    public static Material CryogenicSolder;
 
     public static Material Nimonic105;
     public static Material Incoloy825;

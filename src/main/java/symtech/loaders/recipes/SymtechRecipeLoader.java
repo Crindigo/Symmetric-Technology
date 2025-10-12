@@ -1,5 +1,6 @@
 package symtech.loaders.recipes;
 
+import gregtech.api.GTValues;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.stack.UnificationEntry;
 import symtech.loaders.SymtechMetaTileEntityLoader;
@@ -7,6 +8,8 @@ import symtech.loaders.SymtechMetaTileEntityLoader;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static symtech.common.item.SymtechMetaItems.MINERAL_WOOL;
+import static symtech.common.materials.SymtechMaterials.CryogenicSolder;
 import static symtech.common.metatileentities.SymtechMetaTileEntities.*;
 
 public class SymtechRecipeLoader {
@@ -63,5 +66,21 @@ public class SymtechRecipeLoader {
 
         ModHandler.addShapelessNBTClearingRecipe("drum_nbt_uhmwpe",
                 UHMWPE_CAN.getStackForm(), UHMWPE_CAN.getStackForm());
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(Lava.getFluid(1000))
+                .notConsumable(stick, Steel, 1)
+                .outputs(MINERAL_WOOL.getStackForm(16))
+                .duration(500)
+                .EUt(30)
+                .buildAndRegister();
+
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Indium, 3)
+                .input(dustTiny, Silver)
+                .output(dust, CryogenicSolder, 3)
+                .duration(120)
+                .EUt(GTValues.VA[2])
+                .buildAndRegister();
     }
 }

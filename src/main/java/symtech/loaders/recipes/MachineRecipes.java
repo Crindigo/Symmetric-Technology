@@ -1,12 +1,9 @@
 package symtech.loaders.recipes;
 
-import gregicality.multiblocks.api.unification.GCYMMaterials;
 import gregtech.api.GTValues;
 import gregtech.api.items.OreDictNames;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.*;
 import gregtech.common.items.MetaItems;
@@ -14,29 +11,27 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import symtech.common.STConfigHolder;
 import symtech.common.blocks.*;
 import symtech.common.blocks.BlockCoagulationTankWall.CoagulationTankWallType;
-import symtech.common.materials.SymtechMaterials;
-import symtech.common.metatileentities.SymtechMetaTileEntities;
-import symtech.common.metatileentities.multi.electric.MetaTileEntityOreSorter;
 
-import java.util.HashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS;
-import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.STAINLESS_CLEAN;
-import static gregtech.common.blocks.MetaBlocks.METAL_CASING;
-import static gregtech.common.blocks.MetaBlocks.STONE_BLOCKS;
+import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.*;
+import static gregtech.common.blocks.MetaBlocks.*;
 import static gregtech.common.blocks.StoneVariantBlock.StoneType.CONCRETE_LIGHT;
+import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static symtech.common.blocks.BlockSymtechMultiblockCasing.CasingType.SILICON_CARBIDE_CASING;
 import static symtech.common.blocks.SymtechBlocks.*;
+import static symtech.common.blocks.SymtechBlocks.MULTIBLOCK_CASING;
+import static symtech.common.blocks.SymtechBlocks.TURBINE_ROTOR;
 import static symtech.common.item.SymtechMetaItems.*;
 import static symtech.common.materials.SymtechMaterials.*;
 import static symtech.common.metatileentities.SymtechMetaTileEntities.*;
@@ -807,7 +802,7 @@ public class MachineRecipes {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(plate, Steel, 2)
-                .input(pipeTinyFluid, Copper, 2)
+                .input(pipeTinyFluid, Copper, 3)
                 .circuitMeta(2)
                 .outputs(SERPENTINE.getItemVariant(BlockSerpentine.SerpentineType.BASIC, 6))
                 .duration(240)
@@ -901,46 +896,256 @@ public class MachineRecipes {
                 'G', Blocks.GRAVEL);
 
         // Clarifier
+        ModHandler.addShapedRecipe("symtech:clarifier", CLARIFIER.getStackForm(),
+                "CRC", "PHP", "IMI",
+                'C', STCraft.cable.mv(),
+                'R', new UnificationEntry(rotor, Steel),
+                'P', STCraft.pump.mv(),
+                'H', STCraft.hull.mv(),
+                'I', STCraft.circuit.mv(),
+                'M', STCraft.motor.mv());
 
         // Clarifier Vat
+        ModHandler.addShapedRecipe("symtech:clarifier_vat",
+                MULTIBLOCK_TANK.getItemVariant(BlockMultiblockTank.MultiblockTankType.CLARIFIER, 9),
+                "TCT", "PPP",
+                'T', STCraft.plate(Steel),
+                'C', Items.CAULDRON,
+                'P', new UnificationEntry(pipeSmallFluid, Steel));
 
         // MSFD
+        ModHandler.addShapedRecipe("symtech:multi_stage_flash_distiller", MULTI_STAGE_FLASH_DISTILLER.getStackForm(),
+                "TCT", "PHP", "ISI",
+                'T', STCraft.plate(StainlessSteel),
+                'C', STCraft.cable.hv(),
+                'P', STCraft.pump.hv(),
+                'H', STCraft.hull.hv(),
+                'I', STCraft.circuit.hv(),
+                'S', STCraft.spring.hv());
 
         // Smoke Stack
+        ModHandler.addShapedRecipe("symtech:smoke_stack", SMOKE_STACK.getStackForm(),
+                " R ", "PHP", " R ",
+                'R', new UnificationEntry(rotor, Steel),
+                'P', new UnificationEntry(pipeSmallFluid, Steel),
+                'H', STCraft.hull.lv());
 
         // Flare Stack
+        ModHandler.addShapedRecipe("symtech:flare_stack", FLARE_STACK.getStackForm(),
+                " R ", "PHP", " R ",
+                'R', new UnificationEntry(rotor, Steel),
+                'P', new UnificationEntry(stick, Steel),
+                'H', STCraft.hull.lv());
 
         // Froth Flotation Tank
+        ModHandler.addShapedRecipe("symtech:froth_flotation_tank", FROTH_FLOTATION_TANK.getStackForm(),
+                "CRC", "PHP", "IMI",
+                'C', STCraft.cable.hv(),
+                'R', new UnificationEntry(rotor, StainlessSteel),
+                'P', STCraft.pump.hv(),
+                'H', STCraft.hull.hv(),
+                'I', STCraft.circuit.hv(),
+                'M', STCraft.motor.hv());
 
         // Froth Flotation Vat
+        ModHandler.addShapedRecipe("symtech:froth_flotation_vat",
+                MULTIBLOCK_TANK.getItemVariant(BlockMultiblockTank.MultiblockTankType.FLOTATION, 4),
+                "TCT", "PPP",
+                'T', new UnificationEntry(plate, StainlessSteel),
+                'C', Items.CAULDRON,
+                'P', new UnificationEntry(pipeSmallFluid, StainlessSteel));
 
         // Vacuum Distillation Tower
+        ModHandler.addShapedRecipe("symtech:vacuum_distillation_tower", VACUUM_DISTILLATION_TOWER.getStackForm(),
+                "RIR", "PHP", "UIU",
+                'R', new UnificationEntry(rotor, Steel),
+                'I', STCraft.circuit.mv(),
+                'P', STCraft.pump.mv(),
+                'H', STCraft.hull.mv(),
+                'U', new UnificationEntry(pipeHugeFluid, Steel));
 
         // Quencher
+        ModHandler.addShapedRecipe("symtech:quencher", QUENCHER.getStackForm(),
+                "PAP", "IHI", "LIL",
+                'P', STCraft.pump.hv(),
+                'A', STCraft.arm.hv(),
+                'I', STCraft.circuit.hv(),
+                'H', METAL_CASING.getItemVariant(STAINLESS_CLEAN),
+                'L', new UnificationEntry(pipeLargeFluid, StainlessSteel));
 
         // Dumper
+        ModHandler.addShapedRecipe("symtech:dumper", DUMPER.getStackForm(),
+                "TTT", "PHL", "TTT",
+                'T', STCraft.plate(Steel),
+                'P', STCraft.pump.lv(),
+                'H', STCraft.hull.lv(),
+                'L', new UnificationEntry(pipeLargeFluid, Steel));
 
         // Coking Tower
+        ModHandler.addShapedRecipe("symtech:coking_tower", COKING_TOWER.getStackForm(),
+                "UPU", "IHI", "UPU",
+                'U', new UnificationEntry(pipeHugeFluid, Steel),
+                'P', STCraft.pump.hv(),
+                'I', STCraft.circuit.hv(),
+                'H', STCraft.hull.hv());
 
         // Rotary Kiln
+        ModHandler.addShapedRecipe("symtech:rotary_kiln", ROTARY_KILN.getStackForm(),
+                "I C", "UHU", "IMC",
+                'I', STCraft.circuit.mv(),
+                'C', STCraft.cable.mv(),
+                'U', new UnificationEntry(pipeHugeFluid, Steel),
+                'H', STCraft.hull.mv(),
+                'M', STCraft.motor.mv());
 
         // High Temp Distillation Tower
+        ModHandler.addShapedRecipe("symtech:high_temperature_distillation_tower",
+                HIGH_TEMPERATURE_DISTILLATION_TOWER.getStackForm(),
+                "IWI", "PHP", "IWI",
+                'I', STCraft.circuit.hv(),
+                'W', WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.CUPRONICKEL),
+                'P', STCraft.pump.hv(),
+                'H', STCraft.hull.hv());
 
         // Mixer Settler
+        ModHandler.addShapedRecipe("symtech:mixer_settler", MIXER_SETTLER.getStackForm(),
+                "MIM", "RHR", "PCP",
+                'M', STCraft.motor.hv(),
+                'I', STCraft.circuit.hv(),
+                'R', STCraft.rotor.hv(),
+                'H', STCraft.hull.hv(),
+                'P', STCraft.pump.hv(),
+                'C', STCraft.cable.hv());
 
         // Catalytic Reformer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[GTValues.HV])
+                .input(frameGt, StainlessSteel, 4)
+                .input(ELECTRIC_PUMP_HV, 2)
+                .input(pipeHugeFluid, StainlessSteel)
+                .input(rotor, StainlessSteel)
+                .input(circuit, MarkerMaterials.Tier.HV)
+                .outputs(CATALYTIC_REFORMER.getStackForm())
+                .circuitMeta(3)
+                .EUt(480)
+                .duration(600)
+                .buildAndRegister();
 
         // Single Column Cryogenic Distillation Plant
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .input(HULL[GTValues.HV])
+                .input(frameGt, Aluminium, 3)
+                .input(circuit, MarkerMaterials.Tier.HV, 4)
+                .input(ELECTRIC_PUMP_HV, 4)
+                .input(plate, Aluminium, 4)
+                .input(MINERAL_WOOL, 64)
+                .fluidInputs(CryogenicSolder.getFluid(1296))
+                .outputs(SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.getStackForm())
+                .EUt(30)
+                .duration(600)
+                .buildAndRegister();
 
         // Low Pressure Cryogenic Distillation Plant
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .input(HULL[GTValues.HV])
+                .input(frameGt, Aluminium, 3)
+                .input(circuit, MarkerMaterials.Tier.HV, 2)
+                .input(ELECTRIC_PUMP_HV, 4)
+                .input(plate, Aluminium, 4)
+                .inputs(SERPENTINE.getItemVariant(BlockSerpentine.SerpentineType.BASIC, 6))
+                .input(MINERAL_WOOL, 64)
+                .fluidInputs(CryogenicSolder.getFluid(1296))
+                .outputs(LOW_PRESSURE_CRYOGENIC_DISTILLATION_PLANT.getStackForm())
+                .EUt(30)
+                .duration(600)
+                .buildAndRegister();
 
         // High Pressure Cryogenic Distillation Plant
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(HULL[GTValues.HV])
+                .input(frameGt, Aluminium, 12)
+                .input(circuit, MarkerMaterials.Tier.HV, 6)
+                .input(ELECTRIC_PUMP_HV, 8)
+                .input(plate, Aluminium, 4)
+                .input(MINERAL_WOOL, 64)
+                .fluidInputs(CryogenicSolder.getFluid(1296))
+                .outputs(HIGH_PRESSURE_CRYOGENIC_DISTILLATION_PLANT.getStackForm())
+                .EUt(30)
+                .duration(600)
+                .buildAndRegister();
 
         // Blender
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .input(HULL[GTValues.HV])
+                .input(frameGt, StainlessSteel, 1)
+                .input(plate, Polytetrafluoroethylene, 4)
+                .input(circuit, MarkerMaterials.Tier.HV, 2)
+                .input(ELECTRIC_MOTOR_HV, 1)
+                .input(ELECTRIC_PUMP_HV, 4)
+                .outputs(BLENDER.getStackForm())
+                .EUt(30)
+                .duration(600)
+                .buildAndRegister();
 
         // Large Fluid Pump
+        ModHandler.addShapedRecipe("symtech:large_fluid_pump", LARGE_FLUID_PUMP.getStackForm(),
+                "RIR", "CHC", "RIR",
+                'R', new UnificationEntry(rotor, Bronze),
+                'I', STCraft.circuit.lv(),
+                'C', new UnificationEntry(cableGtQuadruple, Tin),
+                'H', STCraft.hull.lv());
 
         // Sieve Distillation Tower
+        ModHandler.addShapedRecipe("symtech:sieve_distllation_tower", SIEVE_DISTILLATION_TOWER.getStackForm(),
+                "FIF", "SHS", "FPF",
+                'F', new UnificationEntry(frameGt, StainlessSteel),
+                'I', STCraft.circuit.hv(),
+                'S', new UnificationEntry(spring, Kanthal),
+                'H', STCraft.hull.hv(),
+                'P', STCraft.pump.hv());
+
+        // Injection molder
+        ModHandler.addShapedRecipe("symtech:injection_molder", INJECTION_MOLDER.getStackForm(),
+                "SIC", "LHM", "SIC",
+                'S', new UnificationEntry(spring, Kanthal),
+                'I', STCraft.circuit.hv(),
+                'C', new UnificationEntry(cableGtSingle, Gold),
+                'L', new UnificationEntry(pipeLargeFluid, StainlessSteel),
+                'H', STCraft.hull.hv(),
+                'M', STCraft.motor.hv());
+
+        // Hot isostatic press
+        ModHandler.addShapedRecipe("symtech:hot_isostatic_press", HOT_ISOSTATIC_PRESS.getStackForm(),
+                "TPT", "IHI", "TST",
+                'T', STCraft.plate(StainlessSteel),
+                'P', STCraft.pump.hv(),
+                'I', STCraft.circuit.hv(),
+                'H', METAL_CASING.getItemVariant(STAINLESS_CLEAN),
+                'S', STCraft.piston.hv());
+
+        // Metallurgical Converter
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(METAL_CASING.getItemVariant(STEEL_SOLID))
+                .input(circuit, MarkerMaterials.Tier.EV, 2)
+                .input(ELECTRIC_MOTOR_EV, 2)
+                .input(ELECTRIC_PUMP_EV)
+                .circuitMeta(2)
+                .outputs(METALLURGICAL_CONVERTER.getStackForm())
+                .EUt(1920)
+                .duration(300)
+                .buildAndRegister();
+
+        // Electrolytic Cell
+
+        // Drone Pad
+
+        // Quarry
+
+        // Gas atomizer
     }
 
     private static void initEnergyMachines() {

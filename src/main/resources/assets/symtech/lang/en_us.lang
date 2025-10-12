@@ -178,6 +178,7 @@ symtech.material.germanium_dioxide=Germanium Dioxide
 symtech.material.silicon_carbide=Silicon Carbide
 symtech.material.nimonic_105=Nimonic 105
 symtech.material.incoloy_825=Incoloy 825
+symtech.material.cryogenic_solder=Cryogenic Solder
 
 # Rock/Mineral Materials
 symtech.material.fluorite=Fluorite
@@ -934,6 +935,7 @@ metaitem.air_vent.tooltip.1=§bCollecting Rate: §f%,d L/s
 metaitem.orbital.scrap.earth.name=Earth Orbital Scrap
 metaitem.code_breacher.name=Code Breacher
 metaitem.carbon_molecular_sieve_dust.name=Carbon Molecular Sieve
+metaitem.mineral_wool.name=Mineral Wool Sheet
 
 # Catalysts
 symtech.universal.catalysts.tooltip.tier=§eMax Voltage: §f%,d EU/T (%s§f)

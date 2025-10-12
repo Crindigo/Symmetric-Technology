@@ -145,6 +145,7 @@ symtech.material.gadolinium_silicon_germanium=Гадолиний Кремний 
 symtech.material.latex=Латекс
 symtech.material.mud=Грязь
 symtech.material.sea_water=Морская вода
+symtech.material.cryogenic_solder=Криогенный припой
 
 # Rock/Mineral Materials
 symtech.material.fluorite=Флюорит
@@ -818,6 +819,7 @@ metaitem.track_segment.name=Участок монорельсовой дорог
 metaitem.track_segment.tooltip=Для использования в §8туннельном стволе.
 metaitem.track_segment.length_info=610 блоков стоимостью 7 фунтов стерлингов для монорельсовой дороги.
 metaitem.air_vent.tooltip.1=§bСтавка сбора: §f%,d л/с
+metaitem.mineral_wool.name=Минеральная вата
 
 # Catalysts
 symtech.universal.catalysts.tooltip.tier=§eМакс. напряжение: §f%,d EU/T (%s§f)

@@ -205,5 +205,12 @@ public class SymtechFirstDegreeMaterials {
                 .components(Silicon, 1, Carbon, 1)
                 .color(0x404040)
                 .build();
+
+        CryogenicSolder = new Material.Builder(8286, SymtechUtility.symId("cryogenic_solder"))
+                .dust().ingot().liquid(new FluidBuilder().temperature(430))
+                .components(Indium, 27, Silver, 1)
+                .color(0x8967bf)
+                .build()
+                .setFormula("In97Ag3", true);
     }
 }

@@ -169,6 +169,7 @@ symtech.material.latex=胶乳
 symtech.material.mud=泥
 symtech.material.sea_water=海水
 symtech.material.refractory_gunning_mixture=耐火喷补料
+symtech.material.cryogenic_solder=低温焊料
 
 # Rock/Mineral Materials
 symtech.material.fluorite=氟石
@@ -923,6 +924,7 @@ metaitem.track_segment.length_info=相当于§610格§7的单轨铁道。
 metaitem.air_vent.tooltip.1=§b收集速率：§f%,d L/s
 metaitem.orbital.scrap.earth.name=地球轨道太空垃圾
 metaitem.code_breacher.name=密码破译器
+metaitem.mineral_wool.name=矿棉板
 
 # Catalysts
 symtech.universal.catalysts.tooltip.tier=§e最高电压：§f%,d EU/t（%s§f）

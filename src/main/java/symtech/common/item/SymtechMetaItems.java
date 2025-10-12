@@ -28,6 +28,7 @@ public class SymtechMetaItems {
     public static MetaValueItem MOTOR_STEAM;
     public static MetaValueItem PISTON_STEAM;
     public static OreDictValueItem CARBON_MOLECULAR_SIEVE;
+    public static MetaValueItem MINERAL_WOOL;
 
     public static void initMetaItems() {
         metaItem = new StandardMetaItem();
@@ -64,6 +65,8 @@ public class SymtechMetaItems {
 
         MOTOR_STEAM = metaItem.addItem(7, "steam.motor");
         PISTON_STEAM = metaItem.addItem(8, "steam.piston");
+
+        MINERAL_WOOL = metaItem.addItem(9, "mineral_wool");
     }
 
     private static void initOreDictItems() {
