@@ -1140,12 +1140,56 @@ public class MachineRecipes {
                 .buildAndRegister();
 
         // Electrolytic Cell
+        ModHandler.addShapedRecipe("symtech:electrolytic_cell", ELECTROLYTIC_CELL.getStackForm(),
+                "TIT", "WHW", "ICI",
+                'T', STCraft.plate(Steel),
+                'I', STCraft.circuit.lv(),
+                'W', new UnificationEntry(wireGtQuadruple, Tin),
+                'H', STCraft.hull.lv(),
+                'C', new UnificationEntry(cableGtSingle, Tin));
 
         // Drone Pad
+        ModHandler.addShapedRecipe("symtech:drone_pad_controller", DRONE_PAD.getStackForm(),
+                "TET", "MCM", "TMT",
+                'T', STCraft.plate(Steel),
+                'E', CraftingComponent.EMITTER.getIngredient(GTValues.LV),
+                'M', MULTIBLOCK_CASING.getItemVariant(BlockSymtechMultiblockCasing.CasingType.DRONE_PAD),
+                'C', METAL_CASING.getItemVariant(STEEL_SOLID));
+
+        ModHandler.addShapedRecipe("symtech:drone_pad_block",
+                MULTIBLOCK_CASING.getItemVariant(BlockSymtechMultiblockCasing.CasingType.DRONE_PAD, 3),
+                "   ", "TTT", "CCC",
+                'T', STCraft.plate(Steel),
+                'C', STONE_BLOCKS.get(StoneVariantBlock.StoneVariant.SMOOTH).getItemVariant(CONCRETE_LIGHT));
+
+        ModHandler.addShapedRecipe("symtech:drone_pad_block_alt",
+                MULTIBLOCK_CASING.getItemVariant(BlockSymtechMultiblockCasing.CasingType.DRONE_PAD, 3),
+                "   ", "TTT", "CCC",
+                'T', STCraft.plate(Steel),
+                'C', new ItemStack(Blocks.STONE, 1, 2)); // polished stone
 
         // Quarry
+        ModHandler.addShapedRecipe("symtech:quarry_controller", QUARRY.getStackForm(),
+                "TMT", "IHI", "CGC",
+                'T', STCraft.plate(Steel),
+                'M', STCraft.motor.lv(),
+                'I', STCraft.circuit.lv(),
+                'H', STCraft.hull.lv(),
+                'C', new UnificationEntry(cableGtSingle, Tin),
+                'G', COMPONENT_GRINDER_DIAMOND);
 
         // Gas atomizer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(BOILER_CASING.getItemVariant(BlockBoilerCasing.BoilerCasingType.STEEL_PIPE))
+                .input(circuit, MarkerMaterials.Tier.EV, 2)
+                .input(ELECTRIC_PUMP_EV, 4)
+                .input(NOZZLE_BORON_NITRIDE)
+                .input(plate, BoronNitride, 64)
+                .circuitMeta(20)
+                .outputs(GAS_ATOMIZER.getStackForm())
+                .EUt(GTValues.VA[4])
+                .duration(300)
+                .buildAndRegister();
     }
 
     private static void initEnergyMachines() {

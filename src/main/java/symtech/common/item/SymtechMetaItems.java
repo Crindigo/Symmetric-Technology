@@ -1,6 +1,8 @@
 package symtech.common.item;
 
 import gregtech.api.GTValues;
+import gregtech.api.GregTechAPI;
+import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.MetaItem.MetaValueItem;
 import gregtech.api.items.metaitem.MetaOreDictItem;
 import gregtech.api.items.metaitem.MetaOreDictItem.OreDictValueItem;
@@ -29,6 +31,8 @@ public class SymtechMetaItems {
     public static MetaValueItem PISTON_STEAM;
     public static OreDictValueItem CARBON_MOLECULAR_SIEVE;
     public static MetaValueItem MINERAL_WOOL;
+    public static MetaValueItem DRONE_LV;
+    public static MetaValueItem NOZZLE_BORON_NITRIDE;
 
     public static void initMetaItems() {
         metaItem = new StandardMetaItem();
@@ -67,6 +71,14 @@ public class SymtechMetaItems {
         PISTON_STEAM = metaItem.addItem(8, "steam.piston");
 
         MINERAL_WOOL = metaItem.addItem(9, "mineral_wool");
+
+        DRONE_LV = metaItem.addItem(10, "drone.lv")
+                .setMaxStackSize(1)
+                .addComponents(ElectricStats.createRechargeableBattery(10000, GTValues.LV))
+                .setModelAmount(8)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+
+        NOZZLE_BORON_NITRIDE = metaItem.addItem(11, "nozzle.boron_nitride");
     }
 
     private static void initOreDictItems() {

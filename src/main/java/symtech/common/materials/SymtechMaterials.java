@@ -22,6 +22,8 @@ public class SymtechMaterials {
     public static Material GadoliniumSiliconGermanium;
     public static Material SiliconCarbide;
     public static Material CryogenicSolder;
+    public static Material BoronNitride;
+    public static Material BoricAcid;
 
     public static Material Nimonic105;
     public static Material Incoloy825;

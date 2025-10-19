@@ -925,6 +925,8 @@ metaitem.air_vent.tooltip.1=§b收集速率：§f%,d L/s
 metaitem.orbital.scrap.earth.name=地球轨道太空垃圾
 metaitem.code_breacher.name=密码破译器
 metaitem.mineral_wool.name=矿棉板
+metaitem.drone.lv.name=基础无人机
+metaitem.nozzle.boron_nitride.name=氮化硼喷嘴
 
 # Catalysts
 symtech.universal.catalysts.tooltip.tier=§e最高电压：§f%,d EU/t（%s§f）

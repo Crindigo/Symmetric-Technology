@@ -820,6 +820,7 @@ metaitem.track_segment.tooltip=Для использования в §8тунн�
 metaitem.track_segment.length_info=610 блоков стоимостью 7 фунтов стерлингов для монорельсовой дороги.
 metaitem.air_vent.tooltip.1=§bСтавка сбора: §f%,d л/с
 metaitem.mineral_wool.name=Минеральная вата
+metaitem.drone.lv.name=Базовый дрон
 
 # Catalysts
 symtech.universal.catalysts.tooltip.tier=§eМакс. напряжение: §f%,d EU/T (%s§f)

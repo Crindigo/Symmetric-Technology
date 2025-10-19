@@ -936,6 +936,8 @@ metaitem.orbital.scrap.earth.name=Earth Orbital Scrap
 metaitem.code_breacher.name=Code Breacher
 metaitem.carbon_molecular_sieve_dust.name=Carbon Molecular Sieve
 metaitem.mineral_wool.name=Mineral Wool Sheet
+metaitem.drone.lv.name=Basic Drone
+metaitem.nozzle.boron_nitride.name=Boron Nitride Nozzle
 
 # Catalysts
 symtech.universal.catalysts.tooltip.tier=§eMax Voltage: §f%,d EU/T (%s§f)

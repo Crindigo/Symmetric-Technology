@@ -212,5 +212,19 @@ public class SymtechFirstDegreeMaterials {
                 .color(0x8967bf)
                 .build()
                 .setFormula("In97Ag3", true);
+
+        BoronNitride = new Material.Builder(8273, SymtechUtility.symId("boron_nitride"))
+                .dust()
+                .flags(GENERATE_PLATE)
+                .components(Boron, 1, Nitrogen, 1)
+                .colorAverage()
+                .build();
+
+        BoricAcid = new Material.Builder(8123, SymtechUtility.symId("boric_acid"))
+                .dust()
+                .color(0xedece8)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 3, Boron, 1, Oxygen, 3)
+                .build();
     }
 }
